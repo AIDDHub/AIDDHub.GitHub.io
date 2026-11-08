@@ -123,9 +123,8 @@ code, pre { font-family: var(--mono); }
   border-radius: 22%;
   display: block;
 }
-.brand-text { display: flex; flex-direction: column; line-height: 1.15; }
-.brand-text b { font-size: 15px; }
-.brand-text span { font-size: 11px; color: var(--text-faint); font-weight: 500; letter-spacing: 0.04em; }
+.brand-text { line-height: 1.15; }
+.brand-text b { font-size: 15px; letter-spacing: -0.01em; }
 
 .nav { display: flex; align-items: center; gap: 6px; }
 .nav a.nav-link {

@@ -57,7 +57,6 @@ except Exception:  # pragma: no cover - Pillow or fonts missing
 SITE = {
     "name": "AIDDHub Notes",
     "brand": "AIDDHub",
-    "tagline": "Tutorials & case studies",
     "url": "https://aiddhub.github.io",
     "main": "https://www.aiddhub.com",
     "main_label": "aiddhub.com",
@@ -101,7 +100,6 @@ TEXT = {
     "en": {
         "lang_attr": "en",
         "og_locale": "en_US",
-        "tagline": "Notes on chemistry software",
         "nav": {"home": "Home", "notes": "Writing", "tutorials": "Tutorials", "projects": "Projects", "about": "About"},
         "footer": {"resources": "Pages", "products": "Projects", "pricing": "Pricing", "download": "Download"},
         "footer_blurb": "Notes on desktop software for medicinal chemistry: molecular modelling, docking, SAR "
@@ -123,7 +121,6 @@ TEXT = {
     "zh": {
         "lang_attr": "zh-CN",
         "og_locale": "zh_CN",
-        "tagline": "化学软件笔记",
         "nav": {"home": "首页", "notes": "随笔", "tutorials": "教程", "projects": "项目", "about": "关于"},
         "footer": {"resources": "页面", "products": "项目", "pricing": "价格", "download": "下载"},
         "footer_blurb": "关于药物化学桌面软件的笔记：分子建模、分子对接、构效分析，以及背后的工程问题。",
@@ -537,7 +534,6 @@ class Builder:
             "asset_version": self.version,
             "footer": TEXT[lang]["footer"],
             "footer_blurb": TEXT[lang]["footer_blurb"],
-            "tagline": TEXT[lang]["tagline"],
             "strings": strings,
             "section_href": lambda key: self.section_href(key, lang),
             "alternates": [],
@@ -614,11 +610,12 @@ class Builder:
             profile=profile,
             section_href=lambda key: self.section_href(key, lang),
         )
+        card_title = profile["tagline"].replace(" · ", ", " if lang == "en" else "、")
         context["og_image"] = self.make_og(
             f"assets/og/home-{lang}.png",
-            title=profile["name"],
-            label=SITE["tagline"],
-            footer="aiddhub.github.io",
+            title=card_title,
+            label="",
+            footer="",
             lang=lang,
         )
         self.render("home.html", f"{'zh/' if lang == 'zh' else ''}index.html", **context)

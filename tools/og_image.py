@@ -136,9 +136,13 @@ def render(*, title: str, label: str, footer: str, lang: str, out: Path) -> None
     brand = _font(FONT_BOLD[lang], 27)
     draw.text((128, 70), "AIDDHub", font=brand, fill=TEXT)
 
-    end = _badge(draw, (80, 168), label, lang)
     date_font = _font(FONT_REG[lang], 19)
-    draw.text((end + 16, 178), footer, font=date_font, fill=FAINT)
+    if label:
+        end = _badge(draw, (80, 168), label, lang)
+        if footer:
+            draw.text((end + 16, 178), footer, font=date_font, fill=FAINT)
+    elif footer:
+        draw.text((80, 178), footer, font=date_font, fill=FAINT)
 
     size = 56 if lang == "en" else 54
     title_font = _font(FONT_BOLD[lang], size)
@@ -158,8 +162,6 @@ def render(*, title: str, label: str, footer: str, lang: str, out: Path) -> None
 
     foot_font = _font(FONT_REG[lang], 21)
     draw.text((80, 545), "aiddhub.github.io", font=foot_font, fill=DIM)
-    right = "MolStudio · MolInsight"
-    draw.text((W - 80 - draw.textlength(right, font=foot_font), 545), right, font=foot_font, fill=FAINT)
 
     out.parent.mkdir(parents=True, exist_ok=True)
     payload = image.convert("RGB")
