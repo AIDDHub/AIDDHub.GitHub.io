@@ -12,6 +12,7 @@ The products themselves live in a different repository (`AIDDHub/MolStudio`, `we
 content/posts/<slug>.en.md     English post (required)
 content/posts/<slug>.zh.md     Chinese translation (optional)
 content/pages/<name>.<lang>.md about, projects
+content/profile.yml            homepage profile: name, tagline, intro, keywords, now, links
 templates/                     Jinja2 templates (base, home, list, post, page, 404)
 assets/css/site.css            all styling
 assets/js/site.js              nav toggle, TOC scrollspy, copy buttons
@@ -28,6 +29,14 @@ Sections:
 - **notes** (`/notes/`, nav label *Writing*) — essays, build logs, tool opinions. No product badge.
 - **tutorials** (`/tutorials/`) — step-by-step walkthroughs.
 - **projects** (`/projects/`) — a normal page listing what is being built, and what is not.
+
+## The homepage
+
+The homepage is a profile page, not a product page. Everything on it comes from `content/profile.yml`:
+name, handle, avatar, tagline, intro, keywords, a short *Now* list, and the links row. Edit that file and
+rebuild; no template changes are needed.
+
+Replace `assets/img/avatar.svg` with a photo (square, 240×240 or larger) to use a real picture.
 
 ## Writing a post
 
