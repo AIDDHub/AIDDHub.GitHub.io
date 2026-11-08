@@ -114,14 +114,15 @@ code, pre { font-family: var(--mono); }
 .brand-mark {
   width: 30px;
   height: 30px;
-  border-radius: 9px;
-  background: var(--accent-grad);
-  display: grid;
-  place-items: center;
-  color: #04101f;
   flex: 0 0 auto;
+  display: block;
 }
-.brand-mark svg { width: 18px; height: 18px; }
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  border-radius: 22%;
+  display: block;
+}
 .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
 .brand-text b { font-size: 15px; }
 .brand-text span { font-size: 11px; color: var(--text-faint); font-weight: 500; letter-spacing: 0.04em; }
@@ -285,9 +286,7 @@ h1.hero-title .grad {
 .avatar {
   width: 104px;
   height: 104px;
-  border-radius: 50%;
-  border: 1px solid var(--border-strong);
-  background: var(--bg-2);
+  border-radius: 22%;
   flex: 0 0 auto;
 }
 .profile-id h1 { font-size: clamp(26px, 3.2vw, 36px); letter-spacing: -0.025em; line-height: 1.15; }

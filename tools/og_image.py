@@ -100,6 +100,21 @@ def _mark(draw: ImageDraw.ImageDraw, x: int, y: int, size: int) -> None:
     draw.line([top[0] + 2 * scale, top[1] + 9 * scale, br[0] - r, br[1] - r], fill=ACCENT, width=max(2, int(2.2 * scale)))
 
 
+ICON = Path(__file__).resolve().parent.parent / "assets" / "img" / "avatar-icon.png"
+
+
+def _brand(image: Image.Image, draw: ImageDraw.ImageDraw, x: int, y: int, size: int) -> None:
+    """Paste the site icon when it is available, otherwise draw the vector fallback."""
+    if ICON.exists():
+        try:
+            logo = Image.open(ICON).convert("RGBA").resize((size, size), Image.LANCZOS)
+            image.alpha_composite(logo, (x, y))
+            return
+        except Exception:
+            pass
+    _mark(draw, x, y, size)
+
+
 def render(*, title: str, label: str, footer: str, lang: str, out: Path) -> None:
     image = Image.new("RGBA", (W, H), BG + (255,))
     _glow(image, (170, -40), 520, ACCENT, 90)
@@ -117,7 +132,7 @@ def render(*, title: str, label: str, footer: str, lang: str, out: Path) -> None
         gdraw.line([(0, y), (W, y)], fill=(120, 160, 220, 14))
     image.alpha_composite(grid)
 
-    _mark(draw, 80, 70, 34)
+    _brand(image, draw, 80, 70, 34)
     brand = _font(FONT_BOLD[lang], 27)
     draw.text((128, 70), "AIDDHub", font=brand, fill=TEXT)
 
