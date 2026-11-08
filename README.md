@@ -36,7 +36,8 @@ The homepage is a profile page, not a product page. Everything on it comes from 
 name, handle, avatar, tagline, intro, keywords, a short *Now* list, and the links row. Edit that file and
 rebuild; no template changes are needed.
 
-Replace `assets/img/avatar.svg` with a photo (square, 240×240 or larger) to use a real picture.
+Replace `assets/img/avatar-icon.png` with a square image (300×300 or larger) to use a photo. The same file is
+used for the header, the footer and the social cards.
 
 ## Adding a post
 
