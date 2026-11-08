@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>相信一个对接构象之前，先做六项检查 — AIDDHub Notes</title>
+  <meta name="description" content="对接打分只是排序提示，不是结果。六项快速检查，用来区分一个值得放进报告的构象和一个准备过程留下的产物。" />
+  <link rel="canonical" href="https://aiddhub.github.io/zh/tutorials/six-checks-docking-pose/" />
+  <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/tutorials/six-checks-docking-pose/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/tutorials/six-checks-docking-pose/" />
+  <link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/tutorials/six-checks-docking-pose/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AIDDHub Notes" />
+  <meta property="og:title" content="相信一个对接构象之前，先做六项检查" />
+  <meta property="og:description" content="对接打分只是排序提示，不是结果。六项快速检查，用来区分一个值得放进报告的构象和一个准备过程留下的产物。" />
+  <meta property="og:url" content="https://aiddhub.github.io/zh/tutorials/six-checks-docking-pose/" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://aiddhub.github.io/assets/og/six-checks-docking-pose-zh.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="相信一个对接构象之前，先做六项检查" />
+  <meta name="twitter:description" content="对接打分只是排序提示，不是结果。六项快速检查，用来区分一个值得放进报告的构象和一个准备过程留下的产物。" />
+  <meta name="twitter:image" content="https://aiddhub.github.io/assets/og/six-checks-docking-pose-zh.png" />
+  <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=69af0696" />
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://aiddhub.github.io/zh/tutorials/six-checks-docking-pose/#article",
+      "headline": "相信一个对接构象之前，先做六项检查",
+      "description": "对接打分只是排序提示，不是结果。六项快速检查，用来区分一个值得放进报告的构象和一个准备过程留下的产物。",
+      "datePublished": "2026-10-28",
+      "dateModified": "2026-10-28",
+      "inLanguage": "zh-CN",
+      "mainEntityOfPage": "https://aiddhub.github.io/zh/tutorials/six-checks-docking-pose/",
+      "articleSection": "教程",
+      "keywords": "分子对接, 验证, 构象, 教程",
+      "author": {
+        "@type": "Organization",
+        "name": "AIDDHub",
+        "url": "https://www.aiddhub.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.aiddhub.com/#organization",
+        "name": "AIDDHub",
+        "url": "https://www.aiddhub.com",
+        "email": "support@aiddhub.com",
+        "description": "Desktop software for molecular modelling, docking and SAR analysis."
+      },
+      "isPartOf": {
+        "@id": "https://aiddhub.github.io/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aiddhub.github.io/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "教程",
+          "item": "https://aiddhub.github.io/zh/tutorials/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "相信一个对接构象之前，先做六项检查",
+          "item": "https://aiddhub.github.io/zh/tutorials/six-checks-docking-pose/"
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body class="article-page">
+<div class="bg-aurora"></div>
+<div class="bg-grid"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/zh/" aria-label="AIDDHub Notes">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+          <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b>AIDDHub</b>
+        <span>化学软件笔记</span>
+      </span>
+    </a>
+
+    <div class="nav-right">
+      <nav class="nav" id="navLinks" aria-label="Main">
+        <a class="nav-link" href="/zh/">首页</a>
+        <a class="nav-link" href="/zh/notes/">随笔</a>
+        <a class="nav-link" href="/zh/tutorials/" aria-current="page">教程</a>
+        <a class="nav-link" href="/zh/projects/">项目</a>
+        <a class="nav-link" href="/zh/about/">关于</a>
+      </nav>
+      <a class="lang-switch" href="/tutorials/six-checks-docking-pose/" hreflang="en" lang="en">English</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="container">
+  <div class="article-top">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/zh/">首页</a>
+    <span class="sep">/</span>
+    <a href="/zh/tutorials/">教程</a>
+    <span class="sep">/</span>
+    <span aria-current="page">构象的六项检查</span>
+  </nav>
+  </div>
+
+  <div class="article-layout">
+    <article>
+      <header class="article-head">
+        <div class="article-meta">
+          <span class="badge tutorial">教程</span>
+          <span class="badge product">MolStudio</span>
+          <span class="dot">·</span>
+          <time datetime="2026-10-28">2026 年 10 月 28 日</time>
+          <span class="dot">·</span>
+          <span>2 分钟阅读</span>
+        </div>
+        <h1>相信一个对接构象之前，先做六项检查</h1>
+      </header>
+
+      <div class="article-body">
+<p>任何对接程序都会返回一个构象，每个构象都附带一个数字。被引用的是数字；需要面对评审的是构象。
+这六项检查每个化合物大约五分钟，能拦住大多数让对接图无法辩护的问题。</p>
+<h2 id="1">1. 配体在盒子里吗？</h2>
+<p>显而易见，但仍然是荒谬结果最常见的原因。如果盒子是目测放的，先确认配体整个体积都在盒内——
+只擦到搜索空间边缘的构象，其实没有被真正优化过。</p>
+<p>MolStudio 会把盒子画在视图里，所以这是运行前两秒钟的目视检查，而不是运行后的诊断。</p>
+<h2 id="2">2. 流程能复现参考配体吗？</h2>
+<p>如果结构里有共晶配体，先重对接。把它取出来，用你打算用的同一套流程对回去，再和晶体构象比较 RMSD。</p>
+<ul>
+<li><strong>低于约 2 Å</strong>——这套流程能在这个受体上找到正确答案，继续。</li>
+<li><strong>高于约 2 Å</strong>——所有结果都要打问号。问题出在准备环节（质子化、缺失残基、金属离子、水）或者盒子。</li>
+</ul>
+<p>这是对接研究里性价比最高的对照，成本只有一次运行。</p>
+<h2 id="3">3. 氢键在几何上合理吗？</h2>
+<p>只看距离不够。3.9 Å 的氢键不是氢键；供体背对着受体，也不是。在 2D 相互作用视图里看列出的距离，
+再回到 3D 确认几何：</p>
+<table>
+<thead>
+<tr>
+<th>相互作用</th>
+<th>常见距离</th>
+<th>要确认什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>强氢键</td>
+<td>2.6–3.2 Å</td>
+<td>供体—受体是否对齐</td>
+</tr>
+<tr>
+<td>弱/长氢键</td>
+<td>3.2–3.5 Å</td>
+<td>是否仍然指向受体</td>
+</tr>
+<tr>
+<td>盐桥</td>
+<td>2.5–4.0 Å</td>
+<td>双方的电荷状态</td>
+</tr>
+<tr>
+<td>π–π 堆积</td>
+<td>3.5–4.5 Å</td>
+<td>环质心距离与偏移</td>
+</tr>
+</tbody>
+</table>
+<p>一个只有 3.8 Å "氢键"的构象，是靠打分函数撑住的，不是靠化学。</p>
+<h2 id="4">4. 有空间冲突吗？</h2>
+<p>看配体原子是否落进蛋白原子的范德华半径里，以及配体是否穿过一个 loop。轻微重叠会被软势吸收；
+真正的冲突意味着这个构象无论打多少分都不可能。</p>
+<h2 id="5">5. 这个构象能解释你已知的事实吗？</h2>
+<p>如果系列有 SAR，构象应当和它一致。已知对该靶点无活性的化合物，不应该把口袋填得完美；
+去掉一个取代基活性掉 100 倍的化合物，那个取代基应该在构象里形成接触。</p>
+<p>对接最有用的时候，是它解释了一个已有的测量值，而不是凭空造出一个新先导。</p>
+<h2 id="6">6. 换一次运行，排序还成立吗？</h2>
+<p>用不同随机种子、更高 exhaustiveness 重跑打分最好的化合物。</p>
+<ul>
+<li>构象相同、打分接近——结果稳定。</li>
+<li>构象不同、打分接近——打分函数分不开它们，应当报告这种模糊性，而不是挑更好看的那张图。</li>
+<li>构象相同、打分差别很大——搜索没有收敛，第一个数字是噪声。</li>
+</ul>
+<h2 id="_1">打分是什么，不是什么</h2>
+<p>Vina 打分是一个快速的经验打分函数。它适合给<strong>同一受体、同一准备流程</strong>下的化合物排序。
+它不是结合自由能，不含熵，并且对更大、更亲脂的配体有明显偏好。</p>
+<p>实际后果：</p>
+<ul>
+<li>只在系列内部比较，永远不要跨两个不同受体比；</li>
+<li>当系列的大小跨度很大时，按重原子数归一；</li>
+<li>0.5 kcal/mol 以内的差异当作噪声；</li>
+<li>报告相互作用，让打分只承担排序，不承担结论。</li>
+</ul>
+<h2 id="_2">一张短清单</h2>
+<ul>
+<li>[ ] 配体完全在盒子内</li>
+<li>[ ] 参考配体能复现晶体构象</li>
+<li>[ ] 氢键的距离<strong>和</strong>角度都合理</li>
+<li>[ ] 没有空间冲突</li>
+<li>[ ] 构象与已知 SAR 一致</li>
+<li>[ ] 换种子后排序稳定</li>
+</ul>
+<p>六项都过，这个构象值得一张图。如果四项过、两项模糊，就照实写——一个描述清楚的局限，
+比一张过度自信的图更有说服力。</p>
+      </div>
+
+      <footer class="article-foot">
+        <p class="article-tags">
+<span>分子对接</span><span>验证</span><span>构象</span><span>教程</span>        </p>
+        <div class="prevnext">
+<span></span>          <a class="next" href="https://aiddhub.github.io/zh/tutorials/mmp-rgroup-sar/"><span>下一篇 →</span>MMP 与 R 基团矩阵：从表格到构效关系</a>
+        </div>
+        <p class="article-corrections">勘误与问题请联系 <a href="mailto:support@aiddhub.com">support@aiddhub.com</a>.</p>
+      </footer>
+    </article>
+
+    <aside class="toc" aria-label="本页目录">
+      <h4>本页目录</h4>
+      <ul><li><a href="#1">1. 配体在盒子里吗？</a></li><li><a href="#2">2. 流程能复现参考配体吗？</a></li><li><a href="#3">3. 氢键在几何上合理吗？</a></li><li><a href="#4">4. 有空间冲突吗？</a></li><li><a href="#5">5. 这个构象能解释你已知的事实吗？</a></li><li><a href="#6">6. 换一次运行，排序还成立吗？</a></li><li><a href="#_1">打分是什么，不是什么</a></li><li><a href="#_2">一张短清单</a></li></ul>
+    </aside>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/zh/">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+              <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+            </svg>
+          </span>
+          <span class="brand-text"><b>AIDDHub</b><span>化学软件笔记</span></span>
+        </a>
+        <p>关于药物化学桌面软件的笔记：分子建模、分子对接、构效分析，以及背后的工程问题。</p>
+      </div>
+      <div>
+        <h4>页面</h4>
+        <ul>
+          <li><a href="/zh/notes/">随笔</a></li>
+          <li><a href="/zh/tutorials/">教程</a></li>
+          <li><a href="/zh/projects/">项目</a></li>
+          <li><a href="https://aiddhub.github.io/feed.xml">RSS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>项目</h4>
+        <ul>
+          <li><a href="https://www.aiddhub.com/molstudio">MolStudio</a></li>
+          <li><a href="https://www.aiddhub.com/molinsight">MolInsight</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#pricing">价格</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#download">下载</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> AIDDHub. All rights reserved.</span>
+      <span><a href="mailto:support@aiddhub.com">support@aiddhub.com</a> &middot; <a href="https://www.aiddhub.com/">aiddhub.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js?v=69af0696" defer></script>
+</body>
+</html>

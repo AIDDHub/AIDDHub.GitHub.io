@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>一份在用的工具清单 — AIDDHub Notes</title>
+  <meta name="description" content="实际装了、每天都在用的东西：RDKit、ChEMBL、Qt、Obsidian、DataWarrior、PyMOL、Cloudflare，以及被删掉的工具和原因。" />
+  <link rel="canonical" href="https://aiddhub.github.io/zh/notes/tools-i-use/" />
+  <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/notes/tools-i-use/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/notes/tools-i-use/" />
+  <link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/notes/tools-i-use/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AIDDHub Notes" />
+  <meta property="og:title" content="一份在用的工具清单" />
+  <meta property="og:description" content="实际装了、每天都在用的东西：RDKit、ChEMBL、Qt、Obsidian、DataWarrior、PyMOL、Cloudflare，以及被删掉的工具和原因。" />
+  <meta property="og:url" content="https://aiddhub.github.io/zh/notes/tools-i-use/" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://aiddhub.github.io/assets/og/tools-i-use-zh.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="一份在用的工具清单" />
+  <meta name="twitter:description" content="实际装了、每天都在用的东西：RDKit、ChEMBL、Qt、Obsidian、DataWarrior、PyMOL、Cloudflare，以及被删掉的工具和原因。" />
+  <meta name="twitter:image" content="https://aiddhub.github.io/assets/og/tools-i-use-zh.png" />
+  <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=69af0696" />
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aiddhub.github.io/zh/notes/tools-i-use/#article",
+      "headline": "一份在用的工具清单",
+      "description": "实际装了、每天都在用的东西：RDKit、ChEMBL、Qt、Obsidian、DataWarrior、PyMOL、Cloudflare，以及被删掉的工具和原因。",
+      "datePublished": "2026-09-30",
+      "dateModified": "2026-09-30",
+      "inLanguage": "zh-CN",
+      "mainEntityOfPage": "https://aiddhub.github.io/zh/notes/tools-i-use/",
+      "articleSection": "随笔",
+      "keywords": "工具, 工作流",
+      "author": {
+        "@type": "Organization",
+        "name": "AIDDHub",
+        "url": "https://www.aiddhub.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.aiddhub.com/#organization",
+        "name": "AIDDHub",
+        "url": "https://www.aiddhub.com",
+        "email": "support@aiddhub.com",
+        "description": "Desktop software for molecular modelling, docking and SAR analysis."
+      },
+      "isPartOf": {
+        "@id": "https://aiddhub.github.io/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aiddhub.github.io/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "随笔",
+          "item": "https://aiddhub.github.io/zh/notes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "一份在用的工具清单",
+          "item": "https://aiddhub.github.io/zh/notes/tools-i-use/"
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body class="article-page">
+<div class="bg-aurora"></div>
+<div class="bg-grid"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/zh/" aria-label="AIDDHub Notes">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+          <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b>AIDDHub</b>
+        <span>化学软件笔记</span>
+      </span>
+    </a>
+
+    <div class="nav-right">
+      <nav class="nav" id="navLinks" aria-label="Main">
+        <a class="nav-link" href="/zh/">首页</a>
+        <a class="nav-link" href="/zh/notes/" aria-current="page">随笔</a>
+        <a class="nav-link" href="/zh/tutorials/">教程</a>
+        <a class="nav-link" href="/zh/projects/">项目</a>
+        <a class="nav-link" href="/zh/about/">关于</a>
+      </nav>
+      <a class="lang-switch" href="/notes/tools-i-use/" hreflang="en" lang="en">English</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="container">
+  <div class="article-top">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/zh/">首页</a>
+    <span class="sep">/</span>
+    <a href="/zh/notes/">随笔</a>
+    <span class="sep">/</span>
+    <span aria-current="page">工具清单</span>
+  </nav>
+  </div>
+
+  <div class="article-layout">
+    <article>
+      <header class="article-head">
+        <div class="article-meta">
+          <span class="badge note">随笔</span>
+          <span class="dot">·</span>
+          <time datetime="2026-09-30">2026 年 9 月 30 日</time>
+          <span class="dot">·</span>
+          <span>2 分钟阅读</span>
+        </div>
+        <h1>一份在用的工具清单</h1>
+      </header>
+
+      <div class="article-body">
+<p>工具清单过时得很快，所以这份带日期，也带一条规则：只写最近一个月真的打开过的，只写会想念的。</p>
+<h2 id="_1">化学</h2>
+<p><strong>RDKit。</strong> 任何和结构有关的事，默认答案，而且名副其实。检查一个规范化结果、试写一个描述符，
+或者在把 SMARTS 写进代码之前确认"它到底匹配什么"，它都是最快的路径。格式和反应覆盖面上，
+没有别的能接近。</p>
+<p><strong>ChEMBL。</strong> 不是软件，是数据集——但要拿真实系列去检验一个想法时，它是第一个该看的地方。
+有合理 SAR 的公开数据，永远胜过合成出来的数据。</p>
+<p><strong>DataWarrior。</strong> 打开一个陌生 SDF 看一眼，它还是最快的。免费、局部不好看，但在项目开始时最需要的那件事上
+非常好用：看见整个集合。</p>
+<p><strong>PyMOL。</strong> 主要用来出图。不是因为好用，而是因为每个审稿人都认得它的输出。</p>
+<p><strong>Open Babel。</strong> 偶尔用，处理 RDKit 拒绝的格式转换。它已经很多年不是首选了，仍然装着。</p>
+<h2 id="_2">构建</h2>
+<p><strong>Python</strong> 负责界面之外的一切。它是这个生态的语言，和它较劲是爱好，不是策略。</p>
+<p><strong>Qt</strong> 负责桌面层。成熟、可预测，把那些不体面的部分——停靠面板、表格、高 DPI 缩放——处理得没有戏剧性。</p>
+<p><strong>C++ 只在测过之后用。</strong> 先剖析，再重写。到目前为止追过的性能问题里，有一半其实是两千个分子的 Python 循环，
+而不是算法。</p>
+<p><strong>GitHub Actions</strong> 用来跑那些能抓住错误的检查：站点还能不能构建、测试在另一台机器上还能不能过。</p>
+<h2 id="_3">写作与思考</h2>
+<p><strong>Obsidian</strong>，一个纯 Markdown 文件夹，没有非用不可的插件。它明天坏掉，文件还在，这就是全部意义。</p>
+<p><strong>纸质笔记本</strong>，给一切带结构式的东西。在触控板上画机理，是一种逃避思考的方式。</p>
+<h2 id="_4">被删掉的工具</h2>
+<ul>
+<li><strong>把 Excel 当数据库。</strong> 还会打开；但活性表不再只有它一份。</li>
+<li><strong>把 Jupyter notebook 当产品。</strong> 探索很好，任何下个月还要再跑一次的东西都很糟。
+  一个 notebook 一旦有用户，它就想变成一个带参数解析的脚本。</li>
+<li><strong>给桌面应用用 Docker。</strong> 它解决了一个这里不存在的问题，制造了一个这里存在的支持问题。</li>
+<li><strong>第二块屏幕堆满看板。</strong> 换成了一页真的会看的数字。</li>
+</ul>
+<h2 id="_5">意外的那个</h2>
+<p>Cloudflare。原本期待的是一个 CDN；实际得到的是一个放静态站、一个下载桶和一个邮件转发的组合，
+一个月不到一杯咖啡的钱，没有服务器要打补丁。对一个小工作室来说，这就是全部基础设施预算，
+而且到现在还没倒。</p>
+<h2 id="_6">还缺的</h2>
+<p>一个能同时看 3D 结构和活性表、不用 alt-tab 的方法。MolStudio 大致就是因为这个才存在的，
+而这个问题还没有完全解决。</p>
+      </div>
+
+      <footer class="article-foot">
+        <p class="article-tags">
+<span>工具</span><span>工作流</span>        </p>
+        <div class="prevnext">
+<span></span>          <a class="next" href="https://aiddhub.github.io/zh/notes/one-time-licence/"><span>下一篇 →</span>一次性授权逼你把哪些事做对</a>
+        </div>
+        <p class="article-corrections">勘误与问题请联系 <a href="mailto:support@aiddhub.com">support@aiddhub.com</a>.</p>
+      </footer>
+    </article>
+
+    <aside class="toc" aria-label="本页目录">
+      <h4>本页目录</h4>
+      <ul><li><a href="#_1">化学</a></li><li><a href="#_2">构建</a></li><li><a href="#_3">写作与思考</a></li><li><a href="#_4">被删掉的工具</a></li><li><a href="#_5">意外的那个</a></li><li><a href="#_6">还缺的</a></li></ul>
+    </aside>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/zh/">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+              <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+            </svg>
+          </span>
+          <span class="brand-text"><b>AIDDHub</b><span>化学软件笔记</span></span>
+        </a>
+        <p>关于药物化学桌面软件的笔记：分子建模、分子对接、构效分析，以及背后的工程问题。</p>
+      </div>
+      <div>
+        <h4>页面</h4>
+        <ul>
+          <li><a href="/zh/notes/">随笔</a></li>
+          <li><a href="/zh/tutorials/">教程</a></li>
+          <li><a href="/zh/projects/">项目</a></li>
+          <li><a href="https://aiddhub.github.io/feed.xml">RSS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>项目</h4>
+        <ul>
+          <li><a href="https://www.aiddhub.com/molstudio">MolStudio</a></li>
+          <li><a href="https://www.aiddhub.com/molinsight">MolInsight</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#pricing">价格</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#download">下载</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> AIDDHub. All rights reserved.</span>
+      <span><a href="mailto:support@aiddhub.com">support@aiddhub.com</a> &middot; <a href="https://www.aiddhub.com/">aiddhub.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js?v=69af0696" defer></script>
+</body>
+</html>

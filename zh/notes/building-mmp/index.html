@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>实现匹配分子对：无聊的那部分 — AIDDHub Notes</title>
+  <meta name="description" content="切分子只花一个下午。真正花掉剩下一个月的是：切割点的规范化、对称片段、小样本统计，以及一张四万行的表。" />
+  <link rel="canonical" href="https://aiddhub.github.io/zh/notes/building-mmp/" />
+  <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/notes/building-mmp/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/notes/building-mmp/" />
+  <link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/notes/building-mmp/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AIDDHub Notes" />
+  <meta property="og:title" content="实现匹配分子对：无聊的那部分" />
+  <meta property="og:description" content="切分子只花一个下午。真正花掉剩下一个月的是：切割点的规范化、对称片段、小样本统计，以及一张四万行的表。" />
+  <meta property="og:url" content="https://aiddhub.github.io/zh/notes/building-mmp/" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://aiddhub.github.io/assets/og/building-mmp-zh.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="实现匹配分子对：无聊的那部分" />
+  <meta name="twitter:description" content="切分子只花一个下午。真正花掉剩下一个月的是：切割点的规范化、对称片段、小样本统计，以及一张四万行的表。" />
+  <meta name="twitter:image" content="https://aiddhub.github.io/assets/og/building-mmp-zh.png" />
+  <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=69af0696" />
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aiddhub.github.io/zh/notes/building-mmp/#article",
+      "headline": "实现匹配分子对：无聊的那部分",
+      "description": "切分子只花一个下午。真正花掉剩下一个月的是：切割点的规范化、对称片段、小样本统计，以及一张四万行的表。",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "inLanguage": "zh-CN",
+      "mainEntityOfPage": "https://aiddhub.github.io/zh/notes/building-mmp/",
+      "articleSection": "随笔",
+      "keywords": "mmp, 实现, 统计, 开发笔记",
+      "author": {
+        "@type": "Organization",
+        "name": "AIDDHub",
+        "url": "https://www.aiddhub.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.aiddhub.com/#organization",
+        "name": "AIDDHub",
+        "url": "https://www.aiddhub.com",
+        "email": "support@aiddhub.com",
+        "description": "Desktop software for molecular modelling, docking and SAR analysis."
+      },
+      "isPartOf": {
+        "@id": "https://aiddhub.github.io/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aiddhub.github.io/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "随笔",
+          "item": "https://aiddhub.github.io/zh/notes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "实现匹配分子对：无聊的那部分",
+          "item": "https://aiddhub.github.io/zh/notes/building-mmp/"
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body class="article-page">
+<div class="bg-aurora"></div>
+<div class="bg-grid"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/zh/" aria-label="AIDDHub Notes">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+          <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b>AIDDHub</b>
+        <span>化学软件笔记</span>
+      </span>
+    </a>
+
+    <div class="nav-right">
+      <nav class="nav" id="navLinks" aria-label="Main">
+        <a class="nav-link" href="/zh/">首页</a>
+        <a class="nav-link" href="/zh/notes/" aria-current="page">随笔</a>
+        <a class="nav-link" href="/zh/tutorials/">教程</a>
+        <a class="nav-link" href="/zh/projects/">项目</a>
+        <a class="nav-link" href="/zh/about/">关于</a>
+      </nav>
+      <a class="lang-switch" href="/notes/building-mmp/" hreflang="en" lang="en">English</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="container">
+  <div class="article-top">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/zh/">首页</a>
+    <span class="sep">/</span>
+    <a href="/zh/notes/">随笔</a>
+    <span class="sep">/</span>
+    <span aria-current="page">MMP 无聊的部分</span>
+  </nav>
+  </div>
+
+  <div class="article-layout">
+    <article>
+      <header class="article-head">
+        <div class="article-meta">
+          <span class="badge note">随笔</span>
+          <span class="badge product">MolInsight</span>
+          <span class="dot">·</span>
+          <time datetime="2026-10-26">2026 年 10 月 26 日</time>
+          <span class="dot">·</span>
+          <span>2 分钟阅读</span>
+        </div>
+        <h1>实现匹配分子对：无聊的那部分</h1>
+      </header>
+
+      <div class="article-body">
+<p>匹配分子对看起来是个小功能。在键上切一刀，对每个分子都切，按切掉的片段分组，把活性相减。
+一个下午的活儿。</p>
+<p>切分子确实是一个下午。其余的部分才是这个功能。</p>
+<h2 id="_1">切是简单的那一半</h2>
+<p>教科书算法：对每个分子，最多断开 n 根非环单键，然后把两个片段规范化，让相同的上下文哈希到同一个键。
+有化学信息学工具包的话，这就是一个循环加一个 <code>MolToSmiles</code>。</p>
+<p>难的是细节：</p>
+<ul>
+<li><strong>对称性</strong>。甲苯从甲基键切、从环键切，可能得到同一对片段的两种顺序。没有规范化排序，
+  每个对称分子都会把自己的对数翻倍，把统计悄悄吹大。</li>
+<li><strong>立体与电荷</strong>。如果切割切断了一条立体键，或者留下一个不成对的电荷，这个片段就不是有效结构，
+  这一对也不是一对。留着它，就会产出没人画得出来的变换。</li>
+<li><strong>盐和混合物</strong>。盐酸盐导入时是两个组分。对盐做切割，表里就全是反离子和其它一切的配对。先去掉，而且要显眼地去掉。</li>
+<li><strong>环键</strong>。定义上就排除，但相当多天真的"一刀"变换，其实是恰好能解析的环打开。</li>
+</ul>
+<p>这些都不难。但它们决定了这是演示，还是化学家愿意相信的一张表。</p>
+<h2 id="_2">争论从统计开始</h2>
+<p>所有人都想要的输出，是每个变换一个数：活性变化多少。这个数是平均值，而三对的平均值不是证据。</p>
+<p>所以表里需要对数、离散度、极值，以及某种带显著性的东西。这立刻引出一个不太好回答的问题：<strong>用哪个检验？</strong></p>
+<ul>
+<li>配对 t 检验是最直观的选择，也是当差值重尾时的错误选择——系列里只要有一个离群点，差值就重尾。</li>
+<li>Wilcoxon 符号秩更稳健，但在 n = 4 时什么有用的话都不肯说。</li>
+<li>对上千个变换做多重检验，会让任何固定阈值都变成谎话。</li>
+</ul>
+<p>最终上线的折中：报告对数与离散度，给出一个不假设正态的检验的 p 值，并且——这是重点——把对数放在同一行，
+这样没人能只看 p 排序而不看见证据有多薄。</p>
+<blockquote>
+<p>一个统计量如果没法用一句话向看表的人解释清楚，它就不该成为一列。</p>
+</blockquote>
+<h2 id="_3">界面才是产品本身</h2>
+<p>四万行变换不是一张表，是一次拒绝服务。第一版把它们全渲染出来，切换标签页要九秒。</p>
+<p>上线的版本做三件事：</p>
+<ol>
+<li><strong>先聚合再渲染</strong>。一个变换一行，永远不是一对一行。</li>
+<li><strong>把筛选当一等控件</strong>。对数、效应大小，以及当前正在讨论的那个骨架——因为有意思的问题几乎从来不是"全表"。</li>
+<li><strong>让对保持可达</strong>。点一个变换，就能看到支持它的化合物和结构。没有这一步，表是一个主张；
+   有了它，表才是证据。</li>
+</ol>
+<p>第三点花的时间最长，也是唯一改变了功能使用方式的一步。</p>
+<h2 id="_4">如果重做一次</h2>
+<p>先做 pair 浏览器，再做统计。一旦能把一个变换点开看到实际的分子，该显示哪些数字就变得很明显——
+而几个精心算出来的列，最后发现只是装饰。</p>
+<p>还有：别把"切割数"当成高级设置。所有人都会调大，所有人都会得到无法解释的片段，所有人都会怪算法。
+两刀是个好默认值，现在界面也这么说了。</p>
+<h2 id="_5">所谓教训</h2>
+<p>科学工具里有意思的工程，很少是科学本身。是规范化，是不被藏起来的那条阈值，是每次有人打开表格时省下的四秒钟。
+这些都不构成一张好截图，而它们决定了这个工具会不会被用第二次。</p>
+      </div>
+
+      <footer class="article-foot">
+        <p class="article-tags">
+<span>mmp</span><span>实现</span><span>统计</span><span>开发笔记</span>        </p>
+        <div class="prevnext">
+          <a class="prev" href="https://aiddhub.github.io/zh/notes/molinsight-vs-datawarrior/"><span>← 上一篇</span>MolInsight 与 DataWarrior：SAR 工作流里该怎么分工</a>
+          <a class="next" href="https://aiddhub.github.io/zh/notes/why-desktop-tools/"><span>下一篇 →</span>为什么化学软件仍然适合做成桌面程序</a>
+        </div>
+        <p class="article-corrections">勘误与问题请联系 <a href="mailto:support@aiddhub.com">support@aiddhub.com</a>.</p>
+      </footer>
+    </article>
+
+    <aside class="toc" aria-label="本页目录">
+      <h4>本页目录</h4>
+      <ul><li><a href="#_1">切是简单的那一半</a></li><li><a href="#_2">争论从统计开始</a></li><li><a href="#_3">界面才是产品本身</a></li><li><a href="#_4">如果重做一次</a></li><li><a href="#_5">所谓教训</a></li></ul>
+    </aside>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/zh/">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+              <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+            </svg>
+          </span>
+          <span class="brand-text"><b>AIDDHub</b><span>化学软件笔记</span></span>
+        </a>
+        <p>关于药物化学桌面软件的笔记：分子建模、分子对接、构效分析，以及背后的工程问题。</p>
+      </div>
+      <div>
+        <h4>页面</h4>
+        <ul>
+          <li><a href="/zh/notes/">随笔</a></li>
+          <li><a href="/zh/tutorials/">教程</a></li>
+          <li><a href="/zh/projects/">项目</a></li>
+          <li><a href="https://aiddhub.github.io/feed.xml">RSS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>项目</h4>
+        <ul>
+          <li><a href="https://www.aiddhub.com/molstudio">MolStudio</a></li>
+          <li><a href="https://www.aiddhub.com/molinsight">MolInsight</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#pricing">价格</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#download">下载</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> AIDDHub. All rights reserved.</span>
+      <span><a href="mailto:support@aiddhub.com">support@aiddhub.com</a> &middot; <a href="https://www.aiddhub.com/">aiddhub.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js?v=69af0696" defer></script>
+</body>
+</html>

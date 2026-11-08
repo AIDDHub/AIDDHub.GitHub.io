@@ -805,6 +805,9 @@ class Builder:
 
     def build(self) -> list[str]:
         clean_output(self.dest)
+        missing = sorted(slug for slug, editions in self.posts.items() if "zh" not in editions)
+        if missing:
+            print("warning: no Chinese edition for: " + ", ".join(missing))
         has_zh = any("zh" in editions for editions in self.posts.values())
         for lang in ("en", "zh"):
             if lang == "zh" and not has_zh:

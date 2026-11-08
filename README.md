@@ -76,7 +76,10 @@ corrections line — not a call to action. Every `##` heading becomes a table-of
 
 Add `content/posts/<slug>.zh.md` with the same `date`, `section` and `product`. The build emits
 `/zh/<section>/<slug>/`, adds the `hreflang` pair and links the two versions. A post without a `.zh.md`
-simply has no Chinese page; the Chinese index stays valid as long as at least one post is translated.
+simply has no Chinese page — the build prints a warning listing those posts, so the two editions do not
+drift apart unnoticed.
+
+The two homepages are generated from the same `profile.yml`; only the `en`/`zh` values inside it differ.
 
 ## Checks
 
