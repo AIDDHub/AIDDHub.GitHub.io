@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The tools I actually use — AIDDHub Notes</title>
+  <meta name="description" content="A working list, with the things I stopped using and why: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare, and one very old spreadsheet." />
+  <link rel="canonical" href="https://aiddhub.github.io/notes/tools-i-use/" />
+  <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/notes/tools-i-use/" />
+  <link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/notes/tools-i-use/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AIDDHub Notes" />
+  <meta property="og:title" content="The tools I actually use" />
+  <meta property="og:description" content="A working list, with the things I stopped using and why: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare, and one very old spreadsheet." />
+  <meta property="og:url" content="https://aiddhub.github.io/notes/tools-i-use/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://aiddhub.github.io/assets/og/tools-i-use-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The tools I actually use" />
+  <meta name="twitter:description" content="A working list, with the things I stopped using and why: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare, and one very old spreadsheet." />
+  <meta name="twitter:image" content="https://aiddhub.github.io/assets/og/tools-i-use-en.png" />
+  <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=b2d73312" />
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aiddhub.github.io/notes/tools-i-use/#article",
+      "headline": "The tools I actually use",
+      "description": "A working list, with the things I stopped using and why: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare, and one very old spreadsheet.",
+      "datePublished": "2026-09-30",
+      "dateModified": "2026-09-30",
+      "inLanguage": "en",
+      "mainEntityOfPage": "https://aiddhub.github.io/notes/tools-i-use/",
+      "articleSection": "Writing",
+      "keywords": "tooling, workflow",
+      "author": {
+        "@type": "Organization",
+        "name": "AIDDHub",
+        "url": "https://www.aiddhub.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.aiddhub.com/#organization",
+        "name": "AIDDHub",
+        "url": "https://www.aiddhub.com",
+        "email": "support@aiddhub.com",
+        "description": "Desktop software for molecular modelling, docking and SAR analysis."
+      },
+      "isPartOf": {
+        "@id": "https://aiddhub.github.io/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aiddhub.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://aiddhub.github.io/notes/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "The tools I actually use",
+          "item": "https://aiddhub.github.io/notes/tools-i-use/"
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body class="article-page">
+<div class="bg-aurora"></div>
+<div class="bg-grid"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/" aria-label="AIDDHub Notes">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+          <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b>AIDDHub</b>
+        <span>Build logs and notes</span>
+      </span>
+    </a>
+
+    <div class="nav-right">
+      <nav class="nav" id="navLinks" aria-label="Main">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/notes/" aria-current="page">Writing</a>
+        <a class="nav-link" href="/tutorials/">Tutorials</a>
+        <a class="nav-link" href="/projects/">Projects</a>
+        <a class="nav-link" href="/about/">About</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="container">
+  <div class="article-top">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <a href="/notes/">Writing</a>
+    <span class="sep">/</span>
+    <span aria-current="page">Tools I actually use</span>
+  </nav>
+  </div>
+
+  <div class="article-layout">
+    <article>
+      <header class="article-head">
+        <div class="article-meta">
+          <span class="badge note">Note</span>
+          <span class="dot">·</span>
+          <time datetime="2026-09-30">September 30, 2026</time>
+          <span class="dot">·</span>
+          <span>2 min read</span>
+        </div>
+        <h1>The tools I actually use</h1>
+      </header>
+
+      <div class="article-body">
+<p>Tool lists age badly, so this one comes with a date and a rule: only things I opened in the last month, and
+only things I would miss.</p>
+<h2 id="chemistry">Chemistry</h2>
+<p><strong>RDKit.</strong> The default answer for anything structural, and deservedly so. I reach for it to check a
+canonicalisation, to prototype a descriptor, or to answer "what does this SMARTS actually match" before
+committing it to code. Nothing else comes close for the breadth of formats and reactions.</p>
+<p><strong>ChEMBL.</strong> Not software, a dataset, but it is the first place I look when I need a real series to test an
+idea against. A public dataset with plausible SAR beats a synthetic one every time.</p>
+<p><strong>DataWarrior.</strong> Still the fastest way to open an unfamiliar SDF and look at it. Free, ugly in places, and
+extremely good at the one thing I need at the start of a project: seeing the whole set.</p>
+<p><strong>PyMOL.</strong> For figures. Not because it is pleasant, but because every reviewer recognises its output.</p>
+<p><strong>Open Babel.</strong> Occasionally, for a format conversion RDKit refuses. It has been years since it was my first
+choice, and it is still on the machine.</p>
+<h2 id="building">Building</h2>
+<p><strong>Python</strong> for everything that is not the UI. It is the language of the ecosystem, and fighting that is a
+hobby, not a strategy.</p>
+<p><strong>Qt</strong> for the desktop layer. Mature, predictable, and it does the boring things — docking panels, tables,
+high-DPI scaling — without drama.</p>
+<p><strong>C++ only where measured.</strong> Profiling first, rewriting second. Half the "performance problem" I have chased
+turned out to be a Python loop over 2,000 molecules, not an algorithm.</p>
+<p><strong>GitHub Actions</strong> for the checks that catch me: does the site still build, do the tests still pass on a
+machine that is not mine.</p>
+<h2 id="writing-and-thinking">Writing and thinking</h2>
+<p><strong>Obsidian</strong>, one folder of plain Markdown, no plugins that matter. If it stopped working tomorrow I would
+still have the files, which is the entire point.</p>
+<p><strong>A paper notebook</strong> for anything with a structure in it. Drawing a mechanism on a trackpad is a way to avoid
+thinking.</p>
+<h2 id="things-i-stopped-using">Things I stopped using</h2>
+<ul>
+<li><strong>Excel as a database.</strong> I still open it; I no longer let it hold the only copy of an assay table.</li>
+<li><strong>Jupyter notebooks as the product.</strong> Excellent for exploring, terrible for anything that has to run twice
+  next month. The moment a notebook has users, it wants to be a script with an argument parser.</li>
+<li><strong>Docker for desktop apps.</strong> It solves a packaging problem I do not have and creates a support problem I do.</li>
+<li><strong>A second monitor full of dashboards.</strong> I replaced it with one page of numbers I actually check.</li>
+</ul>
+<h2 id="the-one-that-surprised-me">The one that surprised me</h2>
+<p>Cloudflare. I expected a CDN; what I got was a place to put a static site, a download bucket and a mail
+forwarder for less than the cost of a coffee a month, with no server to patch. For a one-person software
+studio that is the entire infrastructure budget, and it has not fallen over yet.</p>
+<h2 id="what-is-missing">What is missing</h2>
+<p>A good way to look at a 3D structure and an assay table at the same time without alt-tabbing. That is roughly
+the reason MolStudio exists, and I still have not fully solved it.</p>
+      </div>
+
+      <footer class="article-foot">
+        <div class="cta-box">
+          <div>
+            <h3>Written by AIDDHub</h3>
+            <p>I build MolStudio and MolInsight, and write about what I learn doing it. Corrections and questions are welcome by email.</p>
+          </div>
+          <a class="btn btn-primary" href="/about/">About me →</a>
+        </div>
+        <div class="prevnext">
+<span></span>          <a class="next" href="https://aiddhub.github.io/notes/one-time-licence/"><span>Next →</span>What a one-time licence forces you to get right</a>
+        </div>
+      </footer>
+    </article>
+
+    <aside class="toc" aria-label="On this page">
+      <h4>On this page</h4>
+      <ul><li><a href="#chemistry">Chemistry</a></li><li><a href="#building">Building</a></li><li><a href="#writing-and-thinking">Writing and thinking</a></li><li><a href="#things-i-stopped-using">Things I stopped using</a></li><li><a href="#the-one-that-surprised-me">The one that surprised me</a></li><li><a href="#what-is-missing">What is missing</a></li></ul>
+    </aside>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+              <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+            </svg>
+          </span>
+          <span class="brand-text"><b>AIDDHub</b><span>Build logs and notes</span></span>
+        </a>
+        <p>An independent developer writing about desktop software for medicinal chemistry — docking, SAR analysis, and the unglamorous parts of shipping tools people actually use.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="/notes/">Writing</a></li>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/projects/">Projects</a></li>
+          <li><a href="https://aiddhub.github.io/feed.xml">RSS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Projects</h4>
+        <ul>
+          <li><a href="https://www.aiddhub.com/molstudio">MolStudio</a></li>
+          <li><a href="https://www.aiddhub.com/molinsight">MolInsight</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#pricing">Pricing</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#download">Download</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> AIDDHub. All rights reserved.</span>
+      <span><a href="mailto:support@aiddhub.com">support@aiddhub.com</a> &middot; <a href="https://www.aiddhub.com/">aiddhub.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js?v=b2d73312" defer></script>
+</body>
+</html>

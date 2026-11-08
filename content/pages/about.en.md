@@ -1,55 +1,56 @@
 ---
-title: "About AIDDHub"
-description: "An independent software studio building desktop tools for medicinal chemistry: MolStudio for modelling and docking, MolInsight for SAR analysis."
+title: "About"
+description: "The developer behind AIDDHub: two desktop programs for medicinal chemistry, this blog, and the reasons for both."
 ---
 
-AIDDHub is a small, independent software studio. We build desktop tools for medicinal chemistry and structural
-biology — the kind of software you install once, run locally, and use while you are thinking about a series
-rather than about your environment.
+I am the developer behind AIDDHub. One person, two desktop programs, and this blog.
 
-## Why these notes exist
+## What I do
 
-Most chemistry software documentation tells you what each button does. Very little of it tells you what to do
-on a Tuesday afternoon when a reviewer asks why you believe a substituent is better.
+I build **MolStudio**, a modelling and docking workstation, and **MolInsight**, an SAR analysis workbench.
+Both are native Windows and Linux applications that run offline, are sold once, and are meant to be useful
+without an account.
 
-So this site is not documentation. It is the material we wished existed when we started: complete walkthroughs
-that start from a real task, show the clicks, report the numbers honestly, and end with a figure or a sentence
-you can put into a report.
+I write the code, the documentation, the installer, the support replies and the posts here. That is not a
+humblebrag; it is the reason the scope stays small and the reason some obvious features are still missing.
 
-Everything published here is tested on the current release before it goes out. When a feature changes, the
-article changes with it.
+## Why this blog exists
 
-## What we build
+Product pages are bad at nuance. They cannot explain why a docking score under −8 is not proof of anything,
+or why a matched-pair p-value with three pairs is decoration, because saying so is not a sales argument.
 
-### MolStudio — molecular modelling workstation
+So the writing lives here instead: walkthroughs that show the whole workflow including the parts that fail,
+build logs about decisions I got wrong the first time, and occasional essays about software for chemistry.
+The tutorials are the practical half; the notes are the part I would write anyway.
 
-A 3D builder and docking environment for the desktop: import a PDB, prepare the receptor, dock a ligand library
-with AutoDock Vina, inspect the interactions in 2D and 3D, plot the results and save the whole session.
+Everything published here is checked against the current release. When a feature changes, the article changes
+with it. When I was wrong, I say so and leave the correction visible.
 
-One-time licence, $149. A free tier covers the full workflow with no time limit.
+## How I work
 
-### MolInsight — SAR analysis workbench
-
-The analysis side: 47 chart types, matched molecular pairs with significance estimates, R-group matrices,
-scaffold and side-chain analysis, clustering and self-organising maps, QSAR with an applicability domain.
-
-One-time licence, $99. The free tier handles 100 compounds per session.
-
-Both are available together as a bundle for $199, and both are priced in Chinese yuan for the domestic market.
-
-## How we work
-
-- **Local first.** Structures, assay tables and models stay on your machine. Nothing is uploaded to a server to
-  be analysed.
-- **One-time licences.** No subscription, no per-seat renewal, no feature that stops working when a billing
-  cycle ends.
-- **Windows and Linux.** Native installers; no Java runtime, no conda environment, no admin rights required for
+- **Local first.** Structures, assay tables and models stay on your machine. Nothing is uploaded to be
+  analysed, because there is no server to upload it to.
+- **One-time licences.** No subscription. A free tier that can finish real work, with no time limit and no
+  watermark on the output.
+- **Windows and Linux.** Native installers. No Java runtime, no conda environment, no administrator rights for
   a per-user install.
-- **English and Chinese.** The interface and the documentation exist in both.
+- **English and Chinese.** The interface, the documentation and this site exist in both.
+
+## What this is not
+
+It is not a company with a sales team, a partnership programme or an enterprise edition. There is no admin
+console and no SSO, because each of those is a product in its own right and pretending otherwise with a
+checkbox wastes a buyer's afternoon.
+
+If you need ten seats, you buy ten licences. That is the whole story.
 
 ## Getting in touch
 
-Bug reports, feature requests and questions about a licence all go to the same place:
-[support@aiddhub.com](mailto:support@aiddhub.com). We answer in English or Chinese.
+Bug reports, corrections, feature requests and licence questions all go to
+[support@aiddhub.com](mailto:support@aiddhub.com). I read everything and answer in English or Chinese,
+usually within a couple of days.
+
+If something on this site is wrong, telling me is genuinely useful — a correction costs you two minutes and
+saves the next reader an afternoon.
 
 The products live at [www.aiddhub.com](https://www.aiddhub.com).

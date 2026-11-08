@@ -3,7 +3,7 @@ title: "MolInsight 与 DataWarrior：SAR 工作流里该怎么分工"
 short_title: "MolInsight 与 DataWarrior 对比"
 description: "两个构效分析工具的真实对比：DataWarrior 在哪些地方仍然更好，MolInsight 在哪些环节省时间，以及你要接受的取舍。"
 date: 2026-10-20
-section: cases
+section: notes
 product: molinsight
 tags: [datawarrior, 工具对比, sar, 评测]
 ---
@@ -11,7 +11,10 @@ tags: [datawarrior, 工具对比, sar, 评测]
 DataWarrior 默认被推荐是有原因的：免费、开源、几乎能读所有化学文件格式，做聚类、骨架分析、R 基团
 分解都不用授权。做药化的人基本都用过至少一次。
 
-这篇不是"我们的工具样样更强"。它试图写清楚各自适合的位置，让选择变成一个决定，而不是一个习惯。
+**先说明：** 对比的两个工具里有一个是我做的，读的时候请带着这个前提。我尽量把对方更强的那几节写得
+和我自己更强的那几节一样认真。
+
+这篇不是"我的工具样样更强"。它试图写清楚各自适合的位置，让选择变成一个决定，而不是一个习惯。
 
 ## 结论先说
 

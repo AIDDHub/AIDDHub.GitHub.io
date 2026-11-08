@@ -16,7 +16,9 @@
       <header class="article-head">
         <div class="article-meta">
           <span class="badge {{ post.badge_class }}">{{ post.label }}</span>
+{% if post.product_label %}
           <span class="badge product">{{ post.product_label }}</span>
+{% endif %}
           <span class="dot">·</span>
           <time datetime="{{ post.iso }}">{{ post.date_label }}</time>
           <span class="dot">·</span>

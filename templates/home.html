@@ -4,28 +4,21 @@
   <div class="container hero-inner">
     <div>
       <span class="eyebrow">{{ strings.eyebrow }}</span>
-      <h1 class="hero-title">{{ strings.h1_a }} <span class="grad">{{ strings.h1_b }}</span></h1>
+      <h1 class="hero-title">{{ strings.h1_a }}<span class="grad">{{ strings.h1_b }}</span></h1>
       <p class="lede">{{ strings.lede }}</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="{{ section_href('tutorials') }}">{{ strings.cta_primary }}</a>
-        <a class="btn btn-ghost" href="{{ site.main }}/molstudio">{{ strings.cta_secondary }}</a>
+        <a class="btn btn-primary" href="#recent">{{ strings.cta_primary }}</a>
+        <a class="btn btn-ghost" href="{{ about_href }}">{{ strings.cta_secondary }}</a>
       </div>
     </div>
     <aside class="hero-card">
       <h3>{{ strings.card_title }}</h3>
       <ul>
 {% for item in strings.card_items %}
-        <li><span class="tick">✓</span><span><b>{{ item[0] }}</b> {{ item[1] }}</span></li>
+        <li><span class="tick">•</span><span><b>{{ item[0] }}</b> {{ item[1] }}</span></li>
 {% endfor %}
       </ul>
     </aside>
-  </div>
-  <div class="container">
-    <div class="stats">
-{% for value, label in strings.stats %}
-      <div><b>{{ value }}</b><span>{{ label }}</span></div>
-{% endfor %}
-    </div>
   </div>
 </section>
 
@@ -36,14 +29,15 @@
         <h2>{{ strings.featured_title }}</h2>
         <p>{{ strings.featured_sub }}</p>
       </div>
-      <a class="more" href="{{ section_href('tutorials') }}">{{ strings.see_all }} →</a>
     </div>
     <div class="card-grid">
 {% for post in featured %}
       <a class="card" href="{{ post.url }}">
         <div class="card-top">
           <span class="badge {{ post.badge_class }}">{{ post.label }}</span>
+{% if post.product_label %}
           <span class="badge product">{{ post.product_label }}</span>
+{% endif %}
         </div>
         <h3>{{ post.title }}</h3>
         <p>{{ post.description }}</p>
@@ -58,13 +52,14 @@
   </div>
 </section>
 
-<section class="block">
+<section class="block" id="recent">
   <div class="container">
     <div class="section-head">
       <div>
         <h2>{{ strings.latest_title }}</h2>
         <p>{{ strings.latest_sub }}</p>
       </div>
+      <a class="more" href="{{ section_href('notes') }}">{{ strings.see_all }} →</a>
     </div>
     <div class="post-list">
 {% for post in recent %}
@@ -85,9 +80,10 @@
   <div class="container">
     <div class="section-head">
       <div>
-        <h2>{{ strings.products_title }}</h2>
-        <p>{{ strings.products_sub }}</p>
+        <h2>{{ strings.projects_title }}</h2>
+        <p>{{ strings.projects_sub }}</p>
       </div>
+      <a class="more" href="{{ site.main }}">{{ strings.projects_cta }} →</a>
     </div>
     <div class="product-strip">
       <div class="product-card">

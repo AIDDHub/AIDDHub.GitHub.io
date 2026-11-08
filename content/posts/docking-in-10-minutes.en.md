@@ -6,6 +6,7 @@ date: 2026-11-08
 section: tutorials
 product: molstudio
 tags: [docking, autodock-vina, windows, tutorial]
+featured: true
 ---
 
 You have a protein structure and a handful of compounds, and you need a binding hypothesis by tomorrow.

@@ -23,6 +23,14 @@
     <summary>Turn a structure-activity spreadsheet into matched molecular pair statistics with p-values and an R-group matrix you can defend in a review.</summary>
   </entry>
   <entry>
+    <title>Why I still ship desktop software in 2026</title>
+    <link href="https://aiddhub.github.io/notes/why-desktop-tools/"/>
+    <id>https://aiddhub.github.io/notes/why-desktop-tools/</id>
+    <updated>2026-11-02T00:00:00Z</updated>
+    <published>2026-11-02T00:00:00Z</published>
+    <summary>Web apps are the default for scientific software. I keep writing desktop programs anyway — here is what that buys, what it costs, and why I stopped apologising for it.</summary>
+  </entry>
+  <entry>
     <title>Six checks before you trust a docking pose</title>
     <link href="https://aiddhub.github.io/tutorials/six-checks-docking-pose/"/>
     <id>https://aiddhub.github.io/tutorials/six-checks-docking-pose/</id>
@@ -31,11 +39,35 @@
     <summary>A docking score is a ranking hint, not a result. Six quick checks that separate a pose worth reporting from an artefact of preparation.</summary>
   </entry>
   <entry>
+    <title>Implementing matched molecular pairs: the boring parts</title>
+    <link href="https://aiddhub.github.io/notes/building-mmp/"/>
+    <id>https://aiddhub.github.io/notes/building-mmp/</id>
+    <updated>2026-10-26T00:00:00Z</updated>
+    <published>2026-10-26T00:00:00Z</published>
+    <summary>The fragmentation algorithm took an afternoon. Canonicalising cut points, symmetric fragments, small-sample statistics and a table with 40,000 rows took the rest of the month.</summary>
+  </entry>
+  <entry>
     <title>MolInsight vs DataWarrior: which one belongs in your SAR workflow</title>
-    <link href="https://aiddhub.github.io/cases/molinsight-vs-datawarrior/"/>
-    <id>https://aiddhub.github.io/cases/molinsight-vs-datawarrior/</id>
+    <link href="https://aiddhub.github.io/notes/molinsight-vs-datawarrior/"/>
+    <id>https://aiddhub.github.io/notes/molinsight-vs-datawarrior/</id>
     <updated>2026-10-20T00:00:00Z</updated>
     <published>2026-10-20T00:00:00Z</published>
     <summary>An honest comparison of two SAR analysis tools: where DataWarrior is still the better choice, where MolInsight saves time, and the trade-offs you accept.</summary>
+  </entry>
+  <entry>
+    <title>What a one-time licence forces you to get right</title>
+    <link href="https://aiddhub.github.io/notes/one-time-licence/"/>
+    <id>https://aiddhub.github.io/notes/one-time-licence/</id>
+    <updated>2026-10-12T00:00:00Z</updated>
+    <published>2026-10-12T00:00:00Z</published>
+    <summary>Selling software once instead of monthly removes the growth loop and every excuse that comes with it. Notes on pricing, support, and the free tier.</summary>
+  </entry>
+  <entry>
+    <title>The tools I actually use</title>
+    <link href="https://aiddhub.github.io/notes/tools-i-use/"/>
+    <id>https://aiddhub.github.io/notes/tools-i-use/</id>
+    <updated>2026-09-30T00:00:00Z</updated>
+    <published>2026-09-30T00:00:00Z</published>
+    <summary>A working list, with the things I stopped using and why: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare, and one very old spreadsheet.</summary>
   </entry>
 </feed>

@@ -339,6 +339,7 @@ section.block { padding: 58px 0; }
 }
 .badge.tutorial { color: #7fc4ff; border-color: rgba(77, 158, 247, 0.42); background: rgba(77, 158, 247, 0.10); }
 .badge.case { color: #7ef0d6; border-color: rgba(52, 229, 196, 0.40); background: rgba(52, 229, 196, 0.09); }
+.badge.note { color: #c9b6ff; border-color: rgba(160, 107, 255, 0.42); background: rgba(160, 107, 255, 0.10); }
 .badge.product { color: var(--text-dim); border-color: var(--border); background: rgba(120, 160, 220, 0.06); }
 
 /* post list ------------------------------------------------- */
@@ -564,7 +565,7 @@ section.block { padding: 58px 0; }
 .prevnext .next { text-align: right; }
 
 /* about / prose pages --------------------------------------- */
-.prose { padding: 44px 0 70px; font-size: 16.5px; color: #cbd6e6; }
+.prose { max-width: 760px; padding: 44px 0 70px; font-size: 16.5px; color: #cbd6e6; }
 .prose > * + * { margin-top: 1.05em; }
 .prose h2 { font-size: 23px; margin-top: 2em; letter-spacing: -0.02em; color: var(--text); }
 .prose h3 { font-size: 18px; margin-top: 1.6em; color: var(--text); }

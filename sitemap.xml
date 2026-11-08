@@ -16,6 +16,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/" />
   </url>
   <url>
+    <loc>https://aiddhub.github.io/notes/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aiddhub.github.io/notes/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/notes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/notes/" />
+  </url>
+  <url>
+    <loc>https://aiddhub.github.io/zh/notes/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aiddhub.github.io/notes/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/notes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/notes/" />
+  </url>
+  <url>
     <loc>https://aiddhub.github.io/tutorials/</loc>
     <lastmod>2026-11-08</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aiddhub.github.io/tutorials/" />
@@ -30,18 +44,10 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/tutorials/" />
   </url>
   <url>
-    <loc>https://aiddhub.github.io/cases/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aiddhub.github.io/cases/" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/cases/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/cases/" />
-  </url>
-  <url>
-    <loc>https://aiddhub.github.io/zh/cases/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aiddhub.github.io/cases/" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/cases/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/cases/" />
+    <loc>https://aiddhub.github.io/notes/building-mmp/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aiddhub.github.io/notes/building-mmp/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/notes/building-mmp/" />
   </url>
   <url>
     <loc>https://aiddhub.github.io/tutorials/docking-in-10-minutes/</loc>
@@ -64,24 +70,50 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/tutorials/mmp-rgroup-sar/" />
   </url>
   <url>
-    <loc>https://aiddhub.github.io/cases/molinsight-vs-datawarrior/</loc>
+    <loc>https://aiddhub.github.io/notes/molinsight-vs-datawarrior/</loc>
     <lastmod>2026-10-20</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aiddhub.github.io/cases/molinsight-vs-datawarrior/" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/cases/molinsight-vs-datawarrior/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/cases/molinsight-vs-datawarrior/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://aiddhub.github.io/notes/molinsight-vs-datawarrior/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/notes/molinsight-vs-datawarrior/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/notes/molinsight-vs-datawarrior/" />
   </url>
   <url>
-    <loc>https://aiddhub.github.io/zh/cases/molinsight-vs-datawarrior/</loc>
+    <loc>https://aiddhub.github.io/zh/notes/molinsight-vs-datawarrior/</loc>
     <lastmod>2026-10-20</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aiddhub.github.io/cases/molinsight-vs-datawarrior/" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/cases/molinsight-vs-datawarrior/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/cases/molinsight-vs-datawarrior/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://aiddhub.github.io/notes/molinsight-vs-datawarrior/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/notes/molinsight-vs-datawarrior/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/notes/molinsight-vs-datawarrior/" />
+  </url>
+  <url>
+    <loc>https://aiddhub.github.io/notes/one-time-licence/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aiddhub.github.io/notes/one-time-licence/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/notes/one-time-licence/" />
   </url>
   <url>
     <loc>https://aiddhub.github.io/tutorials/six-checks-docking-pose/</loc>
     <lastmod>2026-10-28</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://aiddhub.github.io/tutorials/six-checks-docking-pose/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/tutorials/six-checks-docking-pose/" />
+  </url>
+  <url>
+    <loc>https://aiddhub.github.io/notes/tools-i-use/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aiddhub.github.io/notes/tools-i-use/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/notes/tools-i-use/" />
+  </url>
+  <url>
+    <loc>https://aiddhub.github.io/notes/why-desktop-tools/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aiddhub.github.io/notes/why-desktop-tools/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/notes/why-desktop-tools/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/notes/why-desktop-tools/" />
+  </url>
+  <url>
+    <loc>https://aiddhub.github.io/zh/notes/why-desktop-tools/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aiddhub.github.io/notes/why-desktop-tools/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/notes/why-desktop-tools/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/notes/why-desktop-tools/" />
   </url>
   <url>
     <loc>https://aiddhub.github.io/about/</loc>
@@ -96,5 +128,19 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://aiddhub.github.io/about/" />
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/about/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/about/" />
+  </url>
+  <url>
+    <loc>https://aiddhub.github.io/projects/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aiddhub.github.io/projects/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/projects/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/projects/" />
+  </url>
+  <url>
+    <loc>https://aiddhub.github.io/zh/projects/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aiddhub.github.io/projects/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/projects/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/projects/" />
   </url>
 </urlset>

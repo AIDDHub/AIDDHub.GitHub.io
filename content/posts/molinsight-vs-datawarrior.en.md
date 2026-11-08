@@ -3,7 +3,7 @@ title: "MolInsight vs DataWarrior: which one belongs in your SAR workflow"
 short_title: "MolInsight vs DataWarrior"
 description: "An honest comparison of two SAR analysis tools: where DataWarrior is still the better choice, where MolInsight saves time, and the trade-offs you accept."
 date: 2026-10-20
-section: cases
+section: notes
 product: molinsight
 tags: [datawarrior, comparison, sar, tooling]
 ---
@@ -12,8 +12,11 @@ DataWarrior is the default recommendation for a reason: it is free, open source,
 file format, and does clustering, scaffold analysis and R-group decomposition without asking for a licence.
 Most medicinal chemists have used it at least once.
 
-This comparison is not "our tool is better at everything". It is an attempt to write down where each one earns
-its place, so that the choice is a decision rather than a habit.
+**Disclosure first:** I built one of the two tools compared here, so read this with that in mind. I have tried
+to write the sections where the other one wins as carefully as the ones where mine does.
+
+This is not "my tool is better at everything". It is an attempt to write down where each one earns its place,
+so that the choice is a decision rather than a habit.
 
 ## The short version
 

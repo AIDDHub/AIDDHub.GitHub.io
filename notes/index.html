@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Writing — AIDDHub Notes</title>
+  <meta name="description" content="Essays, build logs and notes on computational chemistry tooling. No schedule and no growth hacks — just what I am working on, what broke, and what I would do differently." />
+  <link rel="canonical" href="https://aiddhub.github.io/notes/" />
+  <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/notes/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/notes/" />
+  <link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/notes/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AIDDHub Notes" />
+  <meta property="og:title" content="Writing — AIDDHub Notes" />
+  <meta property="og:description" content="Essays, build logs and notes on computational chemistry tooling. No schedule and no growth hacks — just what I am working on, what broke, and what I would do differently." />
+  <meta property="og:url" content="https://aiddhub.github.io/notes/" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Writing — AIDDHub Notes" />
+  <meta name="twitter:description" content="Essays, build logs and notes on computational chemistry tooling. No schedule and no growth hacks — just what I am working on, what broke, and what I would do differently." />
+  <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=b2d73312" />
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://aiddhub.github.io/notes/",
+      "url": "https://aiddhub.github.io/notes/",
+      "name": "Writing",
+      "description": "Essays, build logs and notes on computational chemistry tooling. No schedule and no growth hacks — just what I am working on, what broke, and what I would do differently.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://aiddhub.github.io/#website"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://aiddhub.github.io/notes/why-desktop-tools/",
+            "name": "Why I still ship desktop software in 2026"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "url": "https://aiddhub.github.io/notes/building-mmp/",
+            "name": "Implementing matched molecular pairs: the boring parts"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "url": "https://aiddhub.github.io/notes/molinsight-vs-datawarrior/",
+            "name": "MolInsight vs DataWarrior: which one belongs in your SAR workflow"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "url": "https://aiddhub.github.io/notes/one-time-licence/",
+            "name": "What a one-time licence forces you to get right"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "url": "https://aiddhub.github.io/notes/tools-i-use/",
+            "name": "The tools I actually use"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aiddhub.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://aiddhub.github.io/notes/"
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body class="">
+<div class="bg-aurora"></div>
+<div class="bg-grid"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/" aria-label="AIDDHub Notes">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+          <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b>AIDDHub</b>
+        <span>Build logs and notes</span>
+      </span>
+    </a>
+
+    <div class="nav-right">
+      <nav class="nav" id="navLinks" aria-label="Main">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/notes/" aria-current="page">Writing</a>
+        <a class="nav-link" href="/tutorials/">Tutorials</a>
+        <a class="nav-link" href="/projects/">Projects</a>
+        <a class="nav-link" href="/about/">About</a>
+      </nav>
+      <a class="lang-switch" href="/zh/notes/" hreflang="zh-CN" lang="zh-CN">中文</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-head">
+  <div class="container">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <span aria-current="page">Writing</span>
+    </nav>
+    <h1>Writing</h1>
+    <p>Essays, build logs and notes on computational chemistry tooling. No schedule and no growth hacks — just what I am working on, what broke, and what I would do differently.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="card-grid">
+      <a class="card" href="https://aiddhub.github.io/notes/why-desktop-tools/">
+        <div class="card-top">
+          <span class="badge note">Note</span>
+        </div>
+        <h3>Why I still ship desktop software in 2026</h3>
+        <p>Web apps are the default for scientific software. I keep writing desktop programs anyway — here is what that buys, what it costs, and why I stopped apologising for it.</p>
+        <div class="card-foot">
+          <time datetime="2026-11-02">November 2, 2026</time>
+          <span>·</span>
+          <span>3 min read</span>
+        </div>
+      </a>
+      <a class="card" href="https://aiddhub.github.io/notes/building-mmp/">
+        <div class="card-top">
+          <span class="badge note">Note</span>
+          <span class="badge product">MolInsight</span>
+        </div>
+        <h3>Implementing matched molecular pairs: the boring parts</h3>
+        <p>The fragmentation algorithm took an afternoon. Canonicalising cut points, symmetric fragments, small-sample statistics and a table with 40,000 rows took the rest of the month.</p>
+        <div class="card-foot">
+          <time datetime="2026-10-26">October 26, 2026</time>
+          <span>·</span>
+          <span>3 min read</span>
+        </div>
+      </a>
+      <a class="card" href="https://aiddhub.github.io/notes/molinsight-vs-datawarrior/">
+        <div class="card-top">
+          <span class="badge note">Note</span>
+          <span class="badge product">MolInsight</span>
+        </div>
+        <h3>MolInsight vs DataWarrior: which one belongs in your SAR workflow</h3>
+        <p>An honest comparison of two SAR analysis tools: where DataWarrior is still the better choice, where MolInsight saves time, and the trade-offs you accept.</p>
+        <div class="card-foot">
+          <time datetime="2026-10-20">October 20, 2026</time>
+          <span>·</span>
+          <span>4 min read</span>
+        </div>
+      </a>
+      <a class="card" href="https://aiddhub.github.io/notes/one-time-licence/">
+        <div class="card-top">
+          <span class="badge note">Note</span>
+        </div>
+        <h3>What a one-time licence forces you to get right</h3>
+        <p>Selling software once instead of monthly removes the growth loop and every excuse that comes with it. Notes on pricing, support, and the free tier.</p>
+        <div class="card-foot">
+          <time datetime="2026-10-12">October 12, 2026</time>
+          <span>·</span>
+          <span>3 min read</span>
+        </div>
+      </a>
+      <a class="card" href="https://aiddhub.github.io/notes/tools-i-use/">
+        <div class="card-top">
+          <span class="badge note">Note</span>
+        </div>
+        <h3>The tools I actually use</h3>
+        <p>A working list, with the things I stopped using and why: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare, and one very old spreadsheet.</p>
+        <div class="card-foot">
+          <time datetime="2026-09-30">September 30, 2026</time>
+          <span>·</span>
+          <span>2 min read</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+              <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+            </svg>
+          </span>
+          <span class="brand-text"><b>AIDDHub</b><span>Build logs and notes</span></span>
+        </a>
+        <p>An independent developer writing about desktop software for medicinal chemistry — docking, SAR analysis, and the unglamorous parts of shipping tools people actually use.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="/notes/">Writing</a></li>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/projects/">Projects</a></li>
+          <li><a href="https://aiddhub.github.io/feed.xml">RSS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Projects</h4>
+        <ul>
+          <li><a href="https://www.aiddhub.com/molstudio">MolStudio</a></li>
+          <li><a href="https://www.aiddhub.com/molinsight">MolInsight</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#pricing">Pricing</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#download">Download</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> AIDDHub. All rights reserved.</span>
+      <span><a href="mailto:support@aiddhub.com">support@aiddhub.com</a> &middot; <a href="https://www.aiddhub.com/">aiddhub.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js?v=b2d73312" defer></script>
+</body>
+</html>
