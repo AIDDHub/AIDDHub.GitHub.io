@@ -22,7 +22,7 @@ tools/og_image.py              1200x630 card renderer (Pillow)
 ```
 
 Generated output (never edit by hand): `index.html`, `zh/`, `notes/`, `tutorials/`, `about/`, `projects/`,
-`404.html`, `sitemap.xml`, `feed.xml`, `robots.txt`.
+`404.html`, `sitemap.xml`, `feed.xml`, `zh/feed.xml`, `robots.txt`.
 
 Sections:
 
@@ -131,5 +131,6 @@ are referenced with `?v=<content hash>`; editing `site.css` produces a new URL.
 - English is the primary language; `zh` is a mirror with its own canonical and `hreflang`.
 - Each post carries `TechArticle`/`Article` plus `BreadcrumbList` structured data.
 - `sitemap.xml` includes `xhtml:link` alternates; `robots.txt` points at it.
-- `feed.xml` carries the 20 most recent English posts.
+- `feed.xml` carries the 20 most recent English posts; `zh/feed.xml` the 20 most recent Chinese ones. Each
+  page links the feed that matches its language.
 - Titles are written for search intent ("why desktop software in 2026"), not for the brand.

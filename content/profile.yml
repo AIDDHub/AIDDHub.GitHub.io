@@ -39,5 +39,6 @@ links:
     href: "mailto:support@aiddhub.com"
   - label: RSS
     href: "/feed.xml"
+    href_zh: "/zh/feed.xml"
   - label: aiddhub.com
     href: "https://www.aiddhub.com"

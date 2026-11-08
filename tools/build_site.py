@@ -331,7 +331,13 @@ def profile_for(lang: str) -> dict:
         "intro": pick("intro"),
         "keywords": pick("keywords") or [],
         "now": pick("now") or [],
-        "links": data.get("links") or [],
+        "links": [
+            {
+                "label": item.get("label", ""),
+                "href": item.get("href_zh") if lang == "zh" and item.get("href_zh") else item.get("href", ""),
+            }
+            for item in (data.get("links") or [])
+        ],
     }
 
 
@@ -527,6 +533,7 @@ class Builder:
             "home_href": home,
             "about_href": url_path("about", lang=lang),
             "projects_href": url_path("projects", lang=lang),
+            "feed_href": "/zh/feed.xml" if lang == "zh" else "/feed.xml",
             "asset_version": self.version,
             "footer": TEXT[lang]["footer"],
             "footer_blurb": TEXT[lang]["footer_blurb"],
@@ -767,13 +774,20 @@ class Builder:
         )
         self.written.append(write(self.dest, "sitemap.xml", body))
 
-    def build_feed(self) -> None:
+    FEED_META = {
+        "en": {"path": "feed.xml", "title": "AIDDHub Notes", "lang": "en", "home": "/"},
+        "zh": {"path": "zh/feed.xml", "title": "AIDDHub 笔记", "lang": "zh-CN", "home": "/zh/"},
+    }
+
+    def build_feed(self, lang: str) -> None:
+        meta = self.FEED_META[lang]
         posts = sorted(
-            (p["en"] for p in self.posts.values()),
+            (p[lang] for p in self.posts.values() if lang in p),
             key=lambda item: item["date"], reverse=True,
         )[:20]
-        stamp = (posts[0]["updated"] or posts[0]["date"]).isoformat() + "T00:00:00Z" if posts else \
-            datetime.now(timezone.utc).isoformat()
+        if not posts:
+            return
+        stamp = (posts[0]["updated"] or posts[0]["date"]).isoformat() + "T00:00:00Z"
         items = []
         for post in posts:
             items.append(
@@ -786,19 +800,21 @@ class Builder:
                 f"    <summary>{html.escape(post['description'])}</summary>\n"
                 "  </entry>"
             )
+        self_url = SITE["url"] + "/" + meta["path"]
+        home_url = SITE["url"] + meta["home"]
         body = (
             '<?xml version="1.0" encoding="utf-8"?>\n'
-            '<feed xmlns="http://www.w3.org/2005/Atom">\n'
-            f"  <title>{html.escape(SITE['name'])}</title>\n"
-            f'  <link href="{SITE["url"]}/feed.xml" rel="self"/>\n'
-            f'  <link href="{SITE["url"]}/"/>\n'
-            f"  <id>{SITE['url']}/</id>\n"
+            f'<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{meta["lang"]}">\n'
+            f"  <title>{html.escape(meta['title'])}</title>\n"
+            f'  <link href="{self_url}" rel="self"/>\n'
+            f'  <link href="{home_url}"/>\n'
+            f"  <id>{home_url}</id>\n"
             f"  <updated>{stamp}</updated>\n"
             "  <author><name>AIDDHub</name><email>support@aiddhub.com</email></author>\n"
             + "\n".join(items)
             + "\n</feed>\n"
         )
-        self.written.append(write(self.dest, "feed.xml", body))
+        self.written.append(write(self.dest, meta["path"], body))
 
     def build_robots(self) -> None:
         body = (
@@ -832,7 +848,9 @@ class Builder:
                 self.build_page(name, edition["lang"], edition)
         self.build_404()
         self.build_sitemap()
-        self.build_feed()
+        self.build_feed("en")
+        if has_zh:
+            self.build_feed("zh")
         self.build_robots()
         return self.written
 

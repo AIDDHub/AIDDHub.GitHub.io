@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
+  <title>AIDDHub 笔记</title>
+  <link href="https://aiddhub.github.io/zh/feed.xml" rel="self"/>
+  <link href="https://aiddhub.github.io/zh/"/>
+  <id>https://aiddhub.github.io/zh/</id>
+  <updated>2026-11-08T00:00:00Z</updated>
+  <author><name>AIDDHub</name><email>support@aiddhub.com</email></author>
+  <entry>
+    <title>10 分钟在 Windows 上跑完一次分子对接（不用 Python）</title>
+    <link href="https://aiddhub.github.io/zh/tutorials/docking-in-10-minutes/"/>
+    <id>https://aiddhub.github.io/zh/tutorials/docking-in-10-minutes/</id>
+    <updated>2026-11-08T00:00:00Z</updated>
+    <published>2026-11-08T00:00:00Z</published>
+    <summary>在 MolStudio 里完成受体准备、AutoDock Vina 对接与 2D 相互作用图导出。不需要 conda、不需要 MGLTools，也不敲命令行。</summary>
+  </entry>
+  <entry>
+    <title>MMP 与 R 基团矩阵：从表格到构效关系</title>
+    <link href="https://aiddhub.github.io/zh/tutorials/mmp-rgroup-sar/"/>
+    <id>https://aiddhub.github.io/zh/tutorials/mmp-rgroup-sar/</id>
+    <updated>2026-11-05T00:00:00Z</updated>
+    <published>2026-11-05T00:00:00Z</published>
+    <summary>把一张结构-活性表格变成带 p 值的 MMP 统计和一张能在评审里站得住的 R 基团矩阵。</summary>
+  </entry>
+  <entry>
+    <title>为什么化学软件仍然适合做成桌面程序</title>
+    <link href="https://aiddhub.github.io/zh/notes/why-desktop-tools/"/>
+    <id>https://aiddhub.github.io/zh/notes/why-desktop-tools/</id>
+    <updated>2026-11-02T00:00:00Z</updated>
+    <published>2026-11-02T00:00:00Z</published>
+    <summary>网页应用是科学软件的默认选择，大多数时候也确实正确。这篇谈的是不适合的那些场景：对接计算、大结构表，以及跑在内网里的流程。</summary>
+  </entry>
+  <entry>
+    <title>相信一个对接构象之前，先做六项检查</title>
+    <link href="https://aiddhub.github.io/zh/tutorials/six-checks-docking-pose/"/>
+    <id>https://aiddhub.github.io/zh/tutorials/six-checks-docking-pose/</id>
+    <updated>2026-10-28T00:00:00Z</updated>
+    <published>2026-10-28T00:00:00Z</published>
+    <summary>对接打分只是排序提示，不是结果。六项快速检查，用来区分一个值得放进报告的构象和一个准备过程留下的产物。</summary>
+  </entry>
+  <entry>
+    <title>实现匹配分子对：无聊的那部分</title>
+    <link href="https://aiddhub.github.io/zh/notes/building-mmp/"/>
+    <id>https://aiddhub.github.io/zh/notes/building-mmp/</id>
+    <updated>2026-10-26T00:00:00Z</updated>
+    <published>2026-10-26T00:00:00Z</published>
+    <summary>切分子只花一个下午。真正花掉剩下一个月的是：切割点的规范化、对称片段、小样本统计，以及一张四万行的表。</summary>
+  </entry>
+  <entry>
+    <title>MolInsight 与 DataWarrior：SAR 工作流里该怎么分工</title>
+    <link href="https://aiddhub.github.io/zh/notes/molinsight-vs-datawarrior/"/>
+    <id>https://aiddhub.github.io/zh/notes/molinsight-vs-datawarrior/</id>
+    <updated>2026-10-20T00:00:00Z</updated>
+    <published>2026-10-20T00:00:00Z</published>
+    <summary>两个构效分析工具的真实对比：DataWarrior 在哪些地方仍然更好，MolInsight 在哪些环节省时间，以及你要接受的取舍。</summary>
+  </entry>
+  <entry>
+    <title>一次性授权逼你把哪些事做对</title>
+    <link href="https://aiddhub.github.io/zh/notes/one-time-licence/"/>
+    <id>https://aiddhub.github.io/zh/notes/one-time-licence/</id>
+    <updated>2026-10-12T00:00:00Z</updated>
+    <published>2026-10-12T00:00:00Z</published>
+    <summary>卖一次而不是按月卖，会拿走增长闭环，也会拿走大部分借口。关于定价、支持和免费版的几点笔记。</summary>
+  </entry>
+  <entry>
+    <title>一份在用的工具清单</title>
+    <link href="https://aiddhub.github.io/zh/notes/tools-i-use/"/>
+    <id>https://aiddhub.github.io/zh/notes/tools-i-use/</id>
+    <updated>2026-09-30T00:00:00Z</updated>
+    <published>2026-09-30T00:00:00Z</published>
+    <summary>实际装了、每天都在用的东西：RDKit、ChEMBL、Qt、Obsidian、DataWarrior、PyMOL、Cloudflare，以及被删掉的工具和原因。</summary>
+  </entry>
+</feed>

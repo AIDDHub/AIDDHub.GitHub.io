@@ -26,7 +26,7 @@
 {% endif %}
   <link rel="icon" href="/assets/img/favicon-64.png" type="image/png" sizes="64x64" />
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
-  <link rel="alternate" type="application/atom+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml" />
+  <link rel="alternate" type="application/atom+xml" title="{{ site.name }}" href="{{ site.url }}{{ feed_href }}" />
   <link rel="stylesheet" href="/assets/css/site.css?v={{ asset_version }}" />
 {% if jsonld %}
   <script type="application/ld+json">{{ jsonld|safe }}</script>
@@ -84,7 +84,7 @@
         <a href="{{ section_href('tutorials') }}">{{ nav_text.tutorials }}</a>
         <a href="{{ projects_href }}">{{ nav_text.projects }}</a>
         <a href="{{ about_href }}">{{ nav_text.about }}</a>
-        <a href="{{ site.url }}/feed.xml">RSS</a>
+        <a href="{{ feed_href }}">RSS</a>
       </nav>
     </div>
     <div class="footer-bottom">
