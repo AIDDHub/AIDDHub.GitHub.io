@@ -23,12 +23,12 @@
     <summary>Turn a structure-activity spreadsheet into matched molecular pair statistics with p-values and an R-group matrix you can defend in a review.</summary>
   </entry>
   <entry>
-    <title>Why I still ship desktop software in 2026</title>
+    <title>Why desktop software still makes sense for chemistry</title>
     <link href="https://aiddhub.github.io/notes/why-desktop-tools/"/>
     <id>https://aiddhub.github.io/notes/why-desktop-tools/</id>
     <updated>2026-11-02T00:00:00Z</updated>
     <published>2026-11-02T00:00:00Z</published>
-    <summary>Web apps are the default for scientific software. I keep writing desktop programs anyway — here is what that buys, what it costs, and why I stopped apologising for it.</summary>
+    <summary>Web apps are the default for scientific software, and usually that is correct. This is about the cases where they are not: docking runs, large structure tables, and locked-down networks.</summary>
   </entry>
   <entry>
     <title>Six checks before you trust a docking pose</title>
@@ -39,12 +39,12 @@
     <summary>A docking score is a ranking hint, not a result. Six quick checks that separate a pose worth reporting from an artefact of preparation.</summary>
   </entry>
   <entry>
-    <title>Implementing matched molecular pairs: the boring parts</title>
+    <title>Building matched molecular pairs: the boring parts</title>
     <link href="https://aiddhub.github.io/notes/building-mmp/"/>
     <id>https://aiddhub.github.io/notes/building-mmp/</id>
     <updated>2026-10-26T00:00:00Z</updated>
     <published>2026-10-26T00:00:00Z</published>
-    <summary>The fragmentation algorithm took an afternoon. Canonicalising cut points, symmetric fragments, small-sample statistics and a table with 40,000 rows took the rest of the month.</summary>
+    <summary>The fragmentation algorithm takes an afternoon. Canonicalising cut points, symmetric fragments, small-sample statistics and a table with 40,000 rows take the rest of the month.</summary>
   </entry>
   <entry>
     <title>MolInsight vs DataWarrior: which one belongs in your SAR workflow</title>
@@ -60,14 +60,14 @@
     <id>https://aiddhub.github.io/notes/one-time-licence/</id>
     <updated>2026-10-12T00:00:00Z</updated>
     <published>2026-10-12T00:00:00Z</published>
-    <summary>Selling software once instead of monthly removes the growth loop and every excuse that comes with it. Notes on pricing, support, and the free tier.</summary>
+    <summary>Selling software once instead of monthly removes the growth loop and most of the excuses that come with it. Notes on pricing, support and the free tier.</summary>
   </entry>
   <entry>
-    <title>The tools I actually use</title>
+    <title>A working tool list</title>
     <link href="https://aiddhub.github.io/notes/tools-i-use/"/>
     <id>https://aiddhub.github.io/notes/tools-i-use/</id>
     <updated>2026-09-30T00:00:00Z</updated>
     <published>2026-09-30T00:00:00Z</published>
-    <summary>A working list, with the things I stopped using and why: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare, and one very old spreadsheet.</summary>
+    <summary>What is actually installed and used day to day: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare — plus the tools that were dropped and why.</summary>
   </entry>
 </feed>

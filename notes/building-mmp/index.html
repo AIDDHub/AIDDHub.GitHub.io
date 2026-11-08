@@ -3,33 +3,33 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Implementing matched molecular pairs: the boring parts — AIDDHub Notes</title>
-  <meta name="description" content="The fragmentation algorithm took an afternoon. Canonicalising cut points, symmetric fragments, small-sample statistics and a table with 40,000 rows took the rest of the month." />
+  <title>Building matched molecular pairs: the boring parts — AIDDHub Notes</title>
+  <meta name="description" content="The fragmentation algorithm takes an afternoon. Canonicalising cut points, symmetric fragments, small-sample statistics and a table with 40,000 rows take the rest of the month." />
   <link rel="canonical" href="https://aiddhub.github.io/notes/building-mmp/" />
   <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/notes/building-mmp/" />
   <link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/notes/building-mmp/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="AIDDHub Notes" />
-  <meta property="og:title" content="Implementing matched molecular pairs: the boring parts" />
-  <meta property="og:description" content="The fragmentation algorithm took an afternoon. Canonicalising cut points, symmetric fragments, small-sample statistics and a table with 40,000 rows took the rest of the month." />
+  <meta property="og:title" content="Building matched molecular pairs: the boring parts" />
+  <meta property="og:description" content="The fragmentation algorithm takes an afternoon. Canonicalising cut points, symmetric fragments, small-sample statistics and a table with 40,000 rows take the rest of the month." />
   <meta property="og:url" content="https://aiddhub.github.io/notes/building-mmp/" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://aiddhub.github.io/assets/og/building-mmp-en.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Implementing matched molecular pairs: the boring parts" />
-  <meta name="twitter:description" content="The fragmentation algorithm took an afternoon. Canonicalising cut points, symmetric fragments, small-sample statistics and a table with 40,000 rows took the rest of the month." />
+  <meta name="twitter:title" content="Building matched molecular pairs: the boring parts" />
+  <meta name="twitter:description" content="The fragmentation algorithm takes an afternoon. Canonicalising cut points, symmetric fragments, small-sample statistics and a table with 40,000 rows take the rest of the month." />
   <meta name="twitter:image" content="https://aiddhub.github.io/assets/og/building-mmp-en.png" />
   <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
   <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
-  <link rel="stylesheet" href="/assets/css/site.css?v=b2d73312" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=2cbdb425" />
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Article",
       "@id": "https://aiddhub.github.io/notes/building-mmp/#article",
-      "headline": "Implementing matched molecular pairs: the boring parts",
-      "description": "The fragmentation algorithm took an afternoon. Canonicalising cut points, symmetric fragments, small-sample statistics and a table with 40,000 rows took the rest of the month.",
+      "headline": "Building matched molecular pairs: the boring parts",
+      "description": "The fragmentation algorithm takes an afternoon. Canonicalising cut points, symmetric fragments, small-sample statistics and a table with 40,000 rows take the rest of the month.",
       "datePublished": "2026-10-26",
       "dateModified": "2026-10-26",
       "inLanguage": "en",
@@ -71,7 +71,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Implementing matched molecular pairs: the boring parts",
+          "name": "Building matched molecular pairs: the boring parts",
           "item": "https://aiddhub.github.io/notes/building-mmp/"
         }
       ]
@@ -95,7 +95,7 @@
       </span>
       <span class="brand-text">
         <b>AIDDHub</b>
-        <span>Build logs and notes</span>
+        <span>Notes on chemistry software</span>
       </span>
     </a>
 
@@ -135,12 +135,12 @@
           <span class="dot">·</span>
           <span>3 min read</span>
         </div>
-        <h1>Implementing matched molecular pairs: the boring parts</h1>
+        <h1>Building matched molecular pairs: the boring parts</h1>
       </header>
 
       <div class="article-body">
-<p>Matched molecular pairs sound like a small feature. Cut a molecule at a bond, do it for every molecule, group
-the results by the fragment you cut off, subtract the activities. An afternoon of work, I thought.</p>
+<p>Matched molecular pairs look like a small feature. Cut a molecule at a bond, do it for every molecule, group
+the results by the fragment that was removed, subtract the activities. An afternoon of work.</p>
 <p>The cutting is, in fact, an afternoon. Everything else is the feature.</p>
 <h2 id="cutting-is-the-easy-half">Cutting is the easy half</h2>
 <p>The textbook algorithm: for each molecule, break up to <em>n</em> acyclic single bonds, then canonicalise the two
@@ -150,77 +150,72 @@ pieces so that identical contexts hash to the same key. With a cheminformatics t
 <ul>
 <li><strong>Symmetry.</strong> Toluene cut at the methyl bond and cut at a ring bond can produce the same pair of fragments in
   two different orders. Without canonical ordering, every symmetric molecule doubles its pair count and
-  quietly inflates the statistics.</li>
+  inflates the statistics.</li>
 <li><strong>Stereo and charge.</strong> If the cut severs a stereo bond or leaves an unpaired charge, the fragment is not a
-  valid structure and the pair is not a pair. Silently keeping it produces transformations nobody can draw.</li>
-<li><strong>Salts and mixtures.</strong> A hydrochloride salt imports as two components. Fragment the salt and you get pairs
-  between the counterion and everything else. Strip first, loudly.</li>
-<li><strong>Ring bonds.</strong> Excluded by definition, but a surprising number of "one cut" transformations in a naive
-  implementation are ring openings that happen to parse.</li>
+  valid structure and the pair is not a pair. Keeping it produces transformations nobody can draw.</li>
+<li><strong>Salts and mixtures.</strong> A hydrochloride salt imports as two components. Fragment the salt and the table fills
+  with pairs between the counterion and everything else. Strip first, loudly.</li>
+<li><strong>Ring bonds.</strong> Excluded by definition, but a surprising number of naive "one cut" transformations turn out
+  to be ring openings that happen to parse.</li>
 </ul>
-<p>None of this is intellectually hard. All of it is the difference between a demo and a table a chemist will
-believe.</p>
+<p>None of this is intellectually hard. All of it separates a demo from a table a chemist will believe.</p>
 <h2 id="the-statistics-are-where-the-arguments-start">The statistics are where the arguments start</h2>
 <p>The output everybody wants is one number per transformation: how much does this change the activity. That
 number is a mean, and a mean over three pairs is not evidence.</p>
-<p>So the table needs the pair count, the spread, the extremes and something significance-flavoured. Which
-immediately raises a question I did not enjoy answering: <em>which test?</em></p>
+<p>So the table needs the pair count, the spread, the extremes, and something significance-flavoured. Which
+immediately raises a question that is not enjoyable to answer: <em>which test?</em></p>
 <ul>
 <li>A paired t-test is the obvious choice and the wrong one when the differences are heavy-tailed, which they
   are whenever one compound in the series is an outlier.</li>
 <li>Wilcoxon signed-rank is more robust and refuses to say anything useful at n = 4.</li>
 <li>Multiple testing across thousands of transformations turns any fixed threshold into a lie.</li>
 </ul>
-<p>What is in the product now is a pragmatic compromise: report the pair count and the spread, give a p-value
-from a test that does not assume normality, and — this is the important part — put the pair count in the same
-row, so that nobody can sort by p without seeing how thin the evidence is.</p>
+<p>The compromise that ships: report the pair count and the spread, give a p-value from a test that does not
+assume normality, and — the important part — put the pair count in the same row, so nobody can sort by p
+without seeing how thin the evidence is.</p>
 <blockquote>
 <p>If a statistic cannot be explained in one sentence to the person reading the table, it should not be a
 column.</p>
 </blockquote>
 <h2 id="the-interface-is-the-actual-product">The interface is the actual product</h2>
 <p>Forty thousand transformation rows is not a table, it is a denial of service. The first version rendered all
-of them, and the app took nine seconds to switch tabs.</p>
+of them, and switching tabs took nine seconds.</p>
 <p>The version that ships does three things:</p>
 <ol>
 <li><strong>Aggregates before it renders.</strong> One row per transformation, never one row per pair.</li>
-<li><strong>Filters as a first-class control.</strong> Pair count, effect size, and the scaffold you are currently thinking
-   about — because the interesting question is almost never "across everything".</li>
+<li><strong>Treats filtering as a first-class control.</strong> Pair count, effect size, and the scaffold currently under
+   discussion — because the interesting question is almost never "across everything".</li>
 <li><strong>Keeps the pairs reachable.</strong> Click a transformation, see the compounds that support it, with structures.
    Without that, the table is a claim; with it, the table is evidence.</li>
 </ol>
-<p>That third point took the longest, and it is the only one that changed how people use the feature.</p>
-<h2 id="what-i-would-do-differently">What I would do differently</h2>
-<p>I would build the pair browser first, before the statistics. The moment I could click a transformation and see
-the actual molecules, the right numbers to show became obvious — and several of the columns I had carefully
-computed turned out to be decoration.</p>
-<p>I would also stop treating "number of cuts" as a power user setting. Everyone turns it up, everyone gets
-uninterpretable fragments, and everyone blames the algorithm. Two cuts is a good default and the UI now says
-so.</p>
+<p>The third point took the longest, and it is the only one that changed how the feature gets used.</p>
+<h2 id="what-we-would-do-differently">What we would do differently</h2>
+<p>Build the pair browser before the statistics. The moment a transformation can be clicked into its actual
+molecules, the right numbers to show become obvious — and several carefully computed columns turn out to be
+decoration.</p>
+<p>Also: stop treating "number of cuts" as a power-user setting. Everyone turns it up, everyone gets
+uninterpretable fragments, and everyone blames the algorithm. Two cuts is a good default, and the interface
+now says so.</p>
 <h2 id="the-lesson-such-as-it-is">The lesson, such as it is</h2>
 <p>The interesting engineering in a scientific tool is rarely the science. It is the canonicalisation, the
-threshold you refuse to hide, and the four seconds you save every time somebody opens a table. None of that
-makes a good screenshot, and all of it decides whether the tool gets used twice.</p>
+threshold that is not hidden, and the four seconds saved every time someone opens a table. None of that makes
+a good screenshot, and all of it decides whether the tool gets used twice.</p>
       </div>
 
       <footer class="article-foot">
-        <div class="cta-box">
-          <div>
-            <h3>Try it on your own data</h3>
-            <p>The free tier covers everything in this walkthrough, with no time limit.</p>
-          </div>
-          <a class="btn btn-primary" href="https://www.aiddhub.com/molinsight#download">Download MolInsight</a>
-        </div>
+        <p class="article-tags">
+<span>mmp</span><span>implementation</span><span>statistics</span><span>build-log</span>        </p>
         <div class="prevnext">
           <a class="prev" href="https://aiddhub.github.io/notes/molinsight-vs-datawarrior/"><span>← Previous</span>MolInsight vs DataWarrior: which one belongs in your SAR workflow</a>
-          <a class="next" href="https://aiddhub.github.io/notes/why-desktop-tools/"><span>Next →</span>Why I still ship desktop software in 2026</a>
+          <a class="next" href="https://aiddhub.github.io/notes/why-desktop-tools/"><span>Next →</span>Why desktop software still makes sense for chemistry</a>
         </div>
+        <p class="article-corrections">Corrections and questions are welcome at <a href="mailto:support@aiddhub.com">support@aiddhub.com</a>.</p>
       </footer>
     </article>
 
     <aside class="toc" aria-label="On this page">
       <h4>On this page</h4>
-      <ul><li><a href="#cutting-is-the-easy-half">Cutting is the easy half</a></li><li><a href="#the-statistics-are-where-the-arguments-start">The statistics are where the arguments start</a></li><li><a href="#the-interface-is-the-actual-product">The interface is the actual product</a></li><li><a href="#what-i-would-do-differently">What I would do differently</a></li><li><a href="#the-lesson-such-as-it-is">The lesson, such as it is</a></li></ul>
+      <ul><li><a href="#cutting-is-the-easy-half">Cutting is the easy half</a></li><li><a href="#the-statistics-are-where-the-arguments-start">The statistics are where the arguments start</a></li><li><a href="#the-interface-is-the-actual-product">The interface is the actual product</a></li><li><a href="#what-we-would-do-differently">What we would do differently</a></li><li><a href="#the-lesson-such-as-it-is">The lesson, such as it is</a></li></ul>
     </aside>
   </div>
 </div>
@@ -237,9 +232,9 @@ makes a good screenshot, and all of it decides whether the tool gets used twice.
               <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
             </svg>
           </span>
-          <span class="brand-text"><b>AIDDHub</b><span>Build logs and notes</span></span>
+          <span class="brand-text"><b>AIDDHub</b><span>Notes on chemistry software</span></span>
         </a>
-        <p>An independent developer writing about desktop software for medicinal chemistry — docking, SAR analysis, and the unglamorous parts of shipping tools people actually use.</p>
+        <p>Notes on desktop software for medicinal chemistry: molecular modelling, docking, SAR analysis, and the engineering behind them.</p>
       </div>
       <div>
         <h4>Pages</h4>
@@ -267,6 +262,6 @@ makes a good screenshot, and all of it decides whether the tool gets used twice.
   </div>
 </footer>
 
-<script src="/assets/js/site.js?v=b2d73312" defer></script>
+<script src="/assets/js/site.js?v=2cbdb425" defer></script>
 </body>
 </html>

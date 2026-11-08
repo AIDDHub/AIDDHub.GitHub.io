@@ -36,14 +36,12 @@
       </div>
 
       <footer class="article-foot">
-        <div class="cta-box">
-          <div>
-            <h3>{{ cta.title }}</h3>
-            <p>{{ cta.text }}</p>
-          </div>
-          <a class="btn btn-primary" href="{{ cta.href }}">{{ cta.button }}</a>
-        </div>
-{% if toc %}
+{% if post.tags %}
+        <p class="article-tags">
+{% for tag in post.tags %}<span>{{ tag }}</span>{% endfor %}
+        </p>
+{% endif %}
+{% if prev_post or next_post %}
         <div class="prevnext">
 {% if prev_post %}
           <a class="prev" href="{{ prev_post.url }}"><span>← {{ strings.previous }}</span>{{ prev_post.title }}</a>
@@ -53,6 +51,7 @@
 {% endif %}
         </div>
 {% endif %}
+        <p class="article-corrections">{{ strings.corrections }} <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
       </footer>
     </article>
 

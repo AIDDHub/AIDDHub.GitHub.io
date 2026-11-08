@@ -3,26 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AIDDHub Notes — 计算化学工具的开发日志与随笔</title>
-  <meta name="description" content="一个独立开发者写药物化学桌面软件：分子对接、构效分析、背后的工具，以及把东西真正做出来要付出的代价。" />
+  <title>AIDDHub Notes — 化学软件笔记</title>
+  <meta name="description" content="关于药物化学桌面软件的笔记：分子建模、分子对接、构效分析，以及工具背后的工程问题。" />
   <link rel="canonical" href="https://aiddhub.github.io/zh/" />
   <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/" />
   <link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/" />
   <link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AIDDHub Notes" />
-  <meta property="og:title" content="AIDDHub Notes — 计算化学工具的开发日志与随笔" />
-  <meta property="og:description" content="一个独立开发者写药物化学桌面软件：分子对接、构效分析、背后的工具，以及把东西真正做出来要付出的代价。" />
+  <meta property="og:title" content="AIDDHub Notes — 化学软件笔记" />
+  <meta property="og:description" content="关于药物化学桌面软件的笔记：分子建模、分子对接、构效分析，以及工具背后的工程问题。" />
   <meta property="og:url" content="https://aiddhub.github.io/zh/" />
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:image" content="https://aiddhub.github.io/assets/og/home-zh.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AIDDHub Notes — 计算化学工具的开发日志与随笔" />
-  <meta name="twitter:description" content="一个独立开发者写药物化学桌面软件：分子对接、构效分析、背后的工具，以及把东西真正做出来要付出的代价。" />
+  <meta name="twitter:title" content="AIDDHub Notes — 化学软件笔记" />
+  <meta name="twitter:description" content="关于药物化学桌面软件的笔记：分子建模、分子对接、构效分析，以及工具背后的工程问题。" />
   <meta name="twitter:image" content="https://aiddhub.github.io/assets/og/home-zh.png" />
   <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
   <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
-  <link rel="stylesheet" href="/assets/css/site.css?v=b2d73312" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=2cbdb425" />
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -63,7 +63,7 @@
       </span>
       <span class="brand-text">
         <b>AIDDHub</b>
-        <span>开发日志与随笔</span>
+        <span>化学软件笔记</span>
       </span>
     </a>
 
@@ -82,91 +82,28 @@
 </header>
 
 <main id="main">
-<section class="hero">
-  <div class="container hero-inner">
-    <div>
-      <span class="eyebrow">AIDDHub · 独立开发</span>
-      <h1 class="hero-title">我在给<span class="grad">药化人做工具</span></h1>
-      <p class="lede">这里写这件事的另一半：在做什么、这周哪里坏了、计算化学里哪些地方比看起来难。两个桌面软件，一个人，没有上面派下来的路线图。</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#recent">看看最近写的</a>
-        <a class="btn btn-ghost" href="/zh/about/">关于我</a>
-      </div>
-    </div>
-    <aside class="hero-card">
-      <h3>近况</h3>
-      <ul>
-        <li><span class="tick">•</span><span><b>MolStudio。</b> 建模与对接工作站，v1.0 已发布。</span></li>
-        <li><span class="tick">•</span><span><b>MolInsight。</b> 构效分析：MMP、R 基团、QSAR，v1.0 已发布。</span></li>
-        <li><span class="tick">•</span><span><b>写作。</b> 有话想说的时候才写。</span></li>
-      </ul>
-    </aside>
+<section class="hero hero-slim">
+  <div class="container">
+    <span class="eyebrow">AIDDHub</span>
+    <h1 class="hero-title">化学软件笔记</h1>
+    <p class="lede">AIDDHub 做分子建模与构效分析的桌面工具。这里记录工作本身：操作教程、开发笔记，偶尔也写点看法。</p>
+    <p class="hero-links">
+      <a href="/zh/notes/">随笔</a>
+      <a href="/zh/tutorials/">教程</a>
+      <a href="/zh/projects/">项目</a>
+      <a href="https://aiddhub.github.io/feed.xml">RSS</a>
+    </p>
   </div>
 </section>
 
 <section class="block">
   <div class="container">
-    <div class="section-head">
-      <div>
-        <h2>从这里开始</h2>
-        <p>三篇能说明这个站在干什么的文章。</p>
-      </div>
-    </div>
-    <div class="card-grid">
-      <a class="card" href="https://aiddhub.github.io/zh/notes/why-desktop-tools/">
-        <div class="card-top">
-          <span class="badge note">随笔</span>
-        </div>
-        <h3>2026 年了，我为什么还在写桌面软件</h3>
-        <p>科学软件几乎都搬进了浏览器。我还在写桌面程序——这篇写清楚它换来了什么、代价是什么，以及我为什么不再为此道歉。</p>
-        <div class="card-foot">
-          <time datetime="2026-11-02">2026 年 11 月 2 日</time>
-          <span>·</span>
-          <span>2 分钟阅读</span>
-        </div>
-      </a>
-      <a class="card" href="https://aiddhub.github.io/zh/tutorials/docking-in-10-minutes/">
-        <div class="card-top">
-          <span class="badge tutorial">教程</span>
-          <span class="badge product">MolStudio</span>
-        </div>
-        <h3>10 分钟在 Windows 上跑完一次分子对接（不用 Python）</h3>
-        <p>在 MolStudio 里完成受体准备、AutoDock Vina 对接与 2D 相互作用图导出。不需要 conda、不需要 MGLTools，也不敲命令行。</p>
-        <div class="card-foot">
-          <time datetime="2026-11-08">2026 年 11 月 8 日</time>
-          <span>·</span>
-          <span>3 分钟阅读</span>
-        </div>
-      </a>
-      <a class="card" href="https://aiddhub.github.io/zh/notes/molinsight-vs-datawarrior/">
-        <div class="card-top">
-          <span class="badge note">随笔</span>
-          <span class="badge product">MolInsight</span>
-        </div>
-        <h3>MolInsight 与 DataWarrior：SAR 工作流里该怎么分工</h3>
-        <p>两个构效分析工具的真实对比：DataWarrior 在哪些地方仍然更好，MolInsight 在哪些环节省时间，以及你要接受的取舍。</p>
-        <div class="card-foot">
-          <time datetime="2026-10-20">2026 年 10 月 20 日</time>
-          <span>·</span>
-          <span>3 分钟阅读</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="recent">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <h2>最近</h2>
-        <p>全部内容，新的在前。</p>
-      </div>
-      <a class="more" href="/zh/notes/">全部随笔 →</a>
-    </div>
     <div class="post-list">
       <a class="post-item" href="https://aiddhub.github.io/zh/tutorials/docking-in-10-minutes/">
-        <time datetime="2026-11-08">2026 年 11 月 8 日</time>
+        <div class="post-meta">
+          <time datetime="2026-11-08">2026 年 11 月 8 日</time>
+          <span class="post-kind">教程</span>
+        </div>
         <div>
           <h3>10 分钟在 Windows 上跑完一次分子对接（不用 Python）</h3>
           <p>在 MolStudio 里完成受体准备、AutoDock Vina 对接与 2D 相互作用图导出。不需要 conda、不需要 MGLTools，也不敲命令行。</p>
@@ -174,63 +111,27 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
       <a class="post-item" href="https://aiddhub.github.io/zh/notes/why-desktop-tools/">
-        <time datetime="2026-11-02">2026 年 11 月 2 日</time>
+        <div class="post-meta">
+          <time datetime="2026-11-02">2026 年 11 月 2 日</time>
+          <span class="post-kind">随笔</span>
+        </div>
         <div>
-          <h3>2026 年了，我为什么还在写桌面软件</h3>
-          <p>科学软件几乎都搬进了浏览器。我还在写桌面程序——这篇写清楚它换来了什么、代价是什么，以及我为什么不再为此道歉。</p>
+          <h3>为什么化学软件仍然适合做成桌面程序</h3>
+          <p>网页应用是科学软件的默认选择，大多数时候也确实正确。这篇谈的是不适合的那些场景：对接计算、大结构表，以及跑在内网里的流程。</p>
         </div>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
       <a class="post-item" href="https://aiddhub.github.io/zh/notes/molinsight-vs-datawarrior/">
-        <time datetime="2026-10-20">2026 年 10 月 20 日</time>
+        <div class="post-meta">
+          <time datetime="2026-10-20">2026 年 10 月 20 日</time>
+          <span class="post-kind">随笔</span>
+        </div>
         <div>
           <h3>MolInsight 与 DataWarrior：SAR 工作流里该怎么分工</h3>
           <p>两个构效分析工具的真实对比：DataWarrior 在哪些地方仍然更好，MolInsight 在哪些环节省时间，以及你要接受的取舍。</p>
         </div>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
-    </div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <h2>我在做的东西</h2>
-        <p>桌面软件，买一次，离线运行。</p>
-      </div>
-      <a class="more" href="https://www.aiddhub.com">全部项目 →</a>
-    </div>
-    <div class="product-strip">
-      <div class="product-card">
-        <h3>MolStudio</h3>
-        <p>3D 构建、蛋白准备与对接环境：导入 PDB、跑 Vina、看相互作用、导出图。</p>
-        <div class="links">
-          <a href="https://www.aiddhub.com/molstudio">了解更多</a>
-          <a href="https://www.aiddhub.com/molstudio#download">下载</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <h3>MolInsight</h3>
-        <p>分析端：47 种图表、MMP、R 基团矩阵、聚类，以及带适用域的 QSAR。</p>
-        <div class="links">
-          <a href="https://www.aiddhub.com/molinsight">了解更多</a>
-          <a href="https://www.aiddhub.com/molinsight#download">下载</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="container">
-    <div class="cta-box">
-      <div>
-        <h3>谁在写</h3>
-        <p>软件、文档和这些文章都是我自己写。哪里写错了，告诉我比什么都管用。</p>
-      </div>
-      <a class="btn btn-ghost" href="/zh/about/">关于我 →</a>
     </div>
   </div>
 </section>
@@ -247,9 +148,9 @@
               <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
             </svg>
           </span>
-          <span class="brand-text"><b>AIDDHub</b><span>开发日志与随笔</span></span>
+          <span class="brand-text"><b>AIDDHub</b><span>化学软件笔记</span></span>
         </a>
-        <p>一个独立开发者的写作：药物化学的桌面软件、分子对接、构效分析，以及把工具真正做出来那些不体面的部分。</p>
+        <p>关于药物化学桌面软件的笔记：分子建模、分子对接、构效分析，以及背后的工程问题。</p>
       </div>
       <div>
         <h4>页面</h4>
@@ -277,6 +178,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/site.js?v=b2d73312" defer></script>
+<script src="/assets/js/site.js?v=2cbdb425" defer></script>
 </body>
 </html>

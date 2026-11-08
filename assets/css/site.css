@@ -195,6 +195,13 @@ code, pre { font-family: var(--mono); }
 
 /* hero ------------------------------------------------------ */
 .hero { padding: 78px 0 42px; }
+.hero-slim { padding: 64px 0 18px; }
+.hero-slim .hero-title { font-size: clamp(30px, 4vw, 44px); max-width: 30ch; }
+.hero-slim .lede { max-width: 58ch; }
+.hero-slim + .block { padding-top: 26px; }
+.hero-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 26px; font-size: 14px; }
+.hero-links a { color: var(--accent); border-bottom: 1px solid transparent; padding-bottom: 1px; }
+.hero-links a:hover { border-bottom-color: var(--accent); }
 .hero-inner { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 48px; align-items: center; }
 .eyebrow {
   display: inline-flex;
@@ -346,7 +353,7 @@ section.block { padding: 58px 0; }
 .post-list { display: grid; gap: 14px; }
 .post-item {
   display: grid;
-  grid-template-columns: 96px minmax(0, 1fr) auto;
+  grid-template-columns: max-content minmax(0, 1fr) auto;
   gap: 20px;
   align-items: baseline;
   padding: 18px 4px;
@@ -354,7 +361,15 @@ section.block { padding: 58px 0; }
   transition: background .16s ease;
 }
 .post-item:hover { background: rgba(120, 160, 220, 0.05); }
-.post-item time { font-size: 12.5px; color: var(--text-faint); font-variant-numeric: tabular-nums; }
+.post-item time { font-size: 12.5px; color: var(--text-faint); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.post-meta { display: flex; flex-direction: column; gap: 5px; }
+.post-kind {
+  font-size: 10.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  opacity: .8;
+}
 .post-item h3 { font-size: 16.5px; line-height: 1.4; }
 .post-item p { font-size: 14px; color: var(--text-dim); margin-top: 4px; }
 .post-item .arrow { color: var(--text-faint); transition: transform .16s ease, color .16s ease; }
@@ -537,6 +552,16 @@ section.block { padding: 58px 0; }
 
 /* article footer -------------------------------------------- */
 .article-foot { margin-top: 46px; padding-top: 28px; border-top: 1px solid var(--border); }
+.article-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.article-tags span {
+  font-size: 12px;
+  color: var(--text-faint);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+.article-corrections { margin-top: 24px; font-size: 13.5px; color: var(--text-faint); }
+.article-corrections a { color: var(--text-dim); border-bottom: 1px solid var(--border-strong); }
 .cta-box {
   display: flex;
   flex-wrap: wrap;

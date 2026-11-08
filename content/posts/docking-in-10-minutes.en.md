@@ -116,5 +116,3 @@ have.
 
 Docking answers "can it sit here". The next question is usually "what does the series tell me" — that is
 matched molecular pairs and R-group matrices, covered in the next tutorial.
-
-If you want to try this on your own structure, the free tier of MolStudio covers everything above.

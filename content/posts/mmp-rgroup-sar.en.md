@@ -116,5 +116,3 @@ part of the analysis most readers will remember.
 - **Ignoring the pair count.** A large table sorted by mean Δ puts the least supported transformations at the
   top, because small samples produce large averages.
 - **Reporting the average only.** The min/max columns are where the mechanism usually hides.
-
-Every step above is in the free tier of MolInsight, including the MMP statistics and the R-group matrix.

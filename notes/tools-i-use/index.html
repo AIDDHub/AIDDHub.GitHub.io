@@ -3,33 +3,33 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The tools I actually use — AIDDHub Notes</title>
-  <meta name="description" content="A working list, with the things I stopped using and why: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare, and one very old spreadsheet." />
+  <title>A working tool list — AIDDHub Notes</title>
+  <meta name="description" content="What is actually installed and used day to day: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare — plus the tools that were dropped and why." />
   <link rel="canonical" href="https://aiddhub.github.io/notes/tools-i-use/" />
   <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/notes/tools-i-use/" />
   <link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/notes/tools-i-use/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="AIDDHub Notes" />
-  <meta property="og:title" content="The tools I actually use" />
-  <meta property="og:description" content="A working list, with the things I stopped using and why: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare, and one very old spreadsheet." />
+  <meta property="og:title" content="A working tool list" />
+  <meta property="og:description" content="What is actually installed and used day to day: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare — plus the tools that were dropped and why." />
   <meta property="og:url" content="https://aiddhub.github.io/notes/tools-i-use/" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://aiddhub.github.io/assets/og/tools-i-use-en.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The tools I actually use" />
-  <meta name="twitter:description" content="A working list, with the things I stopped using and why: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare, and one very old spreadsheet." />
+  <meta name="twitter:title" content="A working tool list" />
+  <meta name="twitter:description" content="What is actually installed and used day to day: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare — plus the tools that were dropped and why." />
   <meta name="twitter:image" content="https://aiddhub.github.io/assets/og/tools-i-use-en.png" />
   <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
   <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
-  <link rel="stylesheet" href="/assets/css/site.css?v=b2d73312" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=2cbdb425" />
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Article",
       "@id": "https://aiddhub.github.io/notes/tools-i-use/#article",
-      "headline": "The tools I actually use",
-      "description": "A working list, with the things I stopped using and why: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare, and one very old spreadsheet.",
+      "headline": "A working tool list",
+      "description": "What is actually installed and used day to day: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare — plus the tools that were dropped and why.",
       "datePublished": "2026-09-30",
       "dateModified": "2026-09-30",
       "inLanguage": "en",
@@ -71,7 +71,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "The tools I actually use",
+          "name": "A working tool list",
           "item": "https://aiddhub.github.io/notes/tools-i-use/"
         }
       ]
@@ -95,7 +95,7 @@
       </span>
       <span class="brand-text">
         <b>AIDDHub</b>
-        <span>Build logs and notes</span>
+        <span>Notes on chemistry software</span>
       </span>
     </a>
 
@@ -120,7 +120,7 @@
     <span class="sep">/</span>
     <a href="/notes/">Writing</a>
     <span class="sep">/</span>
-    <span aria-current="page">Tools I actually use</span>
+    <span aria-current="page">A working tool list</span>
   </nav>
   </div>
 
@@ -134,71 +134,69 @@
           <span class="dot">·</span>
           <span>2 min read</span>
         </div>
-        <h1>The tools I actually use</h1>
+        <h1>A working tool list</h1>
       </header>
 
       <div class="article-body">
-<p>Tool lists age badly, so this one comes with a date and a rule: only things I opened in the last month, and
-only things I would miss.</p>
+<p>Tool lists age badly, so this one comes with a date and a rule: only software opened in the last month, and
+only software that would be missed.</p>
 <h2 id="chemistry">Chemistry</h2>
-<p><strong>RDKit.</strong> The default answer for anything structural, and deservedly so. I reach for it to check a
-canonicalisation, to prototype a descriptor, or to answer "what does this SMARTS actually match" before
-committing it to code. Nothing else comes close for the breadth of formats and reactions.</p>
-<p><strong>ChEMBL.</strong> Not software, a dataset, but it is the first place I look when I need a real series to test an
-idea against. A public dataset with plausible SAR beats a synthetic one every time.</p>
-<p><strong>DataWarrior.</strong> Still the fastest way to open an unfamiliar SDF and look at it. Free, ugly in places, and
-extremely good at the one thing I need at the start of a project: seeing the whole set.</p>
-<p><strong>PyMOL.</strong> For figures. Not because it is pleasant, but because every reviewer recognises its output.</p>
-<p><strong>Open Babel.</strong> Occasionally, for a format conversion RDKit refuses. It has been years since it was my first
-choice, and it is still on the machine.</p>
+<p><strong>RDKit.</strong> The default answer for anything structural, and deservedly so. It is the quickest way to check a
+canonicalisation, prototype a descriptor, or answer "what does this SMARTS actually match" before committing
+it to code. Nothing else comes close on format and reaction coverage.</p>
+<p><strong>ChEMBL.</strong> Not software, a dataset — but it is the first place to look when a real series is needed to test
+an idea against. Public data with plausible SAR beats a synthetic set every time.</p>
+<p><strong>DataWarrior.</strong> Still the fastest way to open an unfamiliar SDF and look at it. Free, occasionally ugly, and
+very good at the one thing needed at the start of a project: seeing the whole set.</p>
+<p><strong>PyMOL.</strong> For figures, mainly. Not because it is pleasant to use, but because every reviewer recognises its
+output.</p>
+<p><strong>Open Babel.</strong> Occasionally, for a format conversion RDKit refuses. It has not been the first choice for
+years, and it is still installed.</p>
 <h2 id="building">Building</h2>
-<p><strong>Python</strong> for everything that is not the UI. It is the language of the ecosystem, and fighting that is a
-hobby, not a strategy.</p>
-<p><strong>Qt</strong> for the desktop layer. Mature, predictable, and it does the boring things — docking panels, tables,
-high-DPI scaling — without drama.</p>
-<p><strong>C++ only where measured.</strong> Profiling first, rewriting second. Half the "performance problem" I have chased
-turned out to be a Python loop over 2,000 molecules, not an algorithm.</p>
-<p><strong>GitHub Actions</strong> for the checks that catch me: does the site still build, do the tests still pass on a
-machine that is not mine.</p>
+<p><strong>Python</strong> for everything that is not the interface. It is the language of the ecosystem, and fighting that is
+a hobby rather than a strategy.</p>
+<p><strong>Qt</strong> for the desktop layer. Mature and predictable, and it handles the unglamorous parts — docking panels,
+tables, high-DPI scaling — without drama.</p>
+<p><strong>C++ only where measured.</strong> Profile first, rewrite second. Half the performance problems chased so far turned
+out to be a Python loop over 2,000 molecules, not an algorithm.</p>
+<p><strong>GitHub Actions</strong> for the checks that catch mistakes: does the site still build, do the tests still pass on a
+machine that is not this one.</p>
 <h2 id="writing-and-thinking">Writing and thinking</h2>
-<p><strong>Obsidian</strong>, one folder of plain Markdown, no plugins that matter. If it stopped working tomorrow I would
-still have the files, which is the entire point.</p>
+<p><strong>Obsidian</strong>, one folder of plain Markdown, no plugins that matter. If it stopped working tomorrow, the files
+would still be there, which is the entire point.</p>
 <p><strong>A paper notebook</strong> for anything with a structure in it. Drawing a mechanism on a trackpad is a way to avoid
 thinking.</p>
-<h2 id="things-i-stopped-using">Things I stopped using</h2>
+<h2 id="tools-that-were-dropped">Tools that were dropped</h2>
 <ul>
-<li><strong>Excel as a database.</strong> I still open it; I no longer let it hold the only copy of an assay table.</li>
-<li><strong>Jupyter notebooks as the product.</strong> Excellent for exploring, terrible for anything that has to run twice
-  next month. The moment a notebook has users, it wants to be a script with an argument parser.</li>
-<li><strong>Docker for desktop apps.</strong> It solves a packaging problem I do not have and creates a support problem I do.</li>
-<li><strong>A second monitor full of dashboards.</strong> I replaced it with one page of numbers I actually check.</li>
+<li><strong>Excel as a database.</strong> It still gets opened; it no longer holds the only copy of an assay table.</li>
+<li><strong>Jupyter notebooks as the product.</strong> Excellent for exploring, poor for anything that has to run again next
+  month. Once a notebook has users, it wants to be a script with an argument parser.</li>
+<li><strong>Docker for desktop apps.</strong> It solves a packaging problem that does not exist here and creates a support
+  problem that does.</li>
+<li><strong>A second monitor full of dashboards.</strong> Replaced with one page of numbers that actually get checked.</li>
 </ul>
-<h2 id="the-one-that-surprised-me">The one that surprised me</h2>
-<p>Cloudflare. I expected a CDN; what I got was a place to put a static site, a download bucket and a mail
-forwarder for less than the cost of a coffee a month, with no server to patch. For a one-person software
-studio that is the entire infrastructure budget, and it has not fallen over yet.</p>
-<h2 id="what-is-missing">What is missing</h2>
+<h2 id="the-one-that-surprised-us">The one that surprised us</h2>
+<p>Cloudflare. The expectation was a CDN; what it turned out to provide was a place to put a static site, a
+download bucket and a mail forwarder for less than the price of a coffee a month, with no server to patch. For
+a small studio that is the entire infrastructure budget, and it has not fallen over yet.</p>
+<h2 id="what-is-still-missing">What is still missing</h2>
 <p>A good way to look at a 3D structure and an assay table at the same time without alt-tabbing. That is roughly
-the reason MolStudio exists, and I still have not fully solved it.</p>
+the reason MolStudio exists, and it is still not fully solved.</p>
       </div>
 
       <footer class="article-foot">
-        <div class="cta-box">
-          <div>
-            <h3>Written by AIDDHub</h3>
-            <p>I build MolStudio and MolInsight, and write about what I learn doing it. Corrections and questions are welcome by email.</p>
-          </div>
-          <a class="btn btn-primary" href="/about/">About me →</a>
-        </div>
+        <p class="article-tags">
+<span>tooling</span><span>workflow</span>        </p>
         <div class="prevnext">
 <span></span>          <a class="next" href="https://aiddhub.github.io/notes/one-time-licence/"><span>Next →</span>What a one-time licence forces you to get right</a>
         </div>
+        <p class="article-corrections">Corrections and questions are welcome at <a href="mailto:support@aiddhub.com">support@aiddhub.com</a>.</p>
       </footer>
     </article>
 
     <aside class="toc" aria-label="On this page">
       <h4>On this page</h4>
-      <ul><li><a href="#chemistry">Chemistry</a></li><li><a href="#building">Building</a></li><li><a href="#writing-and-thinking">Writing and thinking</a></li><li><a href="#things-i-stopped-using">Things I stopped using</a></li><li><a href="#the-one-that-surprised-me">The one that surprised me</a></li><li><a href="#what-is-missing">What is missing</a></li></ul>
+      <ul><li><a href="#chemistry">Chemistry</a></li><li><a href="#building">Building</a></li><li><a href="#writing-and-thinking">Writing and thinking</a></li><li><a href="#tools-that-were-dropped">Tools that were dropped</a></li><li><a href="#the-one-that-surprised-us">The one that surprised us</a></li><li><a href="#what-is-still-missing">What is still missing</a></li></ul>
     </aside>
   </div>
 </div>
@@ -215,9 +213,9 @@ the reason MolStudio exists, and I still have not fully solved it.</p>
               <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
             </svg>
           </span>
-          <span class="brand-text"><b>AIDDHub</b><span>Build logs and notes</span></span>
+          <span class="brand-text"><b>AIDDHub</b><span>Notes on chemistry software</span></span>
         </a>
-        <p>An independent developer writing about desktop software for medicinal chemistry — docking, SAR analysis, and the unglamorous parts of shipping tools people actually use.</p>
+        <p>Notes on desktop software for medicinal chemistry: molecular modelling, docking, SAR analysis, and the engineering behind them.</p>
       </div>
       <div>
         <h4>Pages</h4>
@@ -245,6 +243,6 @@ the reason MolStudio exists, and I still have not fully solved it.</p>
   </div>
 </footer>
 
-<script src="/assets/js/site.js?v=b2d73312" defer></script>
+<script src="/assets/js/site.js?v=2cbdb425" defer></script>
 </body>
 </html>

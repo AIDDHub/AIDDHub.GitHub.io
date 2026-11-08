@@ -3,26 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AIDDHub Notes — build logs and notes on chemistry software</title>
-  <meta name="description" content="An independent developer writing about desktop software for medicinal chemistry: docking, SAR analysis, the tools behind them, and what shipping them actually takes." />
+  <title>AIDDHub Notes — notes on chemistry software</title>
+  <meta name="description" content="Notes on desktop software for medicinal chemistry: molecular modelling, docking, SAR analysis, and the engineering behind the tools." />
   <link rel="canonical" href="https://aiddhub.github.io/" />
   <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/" />
   <link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/" />
   <link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AIDDHub Notes" />
-  <meta property="og:title" content="AIDDHub Notes — build logs and notes on chemistry software" />
-  <meta property="og:description" content="An independent developer writing about desktop software for medicinal chemistry: docking, SAR analysis, the tools behind them, and what shipping them actually takes." />
+  <meta property="og:title" content="AIDDHub Notes — notes on chemistry software" />
+  <meta property="og:description" content="Notes on desktop software for medicinal chemistry: molecular modelling, docking, SAR analysis, and the engineering behind the tools." />
   <meta property="og:url" content="https://aiddhub.github.io/" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://aiddhub.github.io/assets/og/home-en.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AIDDHub Notes — build logs and notes on chemistry software" />
-  <meta name="twitter:description" content="An independent developer writing about desktop software for medicinal chemistry: docking, SAR analysis, the tools behind them, and what shipping them actually takes." />
+  <meta name="twitter:title" content="AIDDHub Notes — notes on chemistry software" />
+  <meta name="twitter:description" content="Notes on desktop software for medicinal chemistry: molecular modelling, docking, SAR analysis, and the engineering behind the tools." />
   <meta name="twitter:image" content="https://aiddhub.github.io/assets/og/home-en.png" />
   <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
   <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
-  <link rel="stylesheet" href="/assets/css/site.css?v=b2d73312" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=2cbdb425" />
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -63,7 +63,7 @@
       </span>
       <span class="brand-text">
         <b>AIDDHub</b>
-        <span>Build logs and notes</span>
+        <span>Notes on chemistry software</span>
       </span>
     </a>
 
@@ -82,91 +82,28 @@
 </header>
 
 <main id="main">
-<section class="hero">
-  <div class="container hero-inner">
-    <div>
-      <span class="eyebrow">AIDDHub · independent software</span>
-      <h1 class="hero-title">I build tools for <span class="grad">medicinal chemists</span></h1>
-      <p class="lede">This is where I write about it: what I am building, what broke this week, and the parts of computational chemistry that turn out to be harder than they look. Two desktop apps, one person, no roadmap handed down from above.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#recent">Read the latest</a>
-        <a class="btn btn-ghost" href="/about/">About me</a>
-      </div>
-    </div>
-    <aside class="hero-card">
-      <h3>Currently</h3>
-      <ul>
-        <li><span class="tick">•</span><span><b>MolStudio.</b> Modelling and docking workstation. v1.0 shipped.</span></li>
-        <li><span class="tick">•</span><span><b>MolInsight.</b> SAR analysis: MMP, R-groups, QSAR. v1.0 shipped.</span></li>
-        <li><span class="tick">•</span><span><b>Writing.</b> A post when there is something worth saying.</span></li>
-      </ul>
-    </aside>
+<section class="hero hero-slim">
+  <div class="container">
+    <span class="eyebrow">AIDDHub</span>
+    <h1 class="hero-title">Notes on chemistry software</h1>
+    <p class="lede">AIDDHub builds desktop tools for molecular modelling and SAR analysis. This is where the work gets written down: walkthroughs, build notes, and the occasional opinion.</p>
+    <p class="hero-links">
+      <a href="/notes/">Writing</a>
+      <a href="/tutorials/">Tutorials</a>
+      <a href="/projects/">Projects</a>
+      <a href="https://aiddhub.github.io/feed.xml">RSS</a>
+    </p>
   </div>
 </section>
 
 <section class="block">
   <div class="container">
-    <div class="section-head">
-      <div>
-        <h2>Start here</h2>
-        <p>Three pieces that explain what this place is about.</p>
-      </div>
-    </div>
-    <div class="card-grid">
-      <a class="card" href="https://aiddhub.github.io/tutorials/docking-in-10-minutes/">
-        <div class="card-top">
-          <span class="badge tutorial">Tutorial</span>
-          <span class="badge product">MolStudio</span>
-        </div>
-        <h3>Run a docking job on Windows in 10 minutes — without Python</h3>
-        <p>Prepare a receptor, dock a ligand library with AutoDock Vina and export a 2D interaction diagram in MolStudio. No conda, no MGLTools, no command line.</p>
-        <div class="card-foot">
-          <time datetime="2026-11-08">November 8, 2026</time>
-          <span>·</span>
-          <span>4 min read</span>
-        </div>
-      </a>
-      <a class="card" href="https://aiddhub.github.io/notes/why-desktop-tools/">
-        <div class="card-top">
-          <span class="badge note">Note</span>
-        </div>
-        <h3>Why I still ship desktop software in 2026</h3>
-        <p>Web apps are the default for scientific software. I keep writing desktop programs anyway — here is what that buys, what it costs, and why I stopped apologising for it.</p>
-        <div class="card-foot">
-          <time datetime="2026-11-02">November 2, 2026</time>
-          <span>·</span>
-          <span>3 min read</span>
-        </div>
-      </a>
-      <a class="card" href="https://aiddhub.github.io/notes/building-mmp/">
-        <div class="card-top">
-          <span class="badge note">Note</span>
-          <span class="badge product">MolInsight</span>
-        </div>
-        <h3>Implementing matched molecular pairs: the boring parts</h3>
-        <p>The fragmentation algorithm took an afternoon. Canonicalising cut points, symmetric fragments, small-sample statistics and a table with 40,000 rows took the rest of the month.</p>
-        <div class="card-foot">
-          <time datetime="2026-10-26">October 26, 2026</time>
-          <span>·</span>
-          <span>3 min read</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="recent">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <h2>Recent</h2>
-        <p>Everything, newest first.</p>
-      </div>
-      <a class="more" href="/notes/">All writing →</a>
-    </div>
     <div class="post-list">
       <a class="post-item" href="https://aiddhub.github.io/tutorials/docking-in-10-minutes/">
-        <time datetime="2026-11-08">November 8, 2026</time>
+        <div class="post-meta">
+          <time datetime="2026-11-08">November 8, 2026</time>
+          <span class="post-kind">Tutorial</span>
+        </div>
         <div>
           <h3>Run a docking job on Windows in 10 minutes — without Python</h3>
           <p>Prepare a receptor, dock a ligand library with AutoDock Vina and export a 2D interaction diagram in MolStudio. No conda, no MGLTools, no command line.</p>
@@ -174,7 +111,10 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
       <a class="post-item" href="https://aiddhub.github.io/tutorials/mmp-rgroup-sar/">
-        <time datetime="2026-11-05">November 5, 2026</time>
+        <div class="post-meta">
+          <time datetime="2026-11-05">November 5, 2026</time>
+          <span class="post-kind">Tutorial</span>
+        </div>
         <div>
           <h3>Matched molecular pairs and R-group tables: from spreadsheet to SAR</h3>
           <p>Turn a structure-activity spreadsheet into matched molecular pair statistics with p-values and an R-group matrix you can defend in a review.</p>
@@ -182,15 +122,21 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
       <a class="post-item" href="https://aiddhub.github.io/notes/why-desktop-tools/">
-        <time datetime="2026-11-02">November 2, 2026</time>
+        <div class="post-meta">
+          <time datetime="2026-11-02">November 2, 2026</time>
+          <span class="post-kind">Note</span>
+        </div>
         <div>
-          <h3>Why I still ship desktop software in 2026</h3>
-          <p>Web apps are the default for scientific software. I keep writing desktop programs anyway — here is what that buys, what it costs, and why I stopped apologising for it.</p>
+          <h3>Why desktop software still makes sense for chemistry</h3>
+          <p>Web apps are the default for scientific software, and usually that is correct. This is about the cases where they are not: docking runs, large structure tables, and locked-down networks.</p>
         </div>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
       <a class="post-item" href="https://aiddhub.github.io/tutorials/six-checks-docking-pose/">
-        <time datetime="2026-10-28">October 28, 2026</time>
+        <div class="post-meta">
+          <time datetime="2026-10-28">October 28, 2026</time>
+          <span class="post-kind">Tutorial</span>
+        </div>
         <div>
           <h3>Six checks before you trust a docking pose</h3>
           <p>A docking score is a ranking hint, not a result. Six quick checks that separate a pose worth reporting from an artefact of preparation.</p>
@@ -198,15 +144,21 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
       <a class="post-item" href="https://aiddhub.github.io/notes/building-mmp/">
-        <time datetime="2026-10-26">October 26, 2026</time>
+        <div class="post-meta">
+          <time datetime="2026-10-26">October 26, 2026</time>
+          <span class="post-kind">Note</span>
+        </div>
         <div>
-          <h3>Implementing matched molecular pairs: the boring parts</h3>
-          <p>The fragmentation algorithm took an afternoon. Canonicalising cut points, symmetric fragments, small-sample statistics and a table with 40,000 rows took the rest of the month.</p>
+          <h3>Building matched molecular pairs: the boring parts</h3>
+          <p>The fragmentation algorithm takes an afternoon. Canonicalising cut points, symmetric fragments, small-sample statistics and a table with 40,000 rows take the rest of the month.</p>
         </div>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
       <a class="post-item" href="https://aiddhub.github.io/notes/molinsight-vs-datawarrior/">
-        <time datetime="2026-10-20">October 20, 2026</time>
+        <div class="post-meta">
+          <time datetime="2026-10-20">October 20, 2026</time>
+          <span class="post-kind">Note</span>
+        </div>
         <div>
           <h3>MolInsight vs DataWarrior: which one belongs in your SAR workflow</h3>
           <p>An honest comparison of two SAR analysis tools: where DataWarrior is still the better choice, where MolInsight saves time, and the trade-offs you accept.</p>
@@ -214,63 +166,27 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
       <a class="post-item" href="https://aiddhub.github.io/notes/one-time-licence/">
-        <time datetime="2026-10-12">October 12, 2026</time>
+        <div class="post-meta">
+          <time datetime="2026-10-12">October 12, 2026</time>
+          <span class="post-kind">Note</span>
+        </div>
         <div>
           <h3>What a one-time licence forces you to get right</h3>
-          <p>Selling software once instead of monthly removes the growth loop and every excuse that comes with it. Notes on pricing, support, and the free tier.</p>
+          <p>Selling software once instead of monthly removes the growth loop and most of the excuses that come with it. Notes on pricing, support and the free tier.</p>
         </div>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
       <a class="post-item" href="https://aiddhub.github.io/notes/tools-i-use/">
-        <time datetime="2026-09-30">September 30, 2026</time>
+        <div class="post-meta">
+          <time datetime="2026-09-30">September 30, 2026</time>
+          <span class="post-kind">Note</span>
+        </div>
         <div>
-          <h3>The tools I actually use</h3>
-          <p>A working list, with the things I stopped using and why: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare, and one very old spreadsheet.</p>
+          <h3>A working tool list</h3>
+          <p>What is actually installed and used day to day: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare — plus the tools that were dropped and why.</p>
         </div>
         <span class="arrow" aria-hidden="true">→</span>
       </a>
-    </div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <h2>Things I build</h2>
-        <p>Desktop software, sold once, runs offline.</p>
-      </div>
-      <a class="more" href="https://www.aiddhub.com">All projects →</a>
-    </div>
-    <div class="product-strip">
-      <div class="product-card">
-        <h3>MolStudio</h3>
-        <p>A 3D builder, protein preparation and docking environment. Import a PDB, run Vina, read the interactions, export the figure.</p>
-        <div class="links">
-          <a href="https://www.aiddhub.com/molstudio">More about it</a>
-          <a href="https://www.aiddhub.com/molstudio#download">Download</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <h3>MolInsight</h3>
-        <p>The analysis side: 47 chart types, matched molecular pairs, R-group matrices, clustering and QSAR with an applicability domain.</p>
-        <div class="links">
-          <a href="https://www.aiddhub.com/molinsight">More about it</a>
-          <a href="https://www.aiddhub.com/molinsight#download">Download</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="container">
-    <div class="cta-box">
-      <div>
-        <h3>Who is writing this</h3>
-        <p>I write the software, the documentation and these posts. If something here is wrong, telling me is genuinely useful.</p>
-      </div>
-      <a class="btn btn-ghost" href="/about/">About me →</a>
     </div>
   </div>
 </section>
@@ -287,9 +203,9 @@
               <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
             </svg>
           </span>
-          <span class="brand-text"><b>AIDDHub</b><span>Build logs and notes</span></span>
+          <span class="brand-text"><b>AIDDHub</b><span>Notes on chemistry software</span></span>
         </a>
-        <p>An independent developer writing about desktop software for medicinal chemistry — docking, SAR analysis, and the unglamorous parts of shipping tools people actually use.</p>
+        <p>Notes on desktop software for medicinal chemistry: molecular modelling, docking, SAR analysis, and the engineering behind them.</p>
       </div>
       <div>
         <h4>Pages</h4>
@@ -317,6 +233,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/site.js?v=b2d73312" defer></script>
+<script src="/assets/js/site.js?v=2cbdb425" defer></script>
 </body>
 </html>

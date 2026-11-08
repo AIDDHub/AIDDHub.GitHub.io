@@ -55,14 +55,13 @@ Front matter:
 | `description` | meta description, 120–160 characters |
 | `date` | `YYYY-MM-DD` |
 | `section` | `notes` or `tutorials` |
-| `product` | optional: `molstudio`, `molinsight`, `both`. Adds a badge and turns the closing box into a download CTA. Omit it for general posts. |
+| `product` | optional: `molstudio`, `molinsight`, `both`. Adds a small badge naming the app used in the post. Omit it for general posts. |
 | `tags` | list, emitted as `keywords` |
-| `featured` | `true` pins the post under *Start here* on the homepage |
 | `updated` | optional; sets `dateModified` |
 | `draft` | `true` keeps the file out of the build |
 
-House style: first person, one idea per section, numbers instead of adjectives, and no claim about the
-software that is not true for the current release. Every `##` heading becomes a table-of-contents entry.
+House style: neutral, specific, no sales voice. Articles end with tags, previous/next navigation and a
+corrections line — not a call to action. Every `##` heading becomes a table-of-contents entry.
 
 ## Chinese editions
 

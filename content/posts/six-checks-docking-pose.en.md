@@ -95,6 +95,3 @@ Practical consequences:
 
 If all six pass, the pose is worth a figure. If four pass and two are ambiguous, say so — a well-described
 limitation is more convincing than an overconfident picture.
-
-The docking workflow used here, including the interaction diagram and the session export, is part of MolStudio;
-the free tier has no time limit.

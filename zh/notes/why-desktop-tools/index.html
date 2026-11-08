@@ -3,34 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>2026 年了，我为什么还在写桌面软件 — AIDDHub Notes</title>
-  <meta name="description" content="科学软件几乎都搬进了浏览器。我还在写桌面程序——这篇写清楚它换来了什么、代价是什么，以及我为什么不再为此道歉。" />
+  <title>为什么化学软件仍然适合做成桌面程序 — AIDDHub Notes</title>
+  <meta name="description" content="网页应用是科学软件的默认选择，大多数时候也确实正确。这篇谈的是不适合的那些场景：对接计算、大结构表，以及跑在内网里的流程。" />
   <link rel="canonical" href="https://aiddhub.github.io/zh/notes/why-desktop-tools/" />
   <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/notes/why-desktop-tools/" />
   <link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/notes/why-desktop-tools/" />
   <link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/notes/why-desktop-tools/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="AIDDHub Notes" />
-  <meta property="og:title" content="2026 年了，我为什么还在写桌面软件" />
-  <meta property="og:description" content="科学软件几乎都搬进了浏览器。我还在写桌面程序——这篇写清楚它换来了什么、代价是什么，以及我为什么不再为此道歉。" />
+  <meta property="og:title" content="为什么化学软件仍然适合做成桌面程序" />
+  <meta property="og:description" content="网页应用是科学软件的默认选择，大多数时候也确实正确。这篇谈的是不适合的那些场景：对接计算、大结构表，以及跑在内网里的流程。" />
   <meta property="og:url" content="https://aiddhub.github.io/zh/notes/why-desktop-tools/" />
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:image" content="https://aiddhub.github.io/assets/og/why-desktop-tools-zh.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="2026 年了，我为什么还在写桌面软件" />
-  <meta name="twitter:description" content="科学软件几乎都搬进了浏览器。我还在写桌面程序——这篇写清楚它换来了什么、代价是什么，以及我为什么不再为此道歉。" />
+  <meta name="twitter:title" content="为什么化学软件仍然适合做成桌面程序" />
+  <meta name="twitter:description" content="网页应用是科学软件的默认选择，大多数时候也确实正确。这篇谈的是不适合的那些场景：对接计算、大结构表，以及跑在内网里的流程。" />
   <meta name="twitter:image" content="https://aiddhub.github.io/assets/og/why-desktop-tools-zh.png" />
   <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
   <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
-  <link rel="stylesheet" href="/assets/css/site.css?v=b2d73312" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=2cbdb425" />
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Article",
       "@id": "https://aiddhub.github.io/zh/notes/why-desktop-tools/#article",
-      "headline": "2026 年了，我为什么还在写桌面软件",
-      "description": "科学软件几乎都搬进了浏览器。我还在写桌面程序——这篇写清楚它换来了什么、代价是什么，以及我为什么不再为此道歉。",
+      "headline": "为什么化学软件仍然适合做成桌面程序",
+      "description": "网页应用是科学软件的默认选择，大多数时候也确实正确。这篇谈的是不适合的那些场景：对接计算、大结构表，以及跑在内网里的流程。",
       "datePublished": "2026-11-02",
       "dateModified": "2026-11-02",
       "inLanguage": "zh-CN",
@@ -72,7 +72,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "2026 年了，我为什么还在写桌面软件",
+          "name": "为什么化学软件仍然适合做成桌面程序",
           "item": "https://aiddhub.github.io/zh/notes/why-desktop-tools/"
         }
       ]
@@ -96,7 +96,7 @@
       </span>
       <span class="brand-text">
         <b>AIDDHub</b>
-        <span>开发日志与随笔</span>
+        <span>化学软件笔记</span>
       </span>
     </a>
 
@@ -122,7 +122,7 @@
     <span class="sep">/</span>
     <a href="/zh/notes/">随笔</a>
     <span class="sep">/</span>
-    <span aria-current="page">为什么还在写桌面软件</span>
+    <span aria-current="page">为什么还是桌面程序</span>
   </nav>
   </div>
 
@@ -136,68 +136,59 @@
           <span class="dot">·</span>
           <span>2 分钟阅读</span>
         </div>
-        <h1>2026 年了，我为什么还在写桌面软件</h1>
+        <h1>为什么化学软件仍然适合做成桌面程序</h1>
       </header>
 
       <div class="article-body">
-<p>每隔几个月都会有人问：MolStudio 为什么不是网页版。这个问题很合理——浏览器是软件现在该待的地方，
-部署几乎不花力气，用户也不用装任何东西。</p>
-<p>我也写过网页项目。但我还是在发布桌面程序，想把原因写下来，包括那些不太好受的部分。</p>
-<h2 id="_1">决定形态的是化学，不是流行</h2>
-<p>一次对接不是一个 HTTP 请求。它是某台机器上二十分钟的 CPU 计算，要能看着进度、中途改参数、
-结果是装了一堆构象的文件夹，而不是一个 JSON。</p>
-<p>二十万行的化合物表也一样：在浏览器里排序、筛选、聚类当然做得到，但用户一旦想把表拖到第二块屏幕的
-绘图窗口里，或者跑一个要四分钟的模型，浏览器就从优势变成了约束。</p>
-<p>我在意的工作流是本地、反复、计算密集的。桌面不是怀旧，是问题的形状。</p>
-<h2 id="_2">本地安装到底换来了什么</h2>
+<p>网页应用是科学软件的默认选择，大多数情况下也确实正确：不用安装、所有人同一个版本、部署几乎不花力气。</p>
+<p>但有些问题不适合这个形状。对接计算、几十万行的结构表，以及必须跑在受限网络里的流程，是最明显的几个。
+这篇写为什么在这些场景里桌面是更合适的答案，以及选择它要付什么代价。</p>
+<h2 id="_1">问题的形状</h2>
+<p>一次对接不是一个 HTTP 请求。它是某台机器上二十分钟的 CPU 计算，要能看着进度、中途改参数，
+输出是装了一堆构象的文件夹，而不是一个 JSON 响应。</p>
+<p>大化合物表也一样。在浏览器里排序、筛选、聚类二十万行做得到，但结果一旦要和绘图窗口并排放一个小时，
+或者喂给一个跑四分钟的模型，浏览器就从优势变成约束。</p>
+<p>这类工作流是本地、反复、计算密集的。桌面不是怀旧，是它和问题同形。</p>
+<h2 id="_2">本地安装换来了什么</h2>
 <p><strong>不用上传。</strong> 结构、活性表、模型都留在本机。对任何在保密协议下工作的人——也就是手上真有化合物系列的
-大多数人——这不是一个卖点，而是能不能用这个工具的前提。</p>
-<p><strong>飞机上、地下室、医院内网里都能跑。</strong> 工业界和高校的网络里全是代理，什么都要拦。一个装完就能运行的
-安装包，比一个需要申请域名白名单的服务容易批得多。</p>
-<p><strong>没有延迟预算。</strong> 打开 50 MB 的 SDF 花多久，取决于磁盘，不取决于网络。也不用为了省一次往返把界面
-分页。</p>
-<p><strong>我的服务器挂了，软件还在跑。</strong> 这条比较私人。我喜欢三月发出去的版本，十一月还能在一台我从没见过的
-机器上打开，不需要我付可用性的钱。</p>
+大多数人——这是前提，不是卖点。</p>
+<p><strong>离线可用，内网可用。</strong> 工业界和高校的网络里全是代理，什么都要拦。一个签过名的安装包，比一个需要
+申请白名单的域名容易批。</p>
+<p><strong>没有延迟预算。</strong> 打开 50 MB 的 SDF 花多久取决于磁盘，不取决于网络，也不用为了省一次往返去分页。</p>
+<p><strong>厂商的服务器挂了，软件还在跑。</strong> 三月的版本十一月还能在一台开发者从没见过的机器上打开。</p>
 <h2 id="_3">代价</h2>
-<p>我不想假装这些取舍很小。</p>
+<p>这些取舍是实打实的，应该说清楚。</p>
 <ul>
 <li><strong>分发是税。</strong> 每个平台的安装包、代码签名、下载托管，以及杀毒软件厂商哪天改主意之后的一场客服对话。</li>
-<li><strong>更新要商量。</strong> 网页版所有人都在新版本上；桌面版永远有人停在十八个月前的版本，而他的 bug 报告
-  说的是你早就不记得的代码。</li>
-<li><strong>没有遥测就没有数据。</strong> 崩溃是别人发邮件告诉我的。这个反馈闭环比任何仪表盘都差。</li>
-<li><strong>凌晨两点你修不了。</strong> 服务器上没有热修，只有重新打包、重新上传，再写邮件请大家重装。</li>
+<li><strong>更新要商量。</strong> 网页版所有人都在当前版本；桌面版永远有人停在十八个月前的构建上，报告着没人记得的代码。</li>
+<li><strong>没有遥测就没有数据。</strong> 问题靠邮件发现，这个反馈闭环比任何仪表盘都慢。</li>
+<li><strong>远程什么都修不了。</strong> 一次热修变成重新打包、重新上传，再写邮件请大家重装。</li>
 </ul>
-<p>这些都是实打实的成本，也是大多数新的科学软件选择网页版的原因。</p>
-<h2 id="_4">我的界线</h2>
-<p>我不认为网页是错的。我认为浏览器是分发渠道，不是计算模型。当一个工具主要是一个表单、一块看板或一个
-共享数据库时，它属于网页，也应该留在网页上。当一个工具的核心是视口里的一个分子加 CPU 上的一个求解器，
-浏览器就是在原生引擎外面多包了一层，还要付额外的代价。</p>
-<p>所以：原生程序、磁盘上的普通文件、不要账号、不同步。如果哪天这个形状不再适合要做的事，我会改。
-以前也改过。</p>
-<h2 id="_5">一个不体面的优势</h2>
-<p>还有一个理由，和技术无关。桌面软件在用户不再需要你的时候就算完成了。没有活跃度指标，没有留存曲线，
+<p>这些成本，就是大多数新的科学软件选择网页版的原因。</p>
+<h2 id="_4">界线在哪里</h2>
+<p>浏览器是分发渠道，不是计算模型。当一个工具主要是一个表单、一块看板或一个共享数据库时，它属于网页。
+当一个工具的核心是视口里的一个分子加 CPU 上的一个求解器时，浏览器就是在原生引擎外面多包了一层，
+还要付额外的代价。</p>
+<p>由此得到一条简单的规则：原生程序、磁盘上的普通文件、不要账号、不同步。</p>
+<h2 id="_5">值得保留的约束</h2>
+<p>还有一个理由，与技术无关。桌面程序在用户不再需要它的时候就算完成了。没有活跃度指标，没有留存曲线，
 也没有动机让工具比问题本身更黏人。</p>
-<p>我喜欢这个约束。它让设计问题变小，也更容易回答：这东西今天能帮人拿到一个站得住脚的结论吗？
-拿到之后，他可以走开吗？</p>
+<p>这个约束让设计问题变小：这东西今天能帮人拿到一个站得住脚的结论吗？拿到之后，他可以走开吗？</p>
       </div>
 
       <footer class="article-foot">
-        <div class="cta-box">
-          <div>
-            <h3>作者 AIDDHub</h3>
-            <p>我做 MolStudio 和 MolInsight，也写做它们时学到的东西。有错漏或问题，欢迎直接邮件。</p>
-          </div>
-          <a class="btn btn-primary" href="/zh/about/">关于我 →</a>
-        </div>
+        <p class="article-tags">
+<span>桌面软件</span><span>观点</span>        </p>
         <div class="prevnext">
           <a class="prev" href="https://aiddhub.github.io/zh/notes/molinsight-vs-datawarrior/"><span>← 上一篇</span>MolInsight 与 DataWarrior：SAR 工作流里该怎么分工</a>
         </div>
+        <p class="article-corrections">勘误与问题请联系 <a href="mailto:support@aiddhub.com">support@aiddhub.com</a>.</p>
       </footer>
     </article>
 
     <aside class="toc" aria-label="本页目录">
       <h4>本页目录</h4>
-      <ul><li><a href="#_1">决定形态的是化学，不是流行</a></li><li><a href="#_2">本地安装到底换来了什么</a></li><li><a href="#_3">代价</a></li><li><a href="#_4">我的界线</a></li><li><a href="#_5">一个不体面的优势</a></li></ul>
+      <ul><li><a href="#_1">问题的形状</a></li><li><a href="#_2">本地安装换来了什么</a></li><li><a href="#_3">代价</a></li><li><a href="#_4">界线在哪里</a></li><li><a href="#_5">值得保留的约束</a></li></ul>
     </aside>
   </div>
 </div>
@@ -214,9 +205,9 @@
               <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
             </svg>
           </span>
-          <span class="brand-text"><b>AIDDHub</b><span>开发日志与随笔</span></span>
+          <span class="brand-text"><b>AIDDHub</b><span>化学软件笔记</span></span>
         </a>
-        <p>一个独立开发者的写作：药物化学的桌面软件、分子对接、构效分析，以及把工具真正做出来那些不体面的部分。</p>
+        <p>关于药物化学桌面软件的笔记：分子建模、分子对接、构效分析，以及背后的工程问题。</p>
       </div>
       <div>
         <h4>页面</h4>
@@ -244,6 +235,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/site.js?v=b2d73312" defer></script>
+<script src="/assets/js/site.js?v=2cbdb425" defer></script>
 </body>
 </html>

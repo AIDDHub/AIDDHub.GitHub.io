@@ -12,11 +12,11 @@ DataWarrior is the default recommendation for a reason: it is free, open source,
 file format, and does clustering, scaffold analysis and R-group decomposition without asking for a licence.
 Most medicinal chemists have used it at least once.
 
-**Disclosure first:** I built one of the two tools compared here, so read this with that in mind. I have tried
-to write the sections where the other one wins as carefully as the ones where mine does.
+**Disclosure first:** AIDDHub builds one of the two tools compared here, so read this with that in mind. The
+sections where the other one wins are written as carefully as the ones where ours does.
 
-This is not "my tool is better at everything". It is an attempt to write down where each one earns its place,
-so that the choice is a decision rather than a habit.
+This is not "our tool is better at everything". It is an attempt to set out where each one earns its place, so
+that the choice is a decision rather than a habit.
 
 ## The short version
 

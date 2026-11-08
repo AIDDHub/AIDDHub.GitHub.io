@@ -20,7 +20,7 @@ Front matter keys
     date         YYYY-MM-DD
     section      notes | tutorials
     product      molstudio | molinsight | both   (optional, omit for general posts)
-    featured     true to pin the post under "Start here" on the homepage
+    featured     true to pin the post on the homepage (optional)
     tags         [list, of, tags]
     updated      YYYY-MM-DD (optional)
     draft        true to keep the file out of the build
@@ -76,25 +76,23 @@ SECTION_TEXT = {
     "notes": {
         "en": {
             "title": "Writing",
-            "blurb": "Essays, build logs and notes on computational chemistry tooling. No schedule and no growth "
-                     "hacks — just what I am working on, what broke, and what I would do differently.",
+            "blurb": "Essays, build notes and observations on computational chemistry software — decisions, "
+                     "trade-offs, and the parts that turned out to be harder than expected.",
         },
         "zh": {
             "title": "随笔",
-            "blurb": "关于计算化学工具、开发过程和其它想法的文章。没有固定更新频率，写的是正在做的事、"
-                     "踩过的坑，以及下次会怎么做。",
+            "blurb": "关于计算化学软件的文章：设计决策、取舍，以及那些比预想更难的部分。",
         },
     },
     "tutorials": {
         "en": {
             "title": "Tutorials",
             "blurb": "Step-by-step walkthroughs. Each one starts from a real task, shows the clicks, and ends with "
-                     "a figure or a table you can put in a report. Most use MolStudio or MolInsight, some do not.",
+                     "a figure or a table that belongs in a report.",
         },
         "zh": {
             "title": "教程",
-            "blurb": "分步操作指南。每篇都从实际任务出发，写清点击路径，最后给出可以直接放进汇报的图或表。"
-                     "多数用 MolStudio 或 MolInsight，也有不用的。",
+            "blurb": "分步操作指南。每篇都从实际任务出发，写清点击路径，最后给出可以直接放进汇报的图或表。",
         },
     },
 }
@@ -103,105 +101,40 @@ TEXT = {
     "en": {
         "lang_attr": "en",
         "og_locale": "en_US",
-        "tagline": "Build logs and notes",
+        "tagline": "Notes on chemistry software",
         "nav": {"home": "Home", "notes": "Writing", "tutorials": "Tutorials", "projects": "Projects", "about": "About"},
         "footer": {"resources": "Pages", "products": "Projects", "pricing": "Pricing", "download": "Download"},
-        "footer_blurb": "An independent developer writing about desktop software for medicinal chemistry — docking, "
-                        "SAR analysis, and the unglamorous parts of shipping tools people actually use.",
+        "footer_blurb": "Notes on desktop software for medicinal chemistry: molecular modelling, docking, SAR "
+                        "analysis, and the engineering behind them.",
         "home": {
-            "eyebrow": "AIDDHub · independent software",
-            "h1_a": "I build tools for ",
-            "h1_b": "medicinal chemists",
-            "lede": "This is where I write about it: what I am building, what broke this week, and the parts of "
-                    "computational chemistry that turn out to be harder than they look. Two desktop apps, one person, "
-                    "no roadmap handed down from above.",
-            "cta_primary": "Read the latest",
-            "cta_secondary": "About me",
-            "card_title": "Currently",
-            "card_items": [
-                ["MolStudio.", "Modelling and docking workstation. v1.0 shipped."],
-                ["MolInsight.", "SAR analysis: MMP, R-groups, QSAR. v1.0 shipped."],
-                ["Writing.", "A post when there is something worth saying."],
-            ],
-            "featured_title": "Start here",
-            "featured_sub": "Three pieces that explain what this place is about.",
-            "see_all": "All writing",
-            "latest_title": "Recent",
-            "latest_sub": "Everything, newest first.",
-            "projects_title": "Things I build",
-            "projects_sub": "Desktop software, sold once, runs offline.",
-            "product_molstudio": "A 3D builder, protein preparation and docking environment. Import a PDB, run Vina, "
-                                 "read the interactions, export the figure.",
-            "product_molinsight": "The analysis side: 47 chart types, matched molecular pairs, R-group matrices, "
-                                  "clustering and QSAR with an applicability domain.",
-            "product_page": "More about it",
-            "product_download": "Download",
-            "projects_cta": "All projects",
-            "about_title": "Who is writing this",
-            "about_sub": "I write the software, the documentation and these posts. If something here is wrong, "
-                         "telling me is genuinely useful.",
-            "about_cta": "About me",
+            "h1": "Notes on chemistry software",
+            "lede": "AIDDHub builds desktop tools for molecular modelling and SAR analysis. This is where the work "
+                    "gets written down: walkthroughs, build notes, and the occasional opinion.",
         },
         "list": {"empty": "Nothing published here yet."},
         "post": {"min_read": "min read", "updated": "Updated", "toc": "On this page",
                  "previous": "Previous", "next": "Next",
-                 "cta_title": "Try it on your own data",
-                 "cta_text": "The free tier covers everything in this walkthrough, with no time limit.",
-                 "cta_button": "Download",
-                 "author_title": "Written by AIDDHub",
-                 "author_text": "I build MolStudio and MolInsight, and write about what I learn doing it. "
-                                "Corrections and questions are welcome by email."},
-        "notfound": {"text": "That page does not exist. The writing index is probably what you want.",
+                 "corrections": "Corrections and questions are welcome at"},
+        "notfound": {"text": "That page does not exist. The index is probably what you want.",
                      "home": "Back to the homepage"},
     },
     "zh": {
         "lang_attr": "zh-CN",
         "og_locale": "zh_CN",
-        "tagline": "开发日志与随笔",
+        "tagline": "化学软件笔记",
         "nav": {"home": "首页", "notes": "随笔", "tutorials": "教程", "projects": "项目", "about": "关于"},
         "footer": {"resources": "页面", "products": "项目", "pricing": "价格", "download": "下载"},
-        "footer_blurb": "一个独立开发者的写作：药物化学的桌面软件、分子对接、构效分析，以及把工具真正做出来"
-                        "那些不体面的部分。",
+        "footer_blurb": "关于药物化学桌面软件的笔记：分子建模、分子对接、构效分析，以及背后的工程问题。",
         "home": {
-            "eyebrow": "AIDDHub · 独立开发",
-            "h1_a": "我在给",
-            "h1_b": "药化人做工具",
-            "lede": "这里写这件事的另一半：在做什么、这周哪里坏了、计算化学里哪些地方比看起来难。"
-                    "两个桌面软件，一个人，没有上面派下来的路线图。",
-            "cta_primary": "看看最近写的",
-            "cta_secondary": "关于我",
-            "card_title": "近况",
-            "card_items": [
-                ["MolStudio。", "建模与对接工作站，v1.0 已发布。"],
-                ["MolInsight。", "构效分析：MMP、R 基团、QSAR，v1.0 已发布。"],
-                ["写作。", "有话想说的时候才写。"],
-            ],
-            "featured_title": "从这里开始",
-            "featured_sub": "三篇能说明这个站在干什么的文章。",
-            "see_all": "全部随笔",
-            "latest_title": "最近",
-            "latest_sub": "全部内容，新的在前。",
-            "projects_title": "我在做的东西",
-            "projects_sub": "桌面软件，买一次，离线运行。",
-            "product_molstudio": "3D 构建、蛋白准备与对接环境：导入 PDB、跑 Vina、看相互作用、导出图。",
-            "product_molinsight": "分析端：47 种图表、MMP、R 基团矩阵、聚类，以及带适用域的 QSAR。",
-            "product_page": "了解更多",
-            "product_download": "下载",
-            "projects_cta": "全部项目",
-            "about_title": "谁在写",
-            "about_sub": "软件、文档和这些文章都是我自己写。哪里写错了，告诉我比什么都管用。",
-            "about_cta": "关于我",
+            "h1": "化学软件笔记",
+            "lede": "AIDDHub 做分子建模与构效分析的桌面工具。这里记录工作本身：操作教程、开发笔记，"
+                    "偶尔也写点看法。",
         },
         "list": {"empty": "这里还没有内容。"},
         "post": {"min_read": "分钟阅读", "updated": "更新于", "toc": "本页目录",
                  "previous": "上一篇", "next": "下一篇",
-                 "cta_title": "用自己的数据试一次",
-                 "cta_text": "本文用到的功能都包含在免费版里，没有试用期限制。",
-                 "cta_button": "下载",
-                 "author_title": "作者 AIDDHub",
-                 "author_text": "我做 MolStudio 和 MolInsight，也写做它们时学到的东西。"
-                                "有错漏或问题，欢迎直接邮件。"},
-        "notfound": {"text": "这个页面不存在。你可能想找的是随笔列表。", "home": "返回首页"},
+                 "corrections": "勘误与问题请联系"},
+        "notfound": {"text": "这个页面不存在。你可能想找的是文章列表。", "home": "返回首页"},
     },
 }
 
@@ -621,37 +554,27 @@ class Builder:
             (p[lang] for p in self.posts.values() if lang in p),
             key=lambda item: item["date"], reverse=True,
         )
-        tutorials = [p for p in posts if p["section"] == "tutorials"]
-        picked = [p for p in posts if p["featured"]]
-        featured = list(picked)
-        for post in posts:
-            if len(featured) >= 3:
-                break
-            if post not in featured:
-                featured.append(post)
         other_paths = {"en": "/"}
         if any("zh" in p for p in self.posts.values()):
             other_paths["zh"] = "/zh/"
         context = self.base_context(lang, "home")
         context.update(
-            title=f"{SITE['name']} — build logs and notes on chemistry software"
-                  if lang == "en" else f"{SITE['name']} — 计算化学工具的开发日志与随笔",
-            description=("An independent developer writing about desktop software for medicinal chemistry: "
-                         "docking, SAR analysis, the tools behind them, and what shipping them actually takes.")
+            title=f"{SITE['name']} — notes on chemistry software"
+                  if lang == "en" else f"{SITE['name']} — 化学软件笔记",
+            description=("Notes on desktop software for medicinal chemistry: molecular modelling, docking, "
+                         "SAR analysis, and the engineering behind the tools.")
                         if lang == "en" else
-                        ("一个独立开发者写药物化学桌面软件：分子对接、构效分析、背后的工具，"
-                         "以及把东西真正做出来要付出的代价。"),
+                        ("关于药物化学桌面软件的笔记：分子建模、分子对接、构效分析，以及工具背后的工程问题。"),
             canonical=absolute(home),
             alternates=self.alternates_for(other_paths),
             lang_switch=self.lang_switch(other_paths, lang),
             jsonld=jsonld_for_home(lang),
-            featured=featured,
             recent=posts,
             section_href=lambda key: self.section_href(key, lang),
         )
         context["og_image"] = self.make_og(
             f"assets/og/home-{lang}.png",
-            title=f"{TEXT[lang]['home']['h1_a']}{TEXT[lang]['home']['h1_b']}",
+            title=TEXT[lang]["home"]["h1"],
             label=TEXT[lang]["tagline"],
             footer="aiddhub.github.io",
             lang=lang,
@@ -699,22 +622,7 @@ class Builder:
             if code in self.posts[slug]:
                 paths[code] = self.posts[slug][code]["path"]
 
-        product = PRODUCTS.get(edition["product"]) if edition["product"] else None
         context = self.base_context(lang, section)
-        if product:
-            cta = {
-                "title": TEXT[lang]["post"]["cta_title"],
-                "text": TEXT[lang]["post"]["cta_text"],
-                "button": f"{TEXT[lang]['post']['cta_button']} {product['label']}",
-                "href": product["href"] + "#download",
-            }
-        else:
-            cta = {
-                "title": TEXT[lang]["post"]["author_title"],
-                "text": TEXT[lang]["post"]["author_text"],
-                "button": f"{TEXT[lang]['home']['about_cta']} →",
-                "href": url_path("about", lang=lang),
-            }
         context.update(
             title=f"{edition['title']} — {SITE['name']}",
             description=edition["description"],
@@ -730,7 +638,6 @@ class Builder:
             toc=edition["toc"],
             prev_post=prev_post,
             next_post=next_post,
-            cta=cta,
             body_class="article-page",
         )
         label = edition["label"]

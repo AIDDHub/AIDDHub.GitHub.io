@@ -1,56 +1,41 @@
 ---
 title: "About"
-description: "The developer behind AIDDHub: two desktop programs for medicinal chemistry, this blog, and the reasons for both."
+description: "AIDDHub is an independent software studio building desktop tools for molecular modelling and SAR analysis."
 ---
 
-I am the developer behind AIDDHub. One person, two desktop programs, and this blog.
+AIDDHub is an independent software studio. We build desktop software for medicinal chemistry and structural
+biology, and publish the notes that come out of that work.
 
-## What I do
+## What we build
 
-I build **MolStudio**, a modelling and docking workstation, and **MolInsight**, an SAR analysis workbench.
-Both are native Windows and Linux applications that run offline, are sold once, and are meant to be useful
-without an account.
+**MolStudio** is a molecular modelling and docking workstation: 3D building, receptor preparation, docking
+with AutoDock Vina, 2D interaction diagrams, plots and saved sessions.
 
-I write the code, the documentation, the installer, the support replies and the posts here. That is not a
-humblebrag; it is the reason the scope stays small and the reason some obvious features are still missing.
+**MolInsight** is an SAR analysis workbench: 47 chart types, matched molecular pairs with pair counts and
+significance, R-group matrices, scaffold and side-chain analysis, clustering and self-organising maps, and
+QSAR with an applicability domain.
 
-## Why this blog exists
+Both are native Windows and Linux applications. They run offline, keep data in ordinary files, and are sold as
+one-time licences with a free tier that has no time limit.
 
-Product pages are bad at nuance. They cannot explain why a docking score under −8 is not proof of anything,
-or why a matched-pair p-value with three pairs is decoration, because saying so is not a sales argument.
+## How these notes are written
 
-So the writing lives here instead: walkthroughs that show the whole workflow including the parts that fail,
-build logs about decisions I got wrong the first time, and occasional essays about software for chemistry.
-The tutorials are the practical half; the notes are the part I would write anyway.
+Every article is tested against the current release before it is published. When a feature changes, the
+article changes with it. When an earlier statement turns out to be wrong, the correction stays visible instead
+of being quietly deleted.
 
-Everything published here is checked against the current release. When a feature changes, the article changes
-with it. When I was wrong, I say so and leave the correction visible.
+The tutorials are practical: a real task, the actual steps, and a figure or table at the end. The writing is
+more open-ended — design decisions, comparisons, and the parts of the work that do not fit on a product page.
 
-## How I work
+## What we do not do
 
-- **Local first.** Structures, assay tables and models stay on your machine. Nothing is uploaded to be
-  analysed, because there is no server to upload it to.
-- **One-time licences.** No subscription. A free tier that can finish real work, with no time limit and no
-  watermark on the output.
-- **Windows and Linux.** Native installers. No Java runtime, no conda environment, no administrator rights for
-  a per-user install.
-- **English and Chinese.** The interface, the documentation and this site exist in both.
+No subscription, no seat management, no admin console, no SSO, no cloud upload. A laboratory that needs ten
+seats buys ten licences. Anything else would be a second product to support, and a worse one.
 
-## What this is not
+## Contact
 
-It is not a company with a sales team, a partnership programme or an enterprise edition. There is no admin
-console and no SSO, because each of those is a product in its own right and pretending otherwise with a
-checkbox wastes a buyer's afternoon.
+Bug reports, corrections, feature requests and licence questions go to
+[support@aiddhub.com](mailto:support@aiddhub.com). English or Chinese; we answer within a couple of days.
 
-If you need ten seats, you buy ten licences. That is the whole story.
-
-## Getting in touch
-
-Bug reports, corrections, feature requests and licence questions all go to
-[support@aiddhub.com](mailto:support@aiddhub.com). I read everything and answer in English or Chinese,
-usually within a couple of days.
-
-If something on this site is wrong, telling me is genuinely useful — a correction costs you two minutes and
-saves the next reader an afternoon.
-
-The products live at [www.aiddhub.com](https://www.aiddhub.com).
+If something on this site is wrong, telling us is useful — a correction costs two minutes and saves the next
+reader an afternoon.

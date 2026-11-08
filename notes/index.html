@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Writing — AIDDHub Notes</title>
-  <meta name="description" content="Essays, build logs and notes on computational chemistry tooling. No schedule and no growth hacks — just what I am working on, what broke, and what I would do differently." />
+  <meta name="description" content="Essays, build notes and observations on computational chemistry software — decisions, trade-offs, and the parts that turned out to be harder than expected." />
   <link rel="canonical" href="https://aiddhub.github.io/notes/" />
   <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/notes/" />
   <link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/notes/" />
@@ -12,15 +12,15 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AIDDHub Notes" />
   <meta property="og:title" content="Writing — AIDDHub Notes" />
-  <meta property="og:description" content="Essays, build logs and notes on computational chemistry tooling. No schedule and no growth hacks — just what I am working on, what broke, and what I would do differently." />
+  <meta property="og:description" content="Essays, build notes and observations on computational chemistry software — decisions, trade-offs, and the parts that turned out to be harder than expected." />
   <meta property="og:url" content="https://aiddhub.github.io/notes/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Writing — AIDDHub Notes" />
-  <meta name="twitter:description" content="Essays, build logs and notes on computational chemistry tooling. No schedule and no growth hacks — just what I am working on, what broke, and what I would do differently." />
+  <meta name="twitter:description" content="Essays, build notes and observations on computational chemistry software — decisions, trade-offs, and the parts that turned out to be harder than expected." />
   <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
   <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
-  <link rel="stylesheet" href="/assets/css/site.css?v=b2d73312" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=2cbdb425" />
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -29,7 +29,7 @@
       "@id": "https://aiddhub.github.io/notes/",
       "url": "https://aiddhub.github.io/notes/",
       "name": "Writing",
-      "description": "Essays, build logs and notes on computational chemistry tooling. No schedule and no growth hacks — just what I am working on, what broke, and what I would do differently.",
+      "description": "Essays, build notes and observations on computational chemistry software — decisions, trade-offs, and the parts that turned out to be harder than expected.",
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://aiddhub.github.io/#website"
@@ -41,13 +41,13 @@
             "@type": "ListItem",
             "position": 1,
             "url": "https://aiddhub.github.io/notes/why-desktop-tools/",
-            "name": "Why I still ship desktop software in 2026"
+            "name": "Why desktop software still makes sense for chemistry"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "url": "https://aiddhub.github.io/notes/building-mmp/",
-            "name": "Implementing matched molecular pairs: the boring parts"
+            "name": "Building matched molecular pairs: the boring parts"
           },
           {
             "@type": "ListItem",
@@ -65,7 +65,7 @@
             "@type": "ListItem",
             "position": 5,
             "url": "https://aiddhub.github.io/notes/tools-i-use/",
-            "name": "The tools I actually use"
+            "name": "A working tool list"
           }
         ]
       }
@@ -106,7 +106,7 @@
       </span>
       <span class="brand-text">
         <b>AIDDHub</b>
-        <span>Build logs and notes</span>
+        <span>Notes on chemistry software</span>
       </span>
     </a>
 
@@ -133,7 +133,7 @@
       <span aria-current="page">Writing</span>
     </nav>
     <h1>Writing</h1>
-    <p>Essays, build logs and notes on computational chemistry tooling. No schedule and no growth hacks — just what I am working on, what broke, and what I would do differently.</p>
+    <p>Essays, build notes and observations on computational chemistry software — decisions, trade-offs, and the parts that turned out to be harder than expected.</p>
   </div>
 </section>
 
@@ -144,8 +144,8 @@
         <div class="card-top">
           <span class="badge note">Note</span>
         </div>
-        <h3>Why I still ship desktop software in 2026</h3>
-        <p>Web apps are the default for scientific software. I keep writing desktop programs anyway — here is what that buys, what it costs, and why I stopped apologising for it.</p>
+        <h3>Why desktop software still makes sense for chemistry</h3>
+        <p>Web apps are the default for scientific software, and usually that is correct. This is about the cases where they are not: docking runs, large structure tables, and locked-down networks.</p>
         <div class="card-foot">
           <time datetime="2026-11-02">November 2, 2026</time>
           <span>·</span>
@@ -157,8 +157,8 @@
           <span class="badge note">Note</span>
           <span class="badge product">MolInsight</span>
         </div>
-        <h3>Implementing matched molecular pairs: the boring parts</h3>
-        <p>The fragmentation algorithm took an afternoon. Canonicalising cut points, symmetric fragments, small-sample statistics and a table with 40,000 rows took the rest of the month.</p>
+        <h3>Building matched molecular pairs: the boring parts</h3>
+        <p>The fragmentation algorithm takes an afternoon. Canonicalising cut points, symmetric fragments, small-sample statistics and a table with 40,000 rows take the rest of the month.</p>
         <div class="card-foot">
           <time datetime="2026-10-26">October 26, 2026</time>
           <span>·</span>
@@ -183,7 +183,7 @@
           <span class="badge note">Note</span>
         </div>
         <h3>What a one-time licence forces you to get right</h3>
-        <p>Selling software once instead of monthly removes the growth loop and every excuse that comes with it. Notes on pricing, support, and the free tier.</p>
+        <p>Selling software once instead of monthly removes the growth loop and most of the excuses that come with it. Notes on pricing, support and the free tier.</p>
         <div class="card-foot">
           <time datetime="2026-10-12">October 12, 2026</time>
           <span>·</span>
@@ -194,8 +194,8 @@
         <div class="card-top">
           <span class="badge note">Note</span>
         </div>
-        <h3>The tools I actually use</h3>
-        <p>A working list, with the things I stopped using and why: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare, and one very old spreadsheet.</p>
+        <h3>A working tool list</h3>
+        <p>What is actually installed and used day to day: RDKit, ChEMBL, Qt, Obsidian, DataWarrior, PyMOL, Cloudflare — plus the tools that were dropped and why.</p>
         <div class="card-foot">
           <time datetime="2026-09-30">September 30, 2026</time>
           <span>·</span>
@@ -218,9 +218,9 @@
               <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
             </svg>
           </span>
-          <span class="brand-text"><b>AIDDHub</b><span>Build logs and notes</span></span>
+          <span class="brand-text"><b>AIDDHub</b><span>Notes on chemistry software</span></span>
         </a>
-        <p>An independent developer writing about desktop software for medicinal chemistry — docking, SAR analysis, and the unglamorous parts of shipping tools people actually use.</p>
+        <p>Notes on desktop software for medicinal chemistry: molecular modelling, docking, SAR analysis, and the engineering behind them.</p>
       </div>
       <div>
         <h4>Pages</h4>
@@ -248,6 +248,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/site.js?v=b2d73312" defer></script>
+<script src="/assets/js/site.js?v=2cbdb425" defer></script>
 </body>
 </html>
