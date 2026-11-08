@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — AIDDHub Notes</title>
-  <meta name="description" content="Computational chemistry: molecular modelling, docking and structure–activity analysis — and the notes that come out of it." />
+  <meta name="description" content="Computational chemistry: molecular modelling, docking and structure–activity analysis — and the software that supports it." />
   <link rel="canonical" href="https://aiddhub.github.io/about/" />
   <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/about/" />
   <link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/about/" />
@@ -12,15 +12,15 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AIDDHub Notes" />
   <meta property="og:title" content="About — AIDDHub Notes" />
-  <meta property="og:description" content="Computational chemistry: molecular modelling, docking and structure–activity analysis — and the notes that come out of it." />
+  <meta property="og:description" content="Computational chemistry: molecular modelling, docking and structure–activity analysis — and the software that supports it." />
   <meta property="og:url" content="https://aiddhub.github.io/about/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="About — AIDDHub Notes" />
-  <meta name="twitter:description" content="Computational chemistry: molecular modelling, docking and structure–activity analysis — and the notes that come out of it." />
+  <meta name="twitter:description" content="Computational chemistry: molecular modelling, docking and structure–activity analysis — and the software that supports it." />
   <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
   <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
-  <link rel="stylesheet" href="/assets/css/site.css?v=69af0696" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=8cbf240d" />
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -29,7 +29,7 @@
       "@id": "https://aiddhub.github.io/about/",
       "url": "https://aiddhub.github.io/about/",
       "name": "About",
-      "description": "Computational chemistry: molecular modelling, docking and structure–activity analysis — and the notes that come out of it.",
+      "description": "Computational chemistry: molecular modelling, docking and structure–activity analysis — and the software that supports it.",
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://aiddhub.github.io/#website"
@@ -97,41 +97,46 @@
       <span class="sep">/</span>
       <span aria-current="page">About</span>
     </nav>
-    <h1>About</h1>
-    <p>Computational chemistry: molecular modelling, docking and structure–activity analysis — and the notes that come out of it.</p>
+    <div class="profile-top profile-top-sm">
+      <img class="avatar" src="/assets/img/avatar.svg" alt="" width="80" height="80" />
+      <div class="profile-id">
+        <h1>AIDDHub</h1>
+        <p class="profile-tagline">Computational chemistry · drug design · cheminformatics · data analysis</p>
+        <p class="profile-links">
+          <a href="https://github.com/AIDDHub">GitHub</a>
+          <a href="mailto:support@aiddhub.com">Email</a>
+          <a href="/feed.xml">RSS</a>
+          <a href="https://www.aiddhub.com">aiddhub.com</a>
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="container">
   <div class="prose">
-<p>I work on computational chemistry: molecular modelling, docking, and structure–activity analysis. Most of what
-is published here comes out of that work — methods I use, tools I compare, and notes on the parts that took
-longer than expected.</p>
-<h2 id="what-is-here">What is here</h2>
-<ul>
-<li><strong>Tutorials</strong> — complete walkthroughs, from a real task to a figure or table that belongs in a report.</li>
-<li><strong>Writing</strong> — essays, build notes and opinions on software and method.</li>
-<li><strong>Projects</strong> — the tools I build and maintain.</li>
-</ul>
-<h2 id="background">Background</h2>
-<p>My work sits between medicinal chemistry and software: docking and interaction analysis on one side, data
-handling, plotting and statistics on the other. A lot of the notes here exist because the same question came
-up more than once, and writing it down was cheaper than answering it again.</p>
-<h2 id="how-the-writing-is-done">How the writing is done</h2>
-<p>Articles are tested against the current release of whatever they describe. When something changes, the article
-changes with it. When an earlier statement turns out to be wrong, the correction stays visible instead of
-being quietly deleted.</p>
+<p>I work on computational chemistry — molecular modelling, docking and structure–activity analysis — and on the
+software that makes that work less manual.</p>
+<h2 id="what-i-work-on">What I work on</h2>
+<p><strong>Modelling and docking.</strong> Preparing structures properly, running the search, and reading the interactions
+rather than only the score.</p>
+<p><strong>SAR analysis.</strong> Matched pairs, R-groups, clustering, and the statistics that keep the conclusions honest.</p>
+<p><strong>Tooling.</strong> The scripts, plots and desktop programs that hold a workflow together when it has to run again
+next month.</p>
+<h2 id="writing">Writing</h2>
+<p>Two kinds of posts. <strong>Tutorials</strong> walk through a complete task with the actual steps. <strong>Notes</strong> are essays,
+build notes and opinions — including the decisions that turned out wrong.</p>
+<p>Everything is checked against the current release before it is published. When something changes, the article
+changes with it; corrections stay visible rather than being quietly removed.</p>
 <h2 id="contact">Contact</h2>
-<p>Corrections, questions and suggestions: <a href="mailto:support@aiddhub.com">support@aiddhub.com</a>. English or Chinese.</p>
-<p>If something on this site is wrong, telling me is useful — a correction costs two minutes and saves the next
-reader an afternoon.</p>
+<p><a href="mailto:support@aiddhub.com">support@aiddhub.com</a> — English or Chinese.</p>
   </div>
 </section>
 </main>
 
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-grid">
+    <div class="footer-top">
       <div class="footer-about">
         <a class="brand" href="/">
           <span class="brand-mark" aria-hidden="true">
@@ -144,32 +149,21 @@ reader an afternoon.</p>
         </a>
         <p>Notes on desktop software for medicinal chemistry: molecular modelling, docking, SAR analysis, and the engineering behind them.</p>
       </div>
-      <div>
-        <h4>Pages</h4>
-        <ul>
-          <li><a href="/notes/">Writing</a></li>
-          <li><a href="/tutorials/">Tutorials</a></li>
-          <li><a href="/projects/">Projects</a></li>
-          <li><a href="https://aiddhub.github.io/feed.xml">RSS</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Projects</h4>
-        <ul>
-          <li><a href="https://www.aiddhub.com/molstudio">MolStudio</a></li>
-          <li><a href="https://www.aiddhub.com/molinsight">MolInsight</a></li>
-          <li><a href="https://www.aiddhub.com/molstudio#pricing">Pricing</a></li>
-          <li><a href="https://www.aiddhub.com/molstudio#download">Download</a></li>
-        </ul>
-      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="/notes/">Writing</a>
+        <a href="/tutorials/">Tutorials</a>
+        <a href="/projects/">Projects</a>
+        <a href="/about/">About</a>
+        <a href="https://aiddhub.github.io/feed.xml">RSS</a>
+      </nav>
     </div>
     <div class="footer-bottom">
-      <span>&copy; <span id="year">2026</span> AIDDHub. All rights reserved.</span>
+      <span>&copy; <span id="year">2026</span> AIDDHub</span>
       <span><a href="mailto:support@aiddhub.com">support@aiddhub.com</a> &middot; <a href="https://www.aiddhub.com/">aiddhub.com</a></span>
     </div>
   </div>
 </footer>
 
-<script src="/assets/js/site.js?v=69af0696" defer></script>
+<script src="/assets/js/site.js?v=8cbf240d" defer></script>
 </body>
 </html>

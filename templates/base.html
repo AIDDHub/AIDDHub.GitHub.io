@@ -71,7 +71,7 @@
 
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-grid">
+    <div class="footer-top">
       <div class="footer-about">
         <a class="brand" href="{{ home_href }}">
           <span class="brand-mark" aria-hidden="true">
@@ -84,27 +84,16 @@
         </a>
         <p>{{ footer_blurb }}</p>
       </div>
-      <div>
-        <h4>{{ footer.resources }}</h4>
-        <ul>
-          <li><a href="{{ section_href('notes') }}">{{ nav_text.notes }}</a></li>
-          <li><a href="{{ section_href('tutorials') }}">{{ nav_text.tutorials }}</a></li>
-          <li><a href="{{ projects_href }}">{{ nav_text.projects }}</a></li>
-          <li><a href="{{ site.url }}/feed.xml">RSS</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>{{ footer.products }}</h4>
-        <ul>
-          <li><a href="{{ site.main }}/molstudio">MolStudio</a></li>
-          <li><a href="{{ site.main }}/molinsight">MolInsight</a></li>
-          <li><a href="{{ site.main }}/molstudio#pricing">{{ footer.pricing }}</a></li>
-          <li><a href="{{ site.main }}/molstudio#download">{{ footer.download }}</a></li>
-        </ul>
-      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="{{ section_href('notes') }}">{{ nav_text.notes }}</a>
+        <a href="{{ section_href('tutorials') }}">{{ nav_text.tutorials }}</a>
+        <a href="{{ projects_href }}">{{ nav_text.projects }}</a>
+        <a href="{{ about_href }}">{{ nav_text.about }}</a>
+        <a href="{{ site.url }}/feed.xml">RSS</a>
+      </nav>
     </div>
     <div class="footer-bottom">
-      <span>&copy; <span id="year">2026</span> {{ site.brand }}. All rights reserved.</span>
+      <span>&copy; <span id="year">2026</span> {{ site.brand }}</span>
       <span><a href="mailto:{{ site.email }}">{{ site.email }}</a> &middot; <a href="{{ site.main }}/">{{ site.main_label }}</a></span>
     </div>
   </div>

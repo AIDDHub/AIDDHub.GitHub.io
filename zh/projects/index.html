@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>项目 — AIDDHub Notes</title>
-  <meta name="description" content="两个给药物化学用的桌面软件、你正在读的这个博客，以及一份诚实的「还没做」清单。" />
+  <meta name="description" content="用于分子建模与构效分析的桌面软件。" />
   <link rel="canonical" href="https://aiddhub.github.io/zh/projects/" />
   <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/projects/" />
   <link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/projects/" />
@@ -12,15 +12,15 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AIDDHub Notes" />
   <meta property="og:title" content="项目 — AIDDHub Notes" />
-  <meta property="og:description" content="两个给药物化学用的桌面软件、你正在读的这个博客，以及一份诚实的「还没做」清单。" />
+  <meta property="og:description" content="用于分子建模与构效分析的桌面软件。" />
   <meta property="og:url" content="https://aiddhub.github.io/zh/projects/" />
   <meta property="og:locale" content="zh_CN" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="项目 — AIDDHub Notes" />
-  <meta name="twitter:description" content="两个给药物化学用的桌面软件、你正在读的这个博客，以及一份诚实的「还没做」清单。" />
+  <meta name="twitter:description" content="用于分子建模与构效分析的桌面软件。" />
   <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
   <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
-  <link rel="stylesheet" href="/assets/css/site.css?v=69af0696" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=8cbf240d" />
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -29,7 +29,7 @@
       "@id": "https://aiddhub.github.io/zh/projects/",
       "url": "https://aiddhub.github.io/zh/projects/",
       "name": "项目",
-      "description": "两个给药物化学用的桌面软件、你正在读的这个博客，以及一份诚实的「还没做」清单。",
+      "description": "用于分子建模与构效分析的桌面软件。",
       "inLanguage": "zh-CN",
       "isPartOf": {
         "@id": "https://aiddhub.github.io/#website"
@@ -98,22 +98,21 @@
       <span aria-current="page">项目</span>
     </nav>
     <h1>项目</h1>
-    <p>两个给药物化学用的桌面软件、你正在读的这个博客，以及一份诚实的「还没做」清单。</p>
+    <p>用于分子建模与构效分析的桌面软件。</p>
   </div>
 </section>
 
 <section class="container">
   <div class="prose">
-<p>这里的东西都是一个人做的，跑在 Windows 和 Linux 上，离线运行。</p>
+<p>两个给化学用的桌面软件，跑在 Windows 和 Linux 上，本地运行。</p>
 <h2 id="molstudio">MolStudio</h2>
 <p>分子建模与对接工作站。</p>
 <ul>
 <li>3D 构建、受体准备、AutoDock Vina 对接</li>
 <li>2D 相互作用图，标注距离、π–π 堆积与盐桥</li>
 <li>绘图、可重新打开的会话，SDF / CSV / PNG / SVG 导出</li>
-<li>Windows 与 Linux，原生安装包</li>
 </ul>
-<p><strong>状态：</strong> v1.0 已发布。免费版没有期限；一次性授权解锁完整流程。</p>
+<p><strong>状态：</strong> v1.0。免费版没有期限；一次性授权解锁完整流程。</p>
 <p><a href="https://www.aiddhub.com/molstudio">产品页</a> · <a href="https://www.aiddhub.com/molstudio#download">下载</a></p>
 <h2 id="molinsight">MolInsight</h2>
 <p>构效分析工作台，用来回答「为什么这个取代基更好」。</p>
@@ -124,28 +123,15 @@
 <li>聚类、相似性网络与自组织映射</li>
 <li>QSAR：ridge / PLS / 核岭回归 / KNN / GBM，带适用域</li>
 </ul>
-<p><strong>状态：</strong> v1.0 已发布。免费版每次会话 100 个化合物；一次性授权取消限制。</p>
+<p><strong>状态：</strong> v1.0。免费版每次会话 100 个化合物；一次性授权取消限制。</p>
 <p><a href="https://www.aiddhub.com/molinsight">产品页</a> · <a href="https://www.aiddhub.com/molinsight#download">下载</a></p>
-<h2 id="_1">这个站</h2>
-<p>Markdown 经一个小 Python 脚本生成静态 HTML。没有框架、没有数据库、没有统计脚本。
-构建在 CI 里检查，发布出来的页面不会和源码对不上。</p>
-<p>源码公开：<a href="https://github.com/AIDDHub/AIDDHub.github.io">github.com/AIDDHub/AIDDHub.github.io</a>。</p>
-<h2 id="_2">还没做的</h2>
-<p>把话说在前面，比暗示有要便宜得多。</p>
-<ul>
-<li><strong>macOS。</strong> 近期不做。它不是重新编译一次，而是第二个要维护的平台。</li>
-<li><strong>团队版。</strong> 没有管理后台、没有 SSO、没有浮动授权。</li>
-<li><strong>云同步。</strong> 故意不做。文件在磁盘上，备份策略由你决定。</li>
-<li><strong>插件 API。</strong> 想要，但它会把我还想改的接口提前冻住。</li>
-</ul>
-<p>如果上面某一条对你是硬性要求，诚实的回答是：现在还不适合你。这话现在说，比在你付完钱之后说好。</p>
   </div>
 </section>
 </main>
 
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-grid">
+    <div class="footer-top">
       <div class="footer-about">
         <a class="brand" href="/zh/">
           <span class="brand-mark" aria-hidden="true">
@@ -158,32 +144,21 @@
         </a>
         <p>关于药物化学桌面软件的笔记：分子建模、分子对接、构效分析，以及背后的工程问题。</p>
       </div>
-      <div>
-        <h4>页面</h4>
-        <ul>
-          <li><a href="/zh/notes/">随笔</a></li>
-          <li><a href="/zh/tutorials/">教程</a></li>
-          <li><a href="/zh/projects/">项目</a></li>
-          <li><a href="https://aiddhub.github.io/feed.xml">RSS</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>项目</h4>
-        <ul>
-          <li><a href="https://www.aiddhub.com/molstudio">MolStudio</a></li>
-          <li><a href="https://www.aiddhub.com/molinsight">MolInsight</a></li>
-          <li><a href="https://www.aiddhub.com/molstudio#pricing">价格</a></li>
-          <li><a href="https://www.aiddhub.com/molstudio#download">下载</a></li>
-        </ul>
-      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="/zh/notes/">随笔</a>
+        <a href="/zh/tutorials/">教程</a>
+        <a href="/zh/projects/">项目</a>
+        <a href="/zh/about/">关于</a>
+        <a href="https://aiddhub.github.io/feed.xml">RSS</a>
+      </nav>
     </div>
     <div class="footer-bottom">
-      <span>&copy; <span id="year">2026</span> AIDDHub. All rights reserved.</span>
+      <span>&copy; <span id="year">2026</span> AIDDHub</span>
       <span><a href="mailto:support@aiddhub.com">support@aiddhub.com</a> &middot; <a href="https://www.aiddhub.com/">aiddhub.com</a></span>
     </div>
   </div>
 </footer>
 
-<script src="/assets/js/site.js?v=69af0696" defer></script>
+<script src="/assets/js/site.js?v=8cbf240d" defer></script>
 </body>
 </html>

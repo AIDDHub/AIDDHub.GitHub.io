@@ -695,6 +695,7 @@ class Builder:
             lang_switch=self.lang_switch(paths, lang),
             jsonld=jsonld_for_page(name, lang, data["title"], data["description"]),
             page=data,
+            profile=profile_for(lang) if name == "about" else None,
             section_href=lambda key: self.section_href(key, lang),
         )
         rel = f"{'zh/' if lang == 'zh' else ''}{name}/index.html"

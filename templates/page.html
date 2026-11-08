@@ -7,9 +7,28 @@
       <span class="sep">/</span>
       <span aria-current="page">{{ page.title }}</span>
     </nav>
+{% if profile %}
+    <div class="profile-top profile-top-sm">
+{% if profile.avatar %}
+      <img class="avatar" src="{{ profile.avatar }}" alt="" width="80" height="80" />
+{% endif %}
+      <div class="profile-id">
+        <h1>{{ profile.name }}</h1>
+        <p class="profile-tagline">{{ profile.tagline }}</p>
+{% if profile.links %}
+        <p class="profile-links">
+{% for link in profile.links %}
+          <a href="{{ link.href }}">{{ link.label }}</a>
+{% endfor %}
+        </p>
+{% endif %}
+      </div>
+    </div>
+{% else %}
     <h1>{{ page.title }}</h1>
 {% if page.description %}
     <p>{{ page.description }}</p>
+{% endif %}
 {% endif %}
   </div>
 </section>
