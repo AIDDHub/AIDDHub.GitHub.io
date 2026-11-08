@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AIDDHub Notes — MolStudio / MolInsight 实操教程</title>
+  <meta name="description" content="MolStudio 与 MolInsight 的分步教程与案例：AutoDock Vina 对接、MMP、R 基团、骨架分析、聚类与 QSAR。" />
+  <link rel="canonical" href="https://aiddhub.github.io/zh/" />
+  <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/" />
+  <link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AIDDHub Notes" />
+  <meta property="og:title" content="AIDDHub Notes — MolStudio / MolInsight 实操教程" />
+  <meta property="og:description" content="MolStudio 与 MolInsight 的分步教程与案例：AutoDock Vina 对接、MMP、R 基团、骨架分析、聚类与 QSAR。" />
+  <meta property="og:url" content="https://aiddhub.github.io/zh/" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://aiddhub.github.io/assets/og/home-zh.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AIDDHub Notes — MolStudio / MolInsight 实操教程" />
+  <meta name="twitter:description" content="MolStudio 与 MolInsight 的分步教程与案例：AutoDock Vina 对接、MMP、R 基团、骨架分析、聚类与 QSAR。" />
+  <meta name="twitter:image" content="https://aiddhub.github.io/assets/og/home-zh.png" />
+  <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=ce19807a" />
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://aiddhub.github.io/#website",
+      "url": "https://aiddhub.github.io/zh/",
+      "name": "AIDDHub Notes",
+      "inLanguage": "zh-CN",
+      "publisher": {
+        "@id": "https://www.aiddhub.com/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.aiddhub.com/#organization",
+      "name": "AIDDHub",
+      "url": "https://www.aiddhub.com",
+      "email": "support@aiddhub.com",
+      "description": "Desktop software for molecular modelling, docking and SAR analysis."
+    }
+  ]
+}</script>
+</head>
+<body class="">
+<div class="bg-aurora"></div>
+<div class="bg-grid"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/zh/" aria-label="AIDDHub Notes">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+          <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b>AIDDHub</b>
+        <span>教程与案例</span>
+      </span>
+    </a>
+
+    <div class="nav-right">
+      <nav class="nav" id="navLinks" aria-label="Main">
+        <a class="nav-link" href="/zh/" aria-current="page">首页</a>
+        <a class="nav-link" href="/zh/tutorials/">教程</a>
+        <a class="nav-link" href="/zh/cases/">案例</a>
+        <a class="nav-link" href="/zh/about/">关于</a>
+      </nav>
+      <a class="lang-switch" href="/" hreflang="en" lang="en">English</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <span class="eyebrow">开发者笔记</span>
+      <h1 class="hero-title">分子建模与 <span class="grad">构效分析实操</span></h1>
+      <p class="lede">MolStudio 与 MolInsight 的完整操作示例：对接、骨架与 R 基团、聚类与相似性、QSAR。所有步骤都在普通 Windows / Linux 机器上完成，不需要配置 Python 环境。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/zh/tutorials/">查看教程</a>
+        <a class="btn btn-ghost" href="https://www.aiddhub.com/molstudio">了解软件</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <h3>这里有什么</h3>
+      <ul>
+        <li><span class="tick">✓</span><span><b>从准备到成图。</b> 受体准备、盒子设置、Vina 对接、2D 相互作用图。</span></li>
+        <li><span class="tick">✓</span><span><b>经得起追问的 SAR。</b> 带 p 值的 MMP、R 基团矩阵、骨架与侧链分析。</span></li>
+        <li><span class="tick">✓</span><span><b>工具对比。</b> 与 DataWarrior、RDKit、Excel 分工的取舍。</span></li>
+      </ul>
+    </aside>
+  </div>
+  <div class="container">
+    <div class="stats">
+      <div><b>10 分钟</b><span>首个对接任务</span></div>
+      <div><b>47</b><span>种图表</span></div>
+      <div><b>35</b><span>个分子描述符</span></div>
+      <div><b>0</b><span>行代码</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>从这里开始</h2>
+        <p>读者问得最多的三篇。</p>
+      </div>
+      <a class="more" href="/zh/tutorials/">全部教程 →</a>
+    </div>
+    <div class="card-grid">
+      <a class="card" href="https://aiddhub.github.io/zh/tutorials/docking-in-10-minutes/">
+        <div class="card-top">
+          <span class="badge tutorial">教程</span>
+          <span class="badge product">MolStudio</span>
+        </div>
+        <h3>10 分钟在 Windows 上跑完一次分子对接（不用 Python）</h3>
+        <p>在 MolStudio 里完成受体准备、AutoDock Vina 对接与 2D 相互作用图导出。不需要 conda、不需要 MGLTools，也不敲命令行。</p>
+        <div class="card-foot">
+          <time datetime="2026-11-08">2026 年 11 月 8 日</time>
+          <span>·</span>
+          <span>3 分钟阅读</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>最新笔记</h2>
+        <p>新增的实操、更新记录与读者提问。</p>
+      </div>
+    </div>
+    <div class="post-list">
+      <a class="post-item" href="https://aiddhub.github.io/zh/tutorials/docking-in-10-minutes/">
+        <time datetime="2026-11-08">2026 年 11 月 8 日</time>
+        <div>
+          <h3>10 分钟在 Windows 上跑完一次分子对接（不用 Python）</h3>
+          <p>在 MolStudio 里完成受体准备、AutoDock Vina 对接与 2D 相互作用图导出。不需要 conda、不需要 MGLTools，也不敲命令行。</p>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="post-item" href="https://aiddhub.github.io/zh/cases/molinsight-vs-datawarrior/">
+        <time datetime="2026-10-20">2026 年 10 月 20 日</time>
+        <div>
+          <h3>MolInsight 与 DataWarrior：SAR 工作流里该怎么分工</h3>
+          <p>两个构效分析工具的真实对比：DataWarrior 在哪些地方仍然更好，MolInsight 在哪些环节省时间，以及你要接受的取舍。</p>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>这些笔记背后的软件</h2>
+        <p>两个桌面软件，一次性授权，免费版可长期使用。</p>
+      </div>
+    </div>
+    <div class="product-strip">
+      <div class="product-card">
+        <h3>MolStudio</h3>
+        <p>分子建模工作站：3D 构建、蛋白准备、AutoDock Vina 对接、2D 相互作用图、绘图与会话保存。</p>
+        <div class="links">
+          <a href="https://www.aiddhub.com/molstudio">产品页</a>
+          <a href="https://www.aiddhub.com/molstudio#download">下载</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <h3>MolInsight</h3>
+        <p>构效分析工作台：47 种图表、MMP、R 基团矩阵、聚类与 SOM、带适用域的 QSAR。</p>
+        <div class="links">
+          <a href="https://www.aiddhub.com/molinsight">产品页</a>
+          <a href="https://www.aiddhub.com/molinsight#download">下载</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="cta-box">
+      <div>
+        <h3>关于 AIDDHub</h3>
+        <p>独立软件工作室，专注药物化学与结构生物学的桌面工具。</p>
+      </div>
+      <a class="btn btn-ghost" href="/zh/about/">了解更多 →</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/zh/">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+              <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+            </svg>
+          </span>
+          <span class="brand-text"><b>AIDDHub</b><span>教程与案例</span></span>
+        </a>
+        <p>分子建模、分子对接与构效关系分析的实操笔记，作者是 MolStudio 与 MolInsight 的开发者。</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="/zh/tutorials/">教程</a></li>
+          <li><a href="/zh/cases/">案例</a></li>
+          <li><a href="/zh/about/">关于</a></li>
+          <li><a href="https://aiddhub.github.io/feed.xml">RSS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>软件</h4>
+        <ul>
+          <li><a href="https://www.aiddhub.com/molstudio">MolStudio</a></li>
+          <li><a href="https://www.aiddhub.com/molinsight">MolInsight</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#pricing">价格</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#download">下载</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> AIDDHub. All rights reserved.</span>
+      <span><a href="mailto:support@aiddhub.com">support@aiddhub.com</a> &middot; <a href="https://www.aiddhub.com/">aiddhub.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js?v=ce19807a" defer></script>
+</body>
+</html>

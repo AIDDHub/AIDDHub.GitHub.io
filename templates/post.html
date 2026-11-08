@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <div class="article-top">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="{{ home_href }}">{{ nav_text.home }}</a>
+    <span class="sep">/</span>
+    <a href="{{ section_href(post.section) }}">{{ section_title }}</a>
+    <span class="sep">/</span>
+    <span aria-current="page">{{ post.short_title }}</span>
+  </nav>
+  </div>
+
+  <div class="article-layout">
+    <article>
+      <header class="article-head">
+        <div class="article-meta">
+          <span class="badge {{ post.badge_class }}">{{ post.label }}</span>
+          <span class="badge product">{{ post.product_label }}</span>
+          <span class="dot">·</span>
+          <time datetime="{{ post.iso }}">{{ post.date_label }}</time>
+          <span class="dot">·</span>
+          <span>{{ post.minutes }} {{ strings.min_read }}</span>
+{% if post.updated_iso %}
+          <span class="dot">·</span>
+          <span>{{ strings.updated }} <time datetime="{{ post.updated_iso }}">{{ post.updated_label }}</time></span>
+{% endif %}
+        </div>
+        <h1>{{ post.title }}</h1>
+      </header>
+
+      <div class="article-body">
+{{ post.body|safe }}
+      </div>
+
+      <footer class="article-foot">
+        <div class="cta-box">
+          <div>
+            <h3>{{ cta.title }}</h3>
+            <p>{{ cta.text }}</p>
+          </div>
+          <a class="btn btn-primary" href="{{ cta.href }}">{{ cta.button }}</a>
+        </div>
+{% if toc %}
+        <div class="prevnext">
+{% if prev_post %}
+          <a class="prev" href="{{ prev_post.url }}"><span>← {{ strings.previous }}</span>{{ prev_post.title }}</a>
+{% else %}<span></span>{% endif %}
+{% if next_post %}
+          <a class="next" href="{{ next_post.url }}"><span>{{ strings.next }} →</span>{{ next_post.title }}</a>
+{% endif %}
+        </div>
+{% endif %}
+      </footer>
+    </article>
+
+{% if toc %}
+    <aside class="toc" aria-label="{{ strings.toc }}">
+      <h4>{{ strings.toc }}</h4>
+      {{ toc|safe }}
+    </aside>
+{% endif %}
+  </div>
+</div>
+{% endblock %}

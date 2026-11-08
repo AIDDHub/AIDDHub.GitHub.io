@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>AIDDHub Notes</title>
+  <link href="https://aiddhub.github.io/feed.xml" rel="self"/>
+  <link href="https://aiddhub.github.io/"/>
+  <id>https://aiddhub.github.io/</id>
+  <updated>2026-11-08T00:00:00Z</updated>
+  <author><name>AIDDHub</name><email>support@aiddhub.com</email></author>
+  <entry>
+    <title>Run a docking job on Windows in 10 minutes — without Python</title>
+    <link href="https://aiddhub.github.io/tutorials/docking-in-10-minutes/"/>
+    <id>https://aiddhub.github.io/tutorials/docking-in-10-minutes/</id>
+    <updated>2026-11-08T00:00:00Z</updated>
+    <published>2026-11-08T00:00:00Z</published>
+    <summary>Prepare a receptor, dock a ligand library with AutoDock Vina and export a 2D interaction diagram in MolStudio. No conda, no MGLTools, no command line.</summary>
+  </entry>
+  <entry>
+    <title>Matched molecular pairs and R-group tables: from spreadsheet to SAR</title>
+    <link href="https://aiddhub.github.io/tutorials/mmp-rgroup-sar/"/>
+    <id>https://aiddhub.github.io/tutorials/mmp-rgroup-sar/</id>
+    <updated>2026-11-05T00:00:00Z</updated>
+    <published>2026-11-05T00:00:00Z</published>
+    <summary>Turn a structure-activity spreadsheet into matched molecular pair statistics with p-values and an R-group matrix you can defend in a review.</summary>
+  </entry>
+  <entry>
+    <title>Six checks before you trust a docking pose</title>
+    <link href="https://aiddhub.github.io/tutorials/six-checks-docking-pose/"/>
+    <id>https://aiddhub.github.io/tutorials/six-checks-docking-pose/</id>
+    <updated>2026-10-28T00:00:00Z</updated>
+    <published>2026-10-28T00:00:00Z</published>
+    <summary>A docking score is a ranking hint, not a result. Six quick checks that separate a pose worth reporting from an artefact of preparation.</summary>
+  </entry>
+  <entry>
+    <title>MolInsight vs DataWarrior: which one belongs in your SAR workflow</title>
+    <link href="https://aiddhub.github.io/cases/molinsight-vs-datawarrior/"/>
+    <id>https://aiddhub.github.io/cases/molinsight-vs-datawarrior/</id>
+    <updated>2026-10-20T00:00:00Z</updated>
+    <published>2026-10-20T00:00:00Z</published>
+    <summary>An honest comparison of two SAR analysis tools: where DataWarrior is still the better choice, where MolInsight saves time, and the trade-offs you accept.</summary>
+  </entry>
+</feed>

@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <span class="eyebrow">{{ strings.eyebrow }}</span>
+      <h1 class="hero-title">{{ strings.h1_a }} <span class="grad">{{ strings.h1_b }}</span></h1>
+      <p class="lede">{{ strings.lede }}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="{{ section_href('tutorials') }}">{{ strings.cta_primary }}</a>
+        <a class="btn btn-ghost" href="{{ site.main }}/molstudio">{{ strings.cta_secondary }}</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <h3>{{ strings.card_title }}</h3>
+      <ul>
+{% for item in strings.card_items %}
+        <li><span class="tick">✓</span><span><b>{{ item[0] }}</b> {{ item[1] }}</span></li>
+{% endfor %}
+      </ul>
+    </aside>
+  </div>
+  <div class="container">
+    <div class="stats">
+{% for value, label in strings.stats %}
+      <div><b>{{ value }}</b><span>{{ label }}</span></div>
+{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>{{ strings.featured_title }}</h2>
+        <p>{{ strings.featured_sub }}</p>
+      </div>
+      <a class="more" href="{{ section_href('tutorials') }}">{{ strings.see_all }} →</a>
+    </div>
+    <div class="card-grid">
+{% for post in featured %}
+      <a class="card" href="{{ post.url }}">
+        <div class="card-top">
+          <span class="badge {{ post.badge_class }}">{{ post.label }}</span>
+          <span class="badge product">{{ post.product_label }}</span>
+        </div>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description }}</p>
+        <div class="card-foot">
+          <time datetime="{{ post.iso }}">{{ post.date_label }}</time>
+          <span>·</span>
+          <span>{{ post.minutes }} {{ strings.min_read }}</span>
+        </div>
+      </a>
+{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>{{ strings.latest_title }}</h2>
+        <p>{{ strings.latest_sub }}</p>
+      </div>
+    </div>
+    <div class="post-list">
+{% for post in recent %}
+      <a class="post-item" href="{{ post.url }}">
+        <time datetime="{{ post.iso }}">{{ post.date_label }}</time>
+        <div>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.description }}</p>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>{{ strings.products_title }}</h2>
+        <p>{{ strings.products_sub }}</p>
+      </div>
+    </div>
+    <div class="product-strip">
+      <div class="product-card">
+        <h3>MolStudio</h3>
+        <p>{{ strings.product_molstudio }}</p>
+        <div class="links">
+          <a href="{{ site.main }}/molstudio">{{ strings.product_page }}</a>
+          <a href="{{ site.main }}/molstudio#download">{{ strings.product_download }}</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <h3>MolInsight</h3>
+        <p>{{ strings.product_molinsight }}</p>
+        <div class="links">
+          <a href="{{ site.main }}/molinsight">{{ strings.product_page }}</a>
+          <a href="{{ site.main }}/molinsight#download">{{ strings.product_download }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="cta-box">
+      <div>
+        <h3>{{ strings.about_title }}</h3>
+        <p>{{ strings.about_sub }}</p>
+      </div>
+      <a class="btn btn-ghost" href="{{ about_href }}">{{ strings.about_cta }} →</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

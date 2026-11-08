@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MolInsight vs DataWarrior: which one belongs in your SAR workflow — AIDDHub Notes</title>
+  <meta name="description" content="An honest comparison of two SAR analysis tools: where DataWarrior is still the better choice, where MolInsight saves time, and the trade-offs you accept." />
+  <link rel="canonical" href="https://aiddhub.github.io/cases/molinsight-vs-datawarrior/" />
+  <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/cases/molinsight-vs-datawarrior/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/cases/molinsight-vs-datawarrior/" />
+  <link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/cases/molinsight-vs-datawarrior/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AIDDHub Notes" />
+  <meta property="og:title" content="MolInsight vs DataWarrior: which one belongs in your SAR workflow" />
+  <meta property="og:description" content="An honest comparison of two SAR analysis tools: where DataWarrior is still the better choice, where MolInsight saves time, and the trade-offs you accept." />
+  <meta property="og:url" content="https://aiddhub.github.io/cases/molinsight-vs-datawarrior/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://aiddhub.github.io/assets/og/molinsight-vs-datawarrior-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MolInsight vs DataWarrior: which one belongs in your SAR workflow" />
+  <meta name="twitter:description" content="An honest comparison of two SAR analysis tools: where DataWarrior is still the better choice, where MolInsight saves time, and the trade-offs you accept." />
+  <meta name="twitter:image" content="https://aiddhub.github.io/assets/og/molinsight-vs-datawarrior-en.png" />
+  <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=ce19807a" />
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aiddhub.github.io/cases/molinsight-vs-datawarrior/#article",
+      "headline": "MolInsight vs DataWarrior: which one belongs in your SAR workflow",
+      "description": "An honest comparison of two SAR analysis tools: where DataWarrior is still the better choice, where MolInsight saves time, and the trade-offs you accept.",
+      "datePublished": "2026-10-20",
+      "dateModified": "2026-10-20",
+      "inLanguage": "en",
+      "mainEntityOfPage": "https://aiddhub.github.io/cases/molinsight-vs-datawarrior/",
+      "articleSection": "Case studies",
+      "keywords": "datawarrior, comparison, sar, tooling",
+      "author": {
+        "@type": "Organization",
+        "name": "AIDDHub",
+        "url": "https://www.aiddhub.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.aiddhub.com/#organization",
+        "name": "AIDDHub",
+        "url": "https://www.aiddhub.com",
+        "email": "support@aiddhub.com",
+        "description": "Desktop software for molecular modelling, docking and SAR analysis."
+      },
+      "isPartOf": {
+        "@id": "https://aiddhub.github.io/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aiddhub.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Case studies",
+          "item": "https://aiddhub.github.io/cases/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "MolInsight vs DataWarrior: which one belongs in your SAR workflow",
+          "item": "https://aiddhub.github.io/cases/molinsight-vs-datawarrior/"
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body class="article-page">
+<div class="bg-aurora"></div>
+<div class="bg-grid"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/" aria-label="AIDDHub Notes">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+          <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b>AIDDHub</b>
+        <span>Tutorials &amp; case studies</span>
+      </span>
+    </a>
+
+    <div class="nav-right">
+      <nav class="nav" id="navLinks" aria-label="Main">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/tutorials/">Tutorials</a>
+        <a class="nav-link" href="/cases/" aria-current="page">Case studies</a>
+        <a class="nav-link" href="/about/">About</a>
+      </nav>
+      <a class="lang-switch" href="/zh/cases/molinsight-vs-datawarrior/" hreflang="zh-CN" lang="zh-CN">中文</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="container">
+  <div class="article-top">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <a href="/cases/">Case studies</a>
+    <span class="sep">/</span>
+    <span aria-current="page">MolInsight vs DataWarrior</span>
+  </nav>
+  </div>
+
+  <div class="article-layout">
+    <article>
+      <header class="article-head">
+        <div class="article-meta">
+          <span class="badge case">Case study</span>
+          <span class="badge product">MolInsight</span>
+          <span class="dot">·</span>
+          <time datetime="2026-10-20">October 20, 2026</time>
+          <span class="dot">·</span>
+          <span>4 min read</span>
+        </div>
+        <h1>MolInsight vs DataWarrior: which one belongs in your SAR workflow</h1>
+      </header>
+
+      <div class="article-body">
+<p>DataWarrior is the default recommendation for a reason: it is free, open source, reads almost every chemistry
+file format, and does clustering, scaffold analysis and R-group decomposition without asking for a licence.
+Most medicinal chemists have used it at least once.</p>
+<p>This comparison is not "our tool is better at everything". It is an attempt to write down where each one earns
+its place, so that the choice is a decision rather than a habit.</p>
+<h2 id="the-short-version">The short version</h2>
+<ul>
+<li><strong>Only need to open an SDF, filter it and plot a few distributions?</strong> DataWarrior. It is free and it is fast
+  to start.</li>
+<li><strong>Doing SAR analysis every week, and need MMP statistics with significance, R-group matrices, SOM maps and
+  QSAR with an applicability domain?</strong> MolInsight is built around that specific loop.</li>
+<li><strong>Cannot install Java, or the machine is locked down?</strong> MolInsight ships as a native installer.</li>
+</ul>
+<h2 id="side-by-side">Side by side</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>DataWarrior</th>
+<th>MolInsight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Price</td>
+<td>Free, open source</td>
+<td>$99 one-time, free tier available</td>
+</tr>
+<tr>
+<td>Platform</td>
+<td>Java application</td>
+<td>Native Windows / Linux installer</td>
+</tr>
+<tr>
+<td>Interface language</td>
+<td>English</td>
+<td>Chinese / English</td>
+</tr>
+<tr>
+<td>Structure import</td>
+<td>Excellent, wide format support</td>
+<td>SDF, CSV, SMILES</td>
+</tr>
+<tr>
+<td>Charts</td>
+<td>Solid set of standard plots</td>
+<td>47 types: small multiples, facets, 3D, QQ, ECDF</td>
+</tr>
+<tr>
+<td>MMP</td>
+<td>Transformation and difference</td>
+<td>Transformation, pairs, mean Δ, std. dev., min/max, significance p</td>
+</tr>
+<tr>
+<td>R-groups</td>
+<td>Decomposition</td>
+<td>Matrix, heat map, colour by mean Δ</td>
+</tr>
+<tr>
+<td>Clustering</td>
+<td>Yes</td>
+<td>Yes, including SOM</td>
+</tr>
+<tr>
+<td>QSAR</td>
+<td>Basic modelling</td>
+<td>Ridge / PLS / kernel ridge / KNN / GBM, classification, applicability domain</td>
+</tr>
+<tr>
+<td>Export</td>
+<td>Images, CSV</td>
+<td>CSV, SDF, PNG, PDF, plus session files</td>
+</tr>
+<tr>
+<td>Molecular docking</td>
+<td>No</td>
+<td>No — that is MolStudio</td>
+</tr>
+<tr>
+<td>macOS</td>
+<td>Yes</td>
+<td>Not yet</td>
+</tr>
+</tbody>
+</table>
+<h2 id="where-datawarrior-is-genuinely-better">Where DataWarrior is genuinely better</h2>
+<p><strong>It is free and open source.</strong> If the budget is zero, or the institution requires an auditable open-source
+toolchain, there is no argument to have. MolInsight is closed source.</p>
+<p><strong>It reads everything.</strong> SDF, SMILES, CSV, Excel, native formats from other vendors — DataWarrior is unusually
+forgiving. MolInsight supports the formats a SAR workflow actually needs, not the long tail.</p>
+<p><strong>It has a decade of tutorials.</strong> If you get stuck, someone has already written the answer. A smaller tool means
+a smaller community, and that is a real cost.</p>
+<h2 id="where-the-workflow-differs">Where the workflow differs</h2>
+<h3 id="mmp-statistics">MMP statistics</h3>
+<p>DataWarrior reports the size of a transformation's effect. That is enough to spot a trend. It is not enough to
+answer "is this real, or is it four compounds and an outlier", which is the question that comes up in a review.</p>
+<p>MolInsight puts <code>Pairs</code>, <code>Mean Δ</code>, <code>Std. dev.</code>, <code>Min / Max Δ</code> and a significance <code>p</code> on the same row. The
+practical consequence: you can sort by support before you sort by effect size, and you can see a sign flip
+across scaffolds instead of averaging it away.</p>
+<p>Whether that matters depends on how often you have to defend an SAR claim in writing. If the answer is "every
+week", it matters.</p>
+<h3 id="self-organising-maps">Self-organising maps</h3>
+<p>SOM is the one feature people either use constantly or ignore. It compresses high-dimensional descriptor space
+onto a 2D grid while preserving neighbourhood relations, so similar compounds end up near each other. Its value
+is answering one question fast: <em>is activity continuous across chemical space, or are there discrete clusters?</em></p>
+<p>That question is worth asking before building a QSAR model, because a discontinuous landscape makes a global
+model meaningless.</p>
+<h3 id="qsar-and-applicability">QSAR and applicability</h3>
+<p>Fitting a model is the easy part. The useful output is the uncertainty: an in-domain / out-of-domain call per
+compound, a distance distribution, and Williams leverage. A model with R² = 0.85 that fails on 30% of the test
+set is a different object from one that holds across the series, and only the domain analysis tells you which
+one you have.</p>
+<h2 id="where-molinsight-is-weaker">Where MolInsight is weaker</h2>
+<p><strong>Smaller community.</strong> No StackOverflow answers, fewer blog posts. That is the price of being new, and it is
+not going to change this year.</p>
+<p><strong>No macOS build.</strong> Windows and Linux only. A Mac user has to virtualise or use something else.</p>
+<p><strong>Closed source.</strong> For a commercial lab that is normal. For an academic group with open-source requirements, it
+is disqualifying.</p>
+<p><strong>No docking.</strong> Docking lives in MolStudio. The two are designed to be used together, not as one product.</p>
+<h2 id="a-practical-split">A practical split</h2>
+<p>A workflow that uses both, without duplication:</p>
+<ol>
+<li><strong>DataWarrior</strong> for format conversion, quick filtering and the first look at a series.</li>
+<li><strong>MolInsight</strong> once the question becomes "which substituent matters, and how sure are we" — MMP, R-group
+   matrix, clustering, QSAR with domain analysis.</li>
+<li><strong>MolStudio</strong> when the question becomes three-dimensional — docking, interactions, poses.</li>
+</ol>
+<p>None of these steps requires exporting through five intermediate files; SDF and CSV are enough to move between
+them.</p>
+<h2 id="the-honest-summary">The honest summary</h2>
+<p>If you only need to look at structures and draw a scatter plot, DataWarrior does it for free and you should use
+it. MolInsight exists for the part of the week where you have to produce a number, a significance and a figure
+in the same afternoon — and it is priced as a tool, not a platform, because that is all it is trying to be.</p>
+<p>The free tier covers 100 compounds per session, which is enough to run this comparison on your own data before
+deciding.</p>
+      </div>
+
+      <footer class="article-foot">
+        <div class="cta-box">
+          <div>
+            <h3>Try it on your own data</h3>
+            <p>The free tier covers everything in this walkthrough, with no time limit.</p>
+          </div>
+          <a class="btn btn-primary" href="https://www.aiddhub.com/molinsight#download">Download MolInsight</a>
+        </div>
+        <div class="prevnext">
+<span></span>        </div>
+      </footer>
+    </article>
+
+    <aside class="toc" aria-label="On this page">
+      <h4>On this page</h4>
+      <ul><li><a href="#the-short-version">The short version</a></li><li><a href="#side-by-side">Side by side</a></li><li><a href="#where-datawarrior-is-genuinely-better">Where DataWarrior is genuinely better</a></li><li><a href="#where-the-workflow-differs">Where the workflow differs</a><ul><li><a href="#mmp-statistics">MMP statistics</a></li><li><a href="#self-organising-maps">Self-organising maps</a></li><li><a href="#qsar-and-applicability">QSAR and applicability</a></li></ul></li><li><a href="#where-molinsight-is-weaker">Where MolInsight is weaker</a></li><li><a href="#a-practical-split">A practical split</a></li><li><a href="#the-honest-summary">The honest summary</a></li></ul>
+    </aside>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+              <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+            </svg>
+          </span>
+          <span class="brand-text"><b>AIDDHub</b><span>Tutorials &amp; case studies</span></span>
+        </a>
+        <p>Hands-on notes on molecular modelling, docking and SAR analysis, written by the people who build MolStudio and MolInsight.</p>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/cases/">Case studies</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://aiddhub.github.io/feed.xml">RSS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="https://www.aiddhub.com/molstudio">MolStudio</a></li>
+          <li><a href="https://www.aiddhub.com/molinsight">MolInsight</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#pricing">Pricing</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#download">Download</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> AIDDHub. All rights reserved.</span>
+      <span><a href="mailto:support@aiddhub.com">support@aiddhub.com</a> &middot; <a href="https://www.aiddhub.com/">aiddhub.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js?v=ce19807a" defer></script>
+</body>
+</html>

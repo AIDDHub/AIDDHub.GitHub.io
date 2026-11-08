@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="{{ lang_attr }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}" />
+  <link rel="canonical" href="{{ canonical }}" />
+{% for code, href in alternates %}
+  <link rel="alternate" hreflang="{{ code }}" href="{{ href }}" />
+{% endfor %}
+  <meta property="og:type" content="{{ og_type }}" />
+  <meta property="og:site_name" content="{{ site.name }}" />
+  <meta property="og:title" content="{{ og_title or title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:url" content="{{ canonical }}" />
+  <meta property="og:locale" content="{{ og_locale }}" />
+{% if og_image %}
+  <meta property="og:image" content="{{ og_image }}" />
+{% endif %}
+  <meta name="twitter:card" content="{{ 'summary_large_image' if og_image else 'summary' }}" />
+  <meta name="twitter:title" content="{{ og_title or title }}" />
+  <meta name="twitter:description" content="{{ description }}" />
+{% if og_image %}
+  <meta name="twitter:image" content="{{ og_image }}" />
+{% endif %}
+  <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/atom+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml" />
+  <link rel="stylesheet" href="/assets/css/site.css?v={{ asset_version }}" />
+{% if jsonld %}
+  <script type="application/ld+json">{{ jsonld|safe }}</script>
+{% endif %}
+</head>
+<body class="{{ body_class|default('') }}">
+<div class="bg-aurora"></div>
+<div class="bg-grid"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="{{ home_href }}" aria-label="{{ site.name }}">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+          <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b>{{ site.brand }}</b>
+        <span>{{ tagline }}</span>
+      </span>
+    </a>
+
+    <div class="nav-right">
+      <nav class="nav" id="navLinks" aria-label="Main">
+{% for item in nav %}
+        <a class="nav-link" href="{{ item.href }}"{% if item.key == nav_active %} aria-current="page"{% endif %}>{{ item.label }}</a>
+{% endfor %}
+      </nav>
+{% if lang_switch %}
+      <a class="lang-switch" href="{{ lang_switch.href }}" hreflang="{{ lang_switch.hreflang }}" lang="{{ lang_switch.hreflang }}">{{ lang_switch.label }}</a>
+{% endif %}
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="{{ home_href }}">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+              <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+            </svg>
+          </span>
+          <span class="brand-text"><b>{{ site.brand }}</b><span>{{ tagline }}</span></span>
+        </a>
+        <p>{{ footer_blurb }}</p>
+      </div>
+      <div>
+        <h4>{{ footer.resources }}</h4>
+        <ul>
+          <li><a href="{{ section_href('tutorials') }}">{{ nav_text.tutorials }}</a></li>
+          <li><a href="{{ section_href('cases') }}">{{ nav_text.cases }}</a></li>
+          <li><a href="{{ about_href }}">{{ nav_text.about }}</a></li>
+          <li><a href="{{ site.url }}/feed.xml">RSS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>{{ footer.products }}</h4>
+        <ul>
+          <li><a href="{{ site.main }}/molstudio">MolStudio</a></li>
+          <li><a href="{{ site.main }}/molinsight">MolInsight</a></li>
+          <li><a href="{{ site.main }}/molstudio#pricing">{{ footer.pricing }}</a></li>
+          <li><a href="{{ site.main }}/molstudio#download">{{ footer.download }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> {{ site.brand }}. All rights reserved.</span>
+      <span><a href="mailto:{{ site.email }}">{{ site.email }}</a> &middot; <a href="{{ site.main }}/">{{ site.main_label }}</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js?v={{ asset_version }}" defer></script>
+</body>
+</html>

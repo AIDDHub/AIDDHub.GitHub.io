@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AIDDHub Notes — molecular modelling tutorials for MolStudio and MolInsight</title>
+  <meta name="description" content="Step-by-step tutorials and case studies for MolStudio and MolInsight: docking with AutoDock Vina, matched molecular pairs, R-groups, scaffolds, clustering and QSAR." />
+  <link rel="canonical" href="https://aiddhub.github.io/" />
+  <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/" />
+  <link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AIDDHub Notes" />
+  <meta property="og:title" content="AIDDHub Notes — molecular modelling tutorials for MolStudio and MolInsight" />
+  <meta property="og:description" content="Step-by-step tutorials and case studies for MolStudio and MolInsight: docking with AutoDock Vina, matched molecular pairs, R-groups, scaffolds, clustering and QSAR." />
+  <meta property="og:url" content="https://aiddhub.github.io/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://aiddhub.github.io/assets/og/home-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AIDDHub Notes — molecular modelling tutorials for MolStudio and MolInsight" />
+  <meta name="twitter:description" content="Step-by-step tutorials and case studies for MolStudio and MolInsight: docking with AutoDock Vina, matched molecular pairs, R-groups, scaffolds, clustering and QSAR." />
+  <meta name="twitter:image" content="https://aiddhub.github.io/assets/og/home-en.png" />
+  <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=ce19807a" />
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://aiddhub.github.io/#website",
+      "url": "https://aiddhub.github.io/",
+      "name": "AIDDHub Notes",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://www.aiddhub.com/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.aiddhub.com/#organization",
+      "name": "AIDDHub",
+      "url": "https://www.aiddhub.com",
+      "email": "support@aiddhub.com",
+      "description": "Desktop software for molecular modelling, docking and SAR analysis."
+    }
+  ]
+}</script>
+</head>
+<body class="">
+<div class="bg-aurora"></div>
+<div class="bg-grid"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/" aria-label="AIDDHub Notes">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+          <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b>AIDDHub</b>
+        <span>Tutorials &amp; case studies</span>
+      </span>
+    </a>
+
+    <div class="nav-right">
+      <nav class="nav" id="navLinks" aria-label="Main">
+        <a class="nav-link" href="/" aria-current="page">Home</a>
+        <a class="nav-link" href="/tutorials/">Tutorials</a>
+        <a class="nav-link" href="/cases/">Case studies</a>
+        <a class="nav-link" href="/about/">About</a>
+      </nav>
+      <a class="lang-switch" href="/zh/" hreflang="zh-CN" lang="zh-CN">中文</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <span class="eyebrow">Notes from the developers</span>
+      <h1 class="hero-title">Practical tutorials for <span class="grad">molecular modelling</span></h1>
+      <p class="lede">Worked examples, honest comparisons and step-by-step recipes for MolStudio and MolInsight — the desktop apps for docking, matched molecular pairs, R-groups, scaffolds and QSAR. Everything here runs on a normal Windows or Linux machine, with no Python environment to set up.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/tutorials/">Browse tutorials</a>
+        <a class="btn btn-ghost" href="https://www.aiddhub.com/molstudio">Get the apps</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <h3>What you&#39;ll find here</h3>
+      <ul>
+        <li><span class="tick">✓</span><span><b>Docking, end to end.</b> Receptor prep, box setup, Vina, 2D interaction diagrams.</span></li>
+        <li><span class="tick">✓</span><span><b>SAR that survives review.</b> MMP with p-values, R-group matrices, scaffold vs side-chain.</span></li>
+        <li><span class="tick">✓</span><span><b>Tool comparisons.</b> Where each app fits next to DataWarrior, RDKit or a spreadsheet.</span></li>
+      </ul>
+    </aside>
+  </div>
+  <div class="container">
+    <div class="stats">
+      <div><b>10 min</b><span>first docking job</span></div>
+      <div><b>47</b><span>chart types</span></div>
+      <div><b>35</b><span>molecular descriptors</span></div>
+      <div><b>0</b><span>lines of code</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Start with these</h2>
+        <p>The three walkthroughs readers ask for first.</p>
+      </div>
+      <a class="more" href="/tutorials/">All tutorials →</a>
+    </div>
+    <div class="card-grid">
+      <a class="card" href="https://aiddhub.github.io/tutorials/docking-in-10-minutes/">
+        <div class="card-top">
+          <span class="badge tutorial">Tutorial</span>
+          <span class="badge product">MolStudio</span>
+        </div>
+        <h3>Run a docking job on Windows in 10 minutes — without Python</h3>
+        <p>Prepare a receptor, dock a ligand library with AutoDock Vina and export a 2D interaction diagram in MolStudio. No conda, no MGLTools, no command line.</p>
+        <div class="card-foot">
+          <time datetime="2026-11-08">November 8, 2026</time>
+          <span>·</span>
+          <span>4 min read</span>
+        </div>
+      </a>
+      <a class="card" href="https://aiddhub.github.io/tutorials/mmp-rgroup-sar/">
+        <div class="card-top">
+          <span class="badge tutorial">Tutorial</span>
+          <span class="badge product">MolInsight</span>
+        </div>
+        <h3>Matched molecular pairs and R-group tables: from spreadsheet to SAR</h3>
+        <p>Turn a structure-activity spreadsheet into matched molecular pair statistics with p-values and an R-group matrix you can defend in a review.</p>
+        <div class="card-foot">
+          <time datetime="2026-11-05">November 5, 2026</time>
+          <span>·</span>
+          <span>4 min read</span>
+        </div>
+      </a>
+      <a class="card" href="https://aiddhub.github.io/tutorials/six-checks-docking-pose/">
+        <div class="card-top">
+          <span class="badge tutorial">Tutorial</span>
+          <span class="badge product">MolStudio</span>
+        </div>
+        <h3>Six checks before you trust a docking pose</h3>
+        <p>A docking score is a ranking hint, not a result. Six quick checks that separate a pose worth reporting from an artefact of preparation.</p>
+        <div class="card-foot">
+          <time datetime="2026-10-28">October 28, 2026</time>
+          <span>·</span>
+          <span>3 min read</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Latest notes</h2>
+        <p>New walkthroughs, updates and answers to reader questions.</p>
+      </div>
+    </div>
+    <div class="post-list">
+      <a class="post-item" href="https://aiddhub.github.io/tutorials/docking-in-10-minutes/">
+        <time datetime="2026-11-08">November 8, 2026</time>
+        <div>
+          <h3>Run a docking job on Windows in 10 minutes — without Python</h3>
+          <p>Prepare a receptor, dock a ligand library with AutoDock Vina and export a 2D interaction diagram in MolStudio. No conda, no MGLTools, no command line.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="post-item" href="https://aiddhub.github.io/tutorials/mmp-rgroup-sar/">
+        <time datetime="2026-11-05">November 5, 2026</time>
+        <div>
+          <h3>Matched molecular pairs and R-group tables: from spreadsheet to SAR</h3>
+          <p>Turn a structure-activity spreadsheet into matched molecular pair statistics with p-values and an R-group matrix you can defend in a review.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="post-item" href="https://aiddhub.github.io/tutorials/six-checks-docking-pose/">
+        <time datetime="2026-10-28">October 28, 2026</time>
+        <div>
+          <h3>Six checks before you trust a docking pose</h3>
+          <p>A docking score is a ranking hint, not a result. Six quick checks that separate a pose worth reporting from an artefact of preparation.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="post-item" href="https://aiddhub.github.io/cases/molinsight-vs-datawarrior/">
+        <time datetime="2026-10-20">October 20, 2026</time>
+        <div>
+          <h3>MolInsight vs DataWarrior: which one belongs in your SAR workflow</h3>
+          <p>An honest comparison of two SAR analysis tools: where DataWarrior is still the better choice, where MolInsight saves time, and the trade-offs you accept.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>The software behind these notes</h2>
+        <p>Two desktop apps, sold as one-time licences with a free tier.</p>
+      </div>
+    </div>
+    <div class="product-strip">
+      <div class="product-card">
+        <h3>MolStudio</h3>
+        <p>Molecular modelling workstation: 3D builder, protein preparation, docking with AutoDock Vina, 2D interaction diagrams, plots and saved sessions.</p>
+        <div class="links">
+          <a href="https://www.aiddhub.com/molstudio">Product page</a>
+          <a href="https://www.aiddhub.com/molstudio#download">Download</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <h3>MolInsight</h3>
+        <p>SAR analysis workbench: 47 chart types, matched molecular pairs, R-group matrices, clustering and SOM, QSAR with an applicability domain.</p>
+        <div class="links">
+          <a href="https://www.aiddhub.com/molinsight">Product page</a>
+          <a href="https://www.aiddhub.com/molinsight#download">Download</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="cta-box">
+      <div>
+        <h3>About AIDDHub</h3>
+        <p>An independent studio building desktop tools for medicinal chemistry and structural biology.</p>
+      </div>
+      <a class="btn btn-ghost" href="/about/">Read more →</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+              <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+            </svg>
+          </span>
+          <span class="brand-text"><b>AIDDHub</b><span>Tutorials &amp; case studies</span></span>
+        </a>
+        <p>Hands-on notes on molecular modelling, docking and SAR analysis, written by the people who build MolStudio and MolInsight.</p>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/cases/">Case studies</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://aiddhub.github.io/feed.xml">RSS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="https://www.aiddhub.com/molstudio">MolStudio</a></li>
+          <li><a href="https://www.aiddhub.com/molinsight">MolInsight</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#pricing">Pricing</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#download">Download</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> AIDDHub. All rights reserved.</span>
+      <span><a href="mailto:support@aiddhub.com">support@aiddhub.com</a> &middot; <a href="https://www.aiddhub.com/">aiddhub.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js?v=ce19807a" defer></script>
+</body>
+</html>

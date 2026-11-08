@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MolInsight 与 DataWarrior：SAR 工作流里该怎么分工 — AIDDHub Notes</title>
+  <meta name="description" content="两个构效分析工具的真实对比：DataWarrior 在哪些地方仍然更好，MolInsight 在哪些环节省时间，以及你要接受的取舍。" />
+  <link rel="canonical" href="https://aiddhub.github.io/zh/cases/molinsight-vs-datawarrior/" />
+  <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/cases/molinsight-vs-datawarrior/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/cases/molinsight-vs-datawarrior/" />
+  <link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/cases/molinsight-vs-datawarrior/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AIDDHub Notes" />
+  <meta property="og:title" content="MolInsight 与 DataWarrior：SAR 工作流里该怎么分工" />
+  <meta property="og:description" content="两个构效分析工具的真实对比：DataWarrior 在哪些地方仍然更好，MolInsight 在哪些环节省时间，以及你要接受的取舍。" />
+  <meta property="og:url" content="https://aiddhub.github.io/zh/cases/molinsight-vs-datawarrior/" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://aiddhub.github.io/assets/og/molinsight-vs-datawarrior-zh.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MolInsight 与 DataWarrior：SAR 工作流里该怎么分工" />
+  <meta name="twitter:description" content="两个构效分析工具的真实对比：DataWarrior 在哪些地方仍然更好，MolInsight 在哪些环节省时间，以及你要接受的取舍。" />
+  <meta name="twitter:image" content="https://aiddhub.github.io/assets/og/molinsight-vs-datawarrior-zh.png" />
+  <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=ce19807a" />
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://aiddhub.github.io/zh/cases/molinsight-vs-datawarrior/#article",
+      "headline": "MolInsight 与 DataWarrior：SAR 工作流里该怎么分工",
+      "description": "两个构效分析工具的真实对比：DataWarrior 在哪些地方仍然更好，MolInsight 在哪些环节省时间，以及你要接受的取舍。",
+      "datePublished": "2026-10-20",
+      "dateModified": "2026-10-20",
+      "inLanguage": "zh-CN",
+      "mainEntityOfPage": "https://aiddhub.github.io/zh/cases/molinsight-vs-datawarrior/",
+      "articleSection": "案例",
+      "keywords": "datawarrior, 工具对比, sar, 评测",
+      "author": {
+        "@type": "Organization",
+        "name": "AIDDHub",
+        "url": "https://www.aiddhub.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.aiddhub.com/#organization",
+        "name": "AIDDHub",
+        "url": "https://www.aiddhub.com",
+        "email": "support@aiddhub.com",
+        "description": "Desktop software for molecular modelling, docking and SAR analysis."
+      },
+      "isPartOf": {
+        "@id": "https://aiddhub.github.io/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aiddhub.github.io/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "案例",
+          "item": "https://aiddhub.github.io/zh/cases/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "MolInsight 与 DataWarrior：SAR 工作流里该怎么分工",
+          "item": "https://aiddhub.github.io/zh/cases/molinsight-vs-datawarrior/"
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body class="article-page">
+<div class="bg-aurora"></div>
+<div class="bg-grid"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/zh/" aria-label="AIDDHub Notes">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+          <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b>AIDDHub</b>
+        <span>教程与案例</span>
+      </span>
+    </a>
+
+    <div class="nav-right">
+      <nav class="nav" id="navLinks" aria-label="Main">
+        <a class="nav-link" href="/zh/">首页</a>
+        <a class="nav-link" href="/zh/tutorials/">教程</a>
+        <a class="nav-link" href="/zh/cases/" aria-current="page">案例</a>
+        <a class="nav-link" href="/zh/about/">关于</a>
+      </nav>
+      <a class="lang-switch" href="/cases/molinsight-vs-datawarrior/" hreflang="en" lang="en">English</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="container">
+  <div class="article-top">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/zh/">首页</a>
+    <span class="sep">/</span>
+    <a href="/zh/cases/">案例</a>
+    <span class="sep">/</span>
+    <span aria-current="page">MolInsight 与 DataWarrior 对比</span>
+  </nav>
+  </div>
+
+  <div class="article-layout">
+    <article>
+      <header class="article-head">
+        <div class="article-meta">
+          <span class="badge case">案例</span>
+          <span class="badge product">MolInsight</span>
+          <span class="dot">·</span>
+          <time datetime="2026-10-20">2026 年 10 月 20 日</time>
+          <span class="dot">·</span>
+          <span>3 分钟阅读</span>
+        </div>
+        <h1>MolInsight 与 DataWarrior：SAR 工作流里该怎么分工</h1>
+      </header>
+
+      <div class="article-body">
+<p>DataWarrior 默认被推荐是有原因的：免费、开源、几乎能读所有化学文件格式，做聚类、骨架分析、R 基团
+分解都不用授权。做药化的人基本都用过至少一次。</p>
+<p>这篇不是"我们的工具样样更强"。它试图写清楚各自适合的位置，让选择变成一个决定，而不是一个习惯。</p>
+<h2 id="_1">结论先说</h2>
+<ul>
+<li><strong>只是打开 SDF、筛选、画几个分布图？</strong> 用 DataWarrior。免费，上手快。</li>
+<li><strong>每周都要做 SAR 分析，需要带显著性的 MMP 统计、R 基团矩阵、SOM 和带适用域的 QSAR？</strong>
+  MolInsight 是围绕这个循环设计的。</li>
+<li><strong>装不了 Java，或者机器被 IT 锁住？</strong> MolInsight 是原生安装包。</li>
+</ul>
+<h2 id="_2">并列对比</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>DataWarrior</th>
+<th>MolInsight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>价格</td>
+<td>免费、开源</td>
+<td>99 美元一次性，有免费版</td>
+</tr>
+<tr>
+<td>平台</td>
+<td>Java 应用</td>
+<td>Windows / Linux 原生安装</td>
+</tr>
+<tr>
+<td>界面语言</td>
+<td>英文</td>
+<td>中文 / 英文</td>
+</tr>
+<tr>
+<td>结构导入</td>
+<td>很强，格式支持非常广</td>
+<td>SDF、CSV、SMILES</td>
+</tr>
+<tr>
+<td>图表</td>
+<td>常规统计图</td>
+<td>47 种：小倍数、分面、3D、QQ、ECDF</td>
+</tr>
+<tr>
+<td>MMP</td>
+<td>结构变换与差值</td>
+<td>变换、Pairs、Mean Δ、标准差、极值、显著性 p</td>
+</tr>
+<tr>
+<td>R 基团</td>
+<td>分解</td>
+<td>矩阵、热图、按平均 Δ 上色</td>
+</tr>
+<tr>
+<td>聚类</td>
+<td>有</td>
+<td>有，含 SOM</td>
+</tr>
+<tr>
+<td>QSAR</td>
+<td>基础建模</td>
+<td>ridge / PLS / 核岭回归 / KNN / GBM、分类、适用域</td>
+</tr>
+<tr>
+<td>导出</td>
+<td>图片、CSV</td>
+<td>CSV、SDF、PNG、PDF，以及会话文件</td>
+</tr>
+<tr>
+<td>分子对接</td>
+<td>无</td>
+<td>无（在 MolStudio 里）</td>
+</tr>
+<tr>
+<td>macOS</td>
+<td>支持</td>
+<td>暂不支持</td>
+</tr>
+</tbody>
+</table>
+<h2 id="datawarrior">DataWarrior 确实更好的地方</h2>
+<p><strong>免费且开源。</strong> 预算为零，或者单位要求工具链可审计，那就没有讨论的必要。MolInsight 是闭源的。</p>
+<p><strong>什么格式都能读。</strong> SDF、SMILES、CSV、Excel、各家私有格式，DataWarrior 异常宽容。MolInsight 只覆盖
+SAR 工作流真正用得到的格式，不追长尾。</p>
+<p><strong>十几年的教程积累。</strong> 卡住了总有人写过答案。工具小，社区就小，这是实打实的成本。</p>
+<h2 id="_3">工作流上的差别</h2>
+<h3 id="mmp">MMP 统计</h3>
+<p>DataWarrior 会告诉你一个结构变换带来的效应大小，这足够看出趋势。但它回答不了"这是真的，还是四个化合物
+加一个离群点"——而那恰好是评审时会问的问题。</p>
+<p>MolInsight 把 <code>Pairs</code>、<code>Mean Δ</code>、<code>Std. dev.</code>、<code>Min / Max Δ</code> 和显著性 <code>p</code> 放在同一行。实际后果是：你可以
+先按支持度排序，再看效应大小；也能看到同一个变换在不同骨架上变号，而不是被平均掉。</p>
+<p>这有多重要，取决于你多经常需要在文字里为一个 SAR 结论辩护。如果答案是"每周"，那就很重要。</p>
+<h3 id="_4">自组织映射</h3>
+<p>SOM 是那种要么天天用、要么完全不用的功能。它把高维描述符空间压到二维网格上，同时尽量保持邻接关系，
+相似的化合物会落在附近。它的价值在于快速回答一个问题：<em>活性在化学空间里是连续的，还是分成几块？</em></p>
+<p>这个问题值得在建模之前问，因为不连续的地形会让全局 QSAR 模型失去意义。</p>
+<h3 id="qsar">QSAR 与适用域</h3>
+<p>拟合模型是简单的那一半。有用的是不确定性：每个化合物的域内/域外判定、距离分布、Williams 杠杆值。
+一个 R² = 0.85 但在 30% 测试集上失效的模型，和在整个系列上都成立的模型，是两个不同的东西，只有
+适用域分析能告诉你手上是哪一个。</p>
+<h2 id="molinsight">MolInsight 更弱的地方</h2>
+<p><strong>社区小。</strong> 没有 StackOverflow 答案，博客也少。这是新工具的代价，短期内不会改变。</p>
+<p><strong>没有 macOS 版本。</strong> 只有 Windows 和 Linux。Mac 用户只能虚拟机或者换工具。</p>
+<p><strong>闭源。</strong> 对商业实验室这是常态；对有开源要求的课题组，这是硬伤。</p>
+<p><strong>不含对接。</strong> 对接在 MolStudio 里。两者是设计成配合使用，而不是一个产品。</p>
+<h2 id="_5">一种实际的分工</h2>
+<p>不重复劳动的用法：</p>
+<ol>
+<li><strong>DataWarrior</strong> 做格式转换、快速筛选、对系列的第一眼观察；</li>
+<li>当问题变成"哪个取代基重要、我们有多确定"时换 <strong>MolInsight</strong>——MMP、R 基团矩阵、聚类、带适用域的 QSAR；</li>
+<li>当问题变成三维时用 <strong>MolStudio</strong>——对接、相互作用、构象。</li>
+</ol>
+<p>这几步之间不需要经过五个中间文件，SDF 和 CSV 就够。</p>
+<h2 id="_6">诚实的总结</h2>
+<p>只需要看结构、画散点图，DataWarrior 免费就能做，就该用它。MolInsight 存在的原因是另一个场景：
+同一个下午要交出一个数字、一个显著性和一张图。它的定价也是工具的价格，而不是平台的价格，因为它本来
+就只想做这件事。</p>
+<p>免费版每次会话 100 个化合物，足够你拿自己的数据把上面这套对比跑一遍再决定。</p>
+      </div>
+
+      <footer class="article-foot">
+        <div class="cta-box">
+          <div>
+            <h3>用自己的数据试一次</h3>
+            <p>本文用到的功能都包含在免费版里，没有试用期限制。</p>
+          </div>
+          <a class="btn btn-primary" href="https://www.aiddhub.com/molinsight#download">下载 MolInsight</a>
+        </div>
+        <div class="prevnext">
+<span></span>        </div>
+      </footer>
+    </article>
+
+    <aside class="toc" aria-label="本页目录">
+      <h4>本页目录</h4>
+      <ul><li><a href="#_1">结论先说</a></li><li><a href="#_2">并列对比</a></li><li><a href="#datawarrior">DataWarrior 确实更好的地方</a></li><li><a href="#_3">工作流上的差别</a><ul><li><a href="#mmp">MMP 统计</a></li><li><a href="#_4">自组织映射</a></li><li><a href="#qsar">QSAR 与适用域</a></li></ul></li><li><a href="#molinsight">MolInsight 更弱的地方</a></li><li><a href="#_5">一种实际的分工</a></li><li><a href="#_6">诚实的总结</a></li></ul>
+    </aside>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/zh/">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+              <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+            </svg>
+          </span>
+          <span class="brand-text"><b>AIDDHub</b><span>教程与案例</span></span>
+        </a>
+        <p>分子建模、分子对接与构效关系分析的实操笔记，作者是 MolStudio 与 MolInsight 的开发者。</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="/zh/tutorials/">教程</a></li>
+          <li><a href="/zh/cases/">案例</a></li>
+          <li><a href="/zh/about/">关于</a></li>
+          <li><a href="https://aiddhub.github.io/feed.xml">RSS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>软件</h4>
+        <ul>
+          <li><a href="https://www.aiddhub.com/molstudio">MolStudio</a></li>
+          <li><a href="https://www.aiddhub.com/molinsight">MolInsight</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#pricing">价格</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#download">下载</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> AIDDHub. All rights reserved.</span>
+      <span><a href="mailto:support@aiddhub.com">support@aiddhub.com</a> &middot; <a href="https://www.aiddhub.com/">aiddhub.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js?v=ce19807a" defer></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="notfound">
+  <div class="container-narrow">
+    <div class="code">404</div>
+    <p>{{ strings.text }}</p>
+    <a class="btn btn-primary" href="{{ home_href }}">{{ strings.home }}</a>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>10 分钟在 Windows 上跑完一次分子对接（不用 Python） — AIDDHub Notes</title>
+  <meta name="description" content="在 MolStudio 里完成受体准备、AutoDock Vina 对接与 2D 相互作用图导出。不需要 conda、不需要 MGLTools，也不敲命令行。" />
+  <link rel="canonical" href="https://aiddhub.github.io/zh/tutorials/docking-in-10-minutes/" />
+  <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/tutorials/docking-in-10-minutes/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/tutorials/docking-in-10-minutes/" />
+  <link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/tutorials/docking-in-10-minutes/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AIDDHub Notes" />
+  <meta property="og:title" content="10 分钟在 Windows 上跑完一次分子对接（不用 Python）" />
+  <meta property="og:description" content="在 MolStudio 里完成受体准备、AutoDock Vina 对接与 2D 相互作用图导出。不需要 conda、不需要 MGLTools，也不敲命令行。" />
+  <meta property="og:url" content="https://aiddhub.github.io/zh/tutorials/docking-in-10-minutes/" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://aiddhub.github.io/assets/og/docking-in-10-minutes-zh.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="10 分钟在 Windows 上跑完一次分子对接（不用 Python）" />
+  <meta name="twitter:description" content="在 MolStudio 里完成受体准备、AutoDock Vina 对接与 2D 相互作用图导出。不需要 conda、不需要 MGLTools，也不敲命令行。" />
+  <meta name="twitter:image" content="https://aiddhub.github.io/assets/og/docking-in-10-minutes-zh.png" />
+  <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=ce19807a" />
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://aiddhub.github.io/zh/tutorials/docking-in-10-minutes/#article",
+      "headline": "10 分钟在 Windows 上跑完一次分子对接（不用 Python）",
+      "description": "在 MolStudio 里完成受体准备、AutoDock Vina 对接与 2D 相互作用图导出。不需要 conda、不需要 MGLTools，也不敲命令行。",
+      "datePublished": "2026-11-08",
+      "dateModified": "2026-11-08",
+      "inLanguage": "zh-CN",
+      "mainEntityOfPage": "https://aiddhub.github.io/zh/tutorials/docking-in-10-minutes/",
+      "articleSection": "教程",
+      "keywords": "分子对接, autodock-vina, windows, 教程",
+      "author": {
+        "@type": "Organization",
+        "name": "AIDDHub",
+        "url": "https://www.aiddhub.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.aiddhub.com/#organization",
+        "name": "AIDDHub",
+        "url": "https://www.aiddhub.com",
+        "email": "support@aiddhub.com",
+        "description": "Desktop software for molecular modelling, docking and SAR analysis."
+      },
+      "isPartOf": {
+        "@id": "https://aiddhub.github.io/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aiddhub.github.io/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "教程",
+          "item": "https://aiddhub.github.io/zh/tutorials/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "10 分钟在 Windows 上跑完一次分子对接（不用 Python）",
+          "item": "https://aiddhub.github.io/zh/tutorials/docking-in-10-minutes/"
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body class="article-page">
+<div class="bg-aurora"></div>
+<div class="bg-grid"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/zh/" aria-label="AIDDHub Notes">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+          <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b>AIDDHub</b>
+        <span>教程与案例</span>
+      </span>
+    </a>
+
+    <div class="nav-right">
+      <nav class="nav" id="navLinks" aria-label="Main">
+        <a class="nav-link" href="/zh/">首页</a>
+        <a class="nav-link" href="/zh/tutorials/" aria-current="page">教程</a>
+        <a class="nav-link" href="/zh/cases/">案例</a>
+        <a class="nav-link" href="/zh/about/">关于</a>
+      </nav>
+      <a class="lang-switch" href="/tutorials/docking-in-10-minutes/" hreflang="en" lang="en">English</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="container">
+  <div class="article-top">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/zh/">首页</a>
+    <span class="sep">/</span>
+    <a href="/zh/tutorials/">教程</a>
+    <span class="sep">/</span>
+    <span aria-current="page">不用 Python 的分子对接</span>
+  </nav>
+  </div>
+
+  <div class="article-layout">
+    <article>
+      <header class="article-head">
+        <div class="article-meta">
+          <span class="badge tutorial">教程</span>
+          <span class="badge product">MolStudio</span>
+          <span class="dot">·</span>
+          <time datetime="2026-11-08">2026 年 11 月 8 日</time>
+          <span class="dot">·</span>
+          <span>3 分钟阅读</span>
+        </div>
+        <h1>10 分钟在 Windows 上跑完一次分子对接（不用 Python）</h1>
+      </header>
+
+      <div class="article-body">
+<p>手上有一个蛋白结构、十几个化合物，明天要给出一个结合模式的假设。常规路线是：装 conda、装 MGLTools、
+转换受体、再回忆去年用过的 <code>vina</code> 参数——一个下午就没了，第一个构象还没出来。</p>
+<p>这篇把同样的流程放进 MolStudio：导入、准备、对接、看相互作用、导出图。全部在本地跑，Windows 和 Linux
+是同一个程序，步骤完全一致。</p>
+<h2 id="_1">需要准备什么</h2>
+<ul>
+<li>MolStudio v1.0——下面的每一步都在免费版里</li>
+<li>一个受体结构，例如 PDB 的 <code>3FUP.pdb</code></li>
+<li>配体：SDF、SMILES 或 CSV 都行，第一次跑十几二十个就够</li>
+</ul>
+<h2 id="1">1. 导入受体</h2>
+<p><code>File → Import → PDB</code>，选文件。MolStudio 会把结构按链、残基、杂原子基团和水分子分开显示，所以在
+准备之前就能看清哪些要保留、哪些要丢掉。</p>
+<p>导入后先确认两件事：</p>
+<ul>
+<li>共晶配体在（下一步要用它定位对接盒子）；</li>
+<li>没有因为你没注意的生物组装体而多出来的重复链。</li>
+</ul>
+<h2 id="2">2. 准备受体</h2>
+<p><code>Applications → Preparation → Receptor Prep</code>。</p>
+<p>默认设置覆盖了大多数对接场景：去结晶水、按 pH 7.4 加氢、分配电荷。<strong>这一步是新手最容易翻车的地方</strong>——
+不是因为它难，而是因为准备到一半的受体照样能跑出看起来很合理、打分却很差的构象，而输出里不会告诉你原因。</p>
+<p>这一步先不要删共晶配体，下一步要用。</p>
+<h2 id="3">3. 导入配体</h2>
+<p><code>File → Import → SDF</code>（或 SMILES / CSV）。批量导入后直接进 Molecule Table，每行显示分子量、LogP
+以及其它已计算的性质。</p>
+<p>名称在这里就改好，别拖到后面：记录标题会成为所有下游表格和导出 SDF 里的配体名。</p>
+<h2 id="4">4. 把盒子放对位置</h2>
+<p><code>Applications → Docking</code> 打开对接面板和盒子控制。</p>
+<ul>
+<li><strong>Pick from 3D</strong>——在 3D 视图里点一下结合口袋，盒子以该点为中心；</li>
+<li><strong>Center on ligands</strong>——以共晶配体为中心。已知参考化合物结合位置时，这个选择更容易复现。</li>
+</ul>
+<p>边长 22–24 Å 是稳妥的默认值。盒子不是越大越好：盖住半个蛋白只会稀释搜索、拖慢速度。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>起步值</th>
+<th>什么时候改</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exhaustiveness</td>
+<td>8</td>
+<td>最终构象用 16–32；200 个化合物先粗看用 4</td>
+</tr>
+<tr>
+<td>Number of poses</td>
+<td>9</td>
+<td>只留前 3 个看构象，其余基本是噪声</td>
+</tr>
+<tr>
+<td>CPU 核数</td>
+<td>4</td>
+<td>长时间跑就用满空闲核</td>
+</tr>
+<tr>
+<td>Seed</td>
+<td>固定</td>
+<td>需要两次结果完全一致时</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-vina">5. 跑 Vina</h2>
+<p>点运行。进度会显示，工作区仍然可用——你可以在它跑的时候整理表格、准备下一个受体。10 个配体、
+exhaustiveness 8，普通笔记本几分钟就完了。</p>
+<h2 id="6">6. 看结果表</h2>
+<p>结果表每个构象一行：配体、mode 编号、Vina 打分。大多数人到这里就按打分排序，然后停下了，而这恰恰是
+输出里最不重要的部分。</p>
+<blockquote>
+<p>打分函数不是结合自由能。它能用来在<strong>同一受体、同一质子化状态</strong>下给化合物排序。跨两个不同结构、
+或跨两套准备流程比较打分，没有意义。</p>
+</blockquote>
+<h2 id="7">7. 看构象，不看数字</h2>
+<p>选中最好的构象，打开 Interactions 面板，切到 2D 视图。MolStudio 会画出氢键及距离、疏水作用、π–π
+堆积和盐桥。</p>
+<p>问三个问题：</p>
+<ol>
+<li>配体占据的亚口袋和参考化合物一致吗？</li>
+<li>氢键方向对吗？还是 4 Å 的斜向"氢键"？</li>
+<li>起作用的是骨架，还是你正准备优化的取代基？</li>
+</ol>
+<p>一个打分 −9.0 但什么也没埋进去的构象，价值低于一个 −7.5 却能解释现有 SAR 的构象。</p>
+<h2 id="8">8. 导出需要的东西</h2>
+<ul>
+<li>2D 相互作用图导出 PNG 或 SVG，直接进 PPT 或报告；</li>
+<li>需要以后叠加比对，就把对接构象导出为 SDF；</li>
+<li>整个工作区可以存成会话，下周打开继续，不用重新准备一遍。</li>
+</ul>
+<h2 id="_2">常见问题</h2>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>可能原因</th>
+<th>处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>所有配体打分几乎一样</td>
+<td>盒子放在浅的、暴露于溶剂的表面</td>
+<td>重新定位盒子，先看参考配体</td>
+</tr>
+<tr>
+<td>构象穿进蛋白里</td>
+<td>受体没做能量优化、缺氢</td>
+<td>重做 Receptor Prep，检查组氨酸质子化</td>
+</tr>
+<tr>
+<td>同一批化合物重复跑结果不同</td>
+<td>没固定 seed</td>
+<td>比较之前先固定 seed</td>
+</tr>
+<tr>
+<td>打分最好的恰好是你已知无活性的那个</td>
+<td>打分函数偏好大分子</td>
+<td>按重原子数归一，并回到相互作用看</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">下一步</h2>
+<p>对接回答的是"它能不能待在这里"。下一个问题通常是"这一系列到底告诉了我什么"——那就是 MMP 与
+R 基团矩阵，下一篇讲。</p>
+<p>想用自己的结构试一遍的话，上面全部步骤都在 MolStudio 免费版里。</p>
+      </div>
+
+      <footer class="article-foot">
+        <div class="cta-box">
+          <div>
+            <h3>用自己的数据试一次</h3>
+            <p>本文用到的功能都包含在免费版里，没有试用期限制。</p>
+          </div>
+          <a class="btn btn-primary" href="https://www.aiddhub.com/molstudio#download">下载 MolStudio</a>
+        </div>
+        <div class="prevnext">
+<span></span>        </div>
+      </footer>
+    </article>
+
+    <aside class="toc" aria-label="本页目录">
+      <h4>本页目录</h4>
+      <ul><li><a href="#_1">需要准备什么</a></li><li><a href="#1">1. 导入受体</a></li><li><a href="#2">2. 准备受体</a></li><li><a href="#3">3. 导入配体</a></li><li><a href="#4">4. 把盒子放对位置</a></li><li><a href="#5-vina">5. 跑 Vina</a></li><li><a href="#6">6. 看结果表</a></li><li><a href="#7">7. 看构象，不看数字</a></li><li><a href="#8">8. 导出需要的东西</a></li><li><a href="#_2">常见问题</a></li><li><a href="#_3">下一步</a></li></ul>
+    </aside>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/zh/">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+              <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+            </svg>
+          </span>
+          <span class="brand-text"><b>AIDDHub</b><span>教程与案例</span></span>
+        </a>
+        <p>分子建模、分子对接与构效关系分析的实操笔记，作者是 MolStudio 与 MolInsight 的开发者。</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="/zh/tutorials/">教程</a></li>
+          <li><a href="/zh/cases/">案例</a></li>
+          <li><a href="/zh/about/">关于</a></li>
+          <li><a href="https://aiddhub.github.io/feed.xml">RSS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>软件</h4>
+        <ul>
+          <li><a href="https://www.aiddhub.com/molstudio">MolStudio</a></li>
+          <li><a href="https://www.aiddhub.com/molinsight">MolInsight</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#pricing">价格</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#download">下载</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> AIDDHub. All rights reserved.</span>
+      <span><a href="mailto:support@aiddhub.com">support@aiddhub.com</a> &middot; <a href="https://www.aiddhub.com/">aiddhub.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js?v=ce19807a" defer></script>
+</body>
+</html>

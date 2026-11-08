@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tutorials — AIDDHub Notes</title>
+  <meta name="description" content="Step-by-step walkthroughs for MolStudio and MolInsight. Each one starts from a real task, shows the clicks, and ends with a figure or a table you can put in a report." />
+  <link rel="canonical" href="https://aiddhub.github.io/tutorials/" />
+  <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/tutorials/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://aiddhub.github.io/zh/tutorials/" />
+  <link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/tutorials/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AIDDHub Notes" />
+  <meta property="og:title" content="Tutorials — AIDDHub Notes" />
+  <meta property="og:description" content="Step-by-step walkthroughs for MolStudio and MolInsight. Each one starts from a real task, shows the clicks, and ends with a figure or a table you can put in a report." />
+  <meta property="og:url" content="https://aiddhub.github.io/tutorials/" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tutorials — AIDDHub Notes" />
+  <meta name="twitter:description" content="Step-by-step walkthroughs for MolStudio and MolInsight. Each one starts from a real task, shows the clicks, and ends with a figure or a table you can put in a report." />
+  <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=ce19807a" />
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://aiddhub.github.io/tutorials/",
+      "url": "https://aiddhub.github.io/tutorials/",
+      "name": "Tutorials",
+      "description": "Step-by-step walkthroughs for MolStudio and MolInsight. Each one starts from a real task, shows the clicks, and ends with a figure or a table you can put in a report.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://aiddhub.github.io/#website"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://aiddhub.github.io/tutorials/docking-in-10-minutes/",
+            "name": "Run a docking job on Windows in 10 minutes — without Python"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "url": "https://aiddhub.github.io/tutorials/mmp-rgroup-sar/",
+            "name": "Matched molecular pairs and R-group tables: from spreadsheet to SAR"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "url": "https://aiddhub.github.io/tutorials/six-checks-docking-pose/",
+            "name": "Six checks before you trust a docking pose"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aiddhub.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutorials",
+          "item": "https://aiddhub.github.io/tutorials/"
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body class="">
+<div class="bg-aurora"></div>
+<div class="bg-grid"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/" aria-label="AIDDHub Notes">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+          <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b>AIDDHub</b>
+        <span>Tutorials &amp; case studies</span>
+      </span>
+    </a>
+
+    <div class="nav-right">
+      <nav class="nav" id="navLinks" aria-label="Main">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/tutorials/" aria-current="page">Tutorials</a>
+        <a class="nav-link" href="/cases/">Case studies</a>
+        <a class="nav-link" href="/about/">About</a>
+      </nav>
+      <a class="lang-switch" href="/zh/tutorials/" hreflang="zh-CN" lang="zh-CN">中文</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-head">
+  <div class="container">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <span aria-current="page">Tutorials</span>
+    </nav>
+    <h1>Tutorials</h1>
+    <p>Step-by-step walkthroughs for MolStudio and MolInsight. Each one starts from a real task, shows the clicks, and ends with a figure or a table you can put in a report.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="chips" id="filters">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" type="button" data-filter="molstudio" aria-pressed="false">MolStudio</button>
+      <button class="chip" type="button" data-filter="molinsight" aria-pressed="false">MolInsight</button>
+    </div>
+    <div class="card-grid" id="cards">
+      <a class="card" href="https://aiddhub.github.io/tutorials/docking-in-10-minutes/" data-product="molstudio">
+        <div class="card-top">
+          <span class="badge tutorial">Tutorial</span>
+          <span class="badge product">MolStudio</span>
+        </div>
+        <h3>Run a docking job on Windows in 10 minutes — without Python</h3>
+        <p>Prepare a receptor, dock a ligand library with AutoDock Vina and export a 2D interaction diagram in MolStudio. No conda, no MGLTools, no command line.</p>
+        <div class="card-foot">
+          <time datetime="2026-11-08">November 8, 2026</time>
+          <span>·</span>
+          <span>4 min read</span>
+        </div>
+      </a>
+      <a class="card" href="https://aiddhub.github.io/tutorials/mmp-rgroup-sar/" data-product="molinsight">
+        <div class="card-top">
+          <span class="badge tutorial">Tutorial</span>
+          <span class="badge product">MolInsight</span>
+        </div>
+        <h3>Matched molecular pairs and R-group tables: from spreadsheet to SAR</h3>
+        <p>Turn a structure-activity spreadsheet into matched molecular pair statistics with p-values and an R-group matrix you can defend in a review.</p>
+        <div class="card-foot">
+          <time datetime="2026-11-05">November 5, 2026</time>
+          <span>·</span>
+          <span>4 min read</span>
+        </div>
+      </a>
+      <a class="card" href="https://aiddhub.github.io/tutorials/six-checks-docking-pose/" data-product="molstudio">
+        <div class="card-top">
+          <span class="badge tutorial">Tutorial</span>
+          <span class="badge product">MolStudio</span>
+        </div>
+        <h3>Six checks before you trust a docking pose</h3>
+        <p>A docking score is a ranking hint, not a result. Six quick checks that separate a pose worth reporting from an artefact of preparation.</p>
+        <div class="card-foot">
+          <time datetime="2026-10-28">October 28, 2026</time>
+          <span>·</span>
+          <span>3 min read</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+              <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+            </svg>
+          </span>
+          <span class="brand-text"><b>AIDDHub</b><span>Tutorials &amp; case studies</span></span>
+        </a>
+        <p>Hands-on notes on molecular modelling, docking and SAR analysis, written by the people who build MolStudio and MolInsight.</p>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/cases/">Case studies</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://aiddhub.github.io/feed.xml">RSS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="https://www.aiddhub.com/molstudio">MolStudio</a></li>
+          <li><a href="https://www.aiddhub.com/molinsight">MolInsight</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#pricing">Pricing</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#download">Download</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> AIDDHub. All rights reserved.</span>
+      <span><a href="mailto:support@aiddhub.com">support@aiddhub.com</a> &middot; <a href="https://www.aiddhub.com/">aiddhub.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js?v=ce19807a" defer></script>
+</body>
+</html>

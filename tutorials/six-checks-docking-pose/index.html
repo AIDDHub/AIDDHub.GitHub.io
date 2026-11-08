@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Six checks before you trust a docking pose — AIDDHub Notes</title>
+  <meta name="description" content="A docking score is a ranking hint, not a result. Six quick checks that separate a pose worth reporting from an artefact of preparation." />
+  <link rel="canonical" href="https://aiddhub.github.io/tutorials/six-checks-docking-pose/" />
+  <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/tutorials/six-checks-docking-pose/" />
+  <link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/tutorials/six-checks-docking-pose/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AIDDHub Notes" />
+  <meta property="og:title" content="Six checks before you trust a docking pose" />
+  <meta property="og:description" content="A docking score is a ranking hint, not a result. Six quick checks that separate a pose worth reporting from an artefact of preparation." />
+  <meta property="og:url" content="https://aiddhub.github.io/tutorials/six-checks-docking-pose/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://aiddhub.github.io/assets/og/six-checks-docking-pose-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Six checks before you trust a docking pose" />
+  <meta name="twitter:description" content="A docking score is a ranking hint, not a result. Six quick checks that separate a pose worth reporting from an artefact of preparation." />
+  <meta name="twitter:image" content="https://aiddhub.github.io/assets/og/six-checks-docking-pose-en.png" />
+  <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=ce19807a" />
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://aiddhub.github.io/tutorials/six-checks-docking-pose/#article",
+      "headline": "Six checks before you trust a docking pose",
+      "description": "A docking score is a ranking hint, not a result. Six quick checks that separate a pose worth reporting from an artefact of preparation.",
+      "datePublished": "2026-10-28",
+      "dateModified": "2026-10-28",
+      "inLanguage": "en",
+      "mainEntityOfPage": "https://aiddhub.github.io/tutorials/six-checks-docking-pose/",
+      "articleSection": "Tutorials",
+      "keywords": "docking, validation, poses, tutorial",
+      "author": {
+        "@type": "Organization",
+        "name": "AIDDHub",
+        "url": "https://www.aiddhub.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.aiddhub.com/#organization",
+        "name": "AIDDHub",
+        "url": "https://www.aiddhub.com",
+        "email": "support@aiddhub.com",
+        "description": "Desktop software for molecular modelling, docking and SAR analysis."
+      },
+      "isPartOf": {
+        "@id": "https://aiddhub.github.io/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aiddhub.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutorials",
+          "item": "https://aiddhub.github.io/tutorials/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Six checks before you trust a docking pose",
+          "item": "https://aiddhub.github.io/tutorials/six-checks-docking-pose/"
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body class="article-page">
+<div class="bg-aurora"></div>
+<div class="bg-grid"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/" aria-label="AIDDHub Notes">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+          <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b>AIDDHub</b>
+        <span>Tutorials &amp; case studies</span>
+      </span>
+    </a>
+
+    <div class="nav-right">
+      <nav class="nav" id="navLinks" aria-label="Main">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/tutorials/" aria-current="page">Tutorials</a>
+        <a class="nav-link" href="/cases/">Case studies</a>
+        <a class="nav-link" href="/about/">About</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="container">
+  <div class="article-top">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <a href="/tutorials/">Tutorials</a>
+    <span class="sep">/</span>
+    <span aria-current="page">Six checks on a pose</span>
+  </nav>
+  </div>
+
+  <div class="article-layout">
+    <article>
+      <header class="article-head">
+        <div class="article-meta">
+          <span class="badge tutorial">Tutorial</span>
+          <span class="badge product">MolStudio</span>
+          <span class="dot">·</span>
+          <time datetime="2026-10-28">October 28, 2026</time>
+          <span class="dot">·</span>
+          <span>3 min read</span>
+        </div>
+        <h1>Six checks before you trust a docking pose</h1>
+      </header>
+
+      <div class="article-body">
+<p>Every docking programme will return a pose, and every pose comes with a number. The number is the part people
+quote; the pose is the part that has to survive a reviewer. These six checks take about five minutes per
+compound and catch most of the failures that make a docking figure impossible to defend.</p>
+<h2 id="1-is-the-ligand-inside-the-box">1. Is the ligand inside the box?</h2>
+<p>Obvious, and still the most common cause of nonsense. If the box was placed by eye, confirm that the ligand
+volume sits inside it — a pose that only touches the edge of the search space has not really been optimised.</p>
+<p>In MolStudio the box is drawn in the viewer, so this is a two-second visual check before the run rather than a
+diagnosis after it.</p>
+<h2 id="2-did-the-protocol-reproduce-the-reference-ligand">2. Did the protocol reproduce the reference ligand?</h2>
+<p>If the structure contains a co-crystal ligand, redock it first. Remove it, then dock it back with exactly the
+protocol you plan to use and check the RMSD to the crystal pose.</p>
+<ul>
+<li><strong>Under ~2 Å</strong> — the protocol can find the right answer on this receptor. Continue.</li>
+<li><strong>Over ~2 Å</strong> — treat every result with suspicion. Something in the preparation (protonation, missing
+  residues, metal ions, waters) or in the box is wrong.</li>
+</ul>
+<p>This is the single most valuable control in a docking study, and it costs one run.</p>
+<h2 id="3-are-the-hydrogen-bonds-geometrically-plausible">3. Are the hydrogen bonds geometrically plausible?</h2>
+<p>Distance alone is not enough. A hydrogen bond at 3.9 Å is not a hydrogen bond; a donor pointing away from the
+acceptor is not one either. In the 2D interaction view, look at the listed distances and then confirm the
+geometry in 3D:</p>
+<table>
+<thead>
+<tr>
+<th>Interaction</th>
+<th>Typical distance</th>
+<th>What to check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strong H-bond</td>
+<td>2.6–3.2 Å</td>
+<td>donor–acceptor alignment</td>
+</tr>
+<tr>
+<td>Weak / long H-bond</td>
+<td>3.2–3.5 Å</td>
+<td>does it still point at the acceptor?</td>
+</tr>
+<tr>
+<td>Salt bridge</td>
+<td>2.5–4.0 Å</td>
+<td>charge state of both partners</td>
+</tr>
+<tr>
+<td>π–π stacking</td>
+<td>3.5–4.5 Å</td>
+<td>ring centroid distance and offset</td>
+</tr>
+</tbody>
+</table>
+<p>A pose whose only interactions are 3.8 Å "hydrogen bonds" is held together by the scoring function, not by
+chemistry.</p>
+<h2 id="4-is-there-any-steric-clash">4. Is there any steric clash?</h2>
+<p>Look for ligand atoms that sit inside the van der Waals radius of a protein atom, and for the ligand passing
+through a loop. Small overlaps are absorbed by the soft scoring potential; a real clash means the pose is
+impossible regardless of its score.</p>
+<h2 id="5-does-the-pose-explain-what-you-already-know">5. Does the pose explain what you already know?</h2>
+<p>If the series has SAR, the pose should be consistent with it. A compound known to be inactive through this
+target should not fill the pocket perfectly. A compound that loses 100-fold when a substituent is removed
+should have that substituent making a contact.</p>
+<p>Docking is at its most useful when it explains an existing measurement, not when it invents a new lead from
+nothing.</p>
+<h2 id="6-does-the-ranking-survive-a-second-run">6. Does the ranking survive a second run?</h2>
+<p>Re-run the top compound with a different seed and higher exhaustiveness.</p>
+<ul>
+<li>Same pose, similar score — the result is stable.</li>
+<li>Different pose, similar score — the scoring function cannot distinguish them, and you should report the
+  ambiguity rather than pick the prettier picture.</li>
+<li>Same pose, very different score — the search had not converged; the first number was noise.</li>
+</ul>
+<h2 id="what-the-score-is-and-is-not">What the score is, and is not</h2>
+<p>The Vina affinity is a fast empirical scoring function. It is useful for ordering compounds docked into the
+same receptor with the same preparation. It is not a binding free energy, it does not include entropy, and it
+has a well-known bias toward larger, more lipophilic ligands.</p>
+<p>Practical consequences:</p>
+<ul>
+<li>compare within a series, never across two different receptors;</li>
+<li>normalise by heavy-atom count when a series spans a wide size range;</li>
+<li>treat differences under ~0.5 kcal/mol as noise;</li>
+<li>report the interactions, and let the score be the ranking, not the conclusion.</li>
+</ul>
+<h2 id="a-short-checklist">A short checklist</h2>
+<ul>
+<li>[ ] Ligand fully inside the box</li>
+<li>[ ] Reference ligand reproduces its crystal pose</li>
+<li>[ ] Hydrogen bonds plausible in distance <em>and</em> angle</li>
+<li>[ ] No steric clash</li>
+<li>[ ] Pose consistent with the SAR you already have</li>
+<li>[ ] Ranking stable across seeds</li>
+</ul>
+<p>If all six pass, the pose is worth a figure. If four pass and two are ambiguous, say so — a well-described
+limitation is more convincing than an overconfident picture.</p>
+<p>The docking workflow used here, including the interaction diagram and the session export, is part of MolStudio;
+the free tier has no time limit.</p>
+      </div>
+
+      <footer class="article-foot">
+        <div class="cta-box">
+          <div>
+            <h3>Try it on your own data</h3>
+            <p>The free tier covers everything in this walkthrough, with no time limit.</p>
+          </div>
+          <a class="btn btn-primary" href="https://www.aiddhub.com/molstudio#download">Download MolStudio</a>
+        </div>
+        <div class="prevnext">
+<span></span>          <a class="next" href="https://aiddhub.github.io/tutorials/mmp-rgroup-sar/"><span>Next →</span>Matched molecular pairs and R-group tables: from spreadsheet to SAR</a>
+        </div>
+      </footer>
+    </article>
+
+    <aside class="toc" aria-label="On this page">
+      <h4>On this page</h4>
+      <ul><li><a href="#1-is-the-ligand-inside-the-box">1. Is the ligand inside the box?</a></li><li><a href="#2-did-the-protocol-reproduce-the-reference-ligand">2. Did the protocol reproduce the reference ligand?</a></li><li><a href="#3-are-the-hydrogen-bonds-geometrically-plausible">3. Are the hydrogen bonds geometrically plausible?</a></li><li><a href="#4-is-there-any-steric-clash">4. Is there any steric clash?</a></li><li><a href="#5-does-the-pose-explain-what-you-already-know">5. Does the pose explain what you already know?</a></li><li><a href="#6-does-the-ranking-survive-a-second-run">6. Does the ranking survive a second run?</a></li><li><a href="#what-the-score-is-and-is-not">What the score is, and is not</a></li><li><a href="#a-short-checklist">A short checklist</a></li></ul>
+    </aside>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+              <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+            </svg>
+          </span>
+          <span class="brand-text"><b>AIDDHub</b><span>Tutorials &amp; case studies</span></span>
+        </a>
+        <p>Hands-on notes on molecular modelling, docking and SAR analysis, written by the people who build MolStudio and MolInsight.</p>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/cases/">Case studies</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://aiddhub.github.io/feed.xml">RSS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="https://www.aiddhub.com/molstudio">MolStudio</a></li>
+          <li><a href="https://www.aiddhub.com/molinsight">MolInsight</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#pricing">Pricing</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#download">Download</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> AIDDHub. All rights reserved.</span>
+      <span><a href="mailto:support@aiddhub.com">support@aiddhub.com</a> &middot; <a href="https://www.aiddhub.com/">aiddhub.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js?v=ce19807a" defer></script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matched molecular pairs and R-group tables: from spreadsheet to SAR — AIDDHub Notes</title>
+  <meta name="description" content="Turn a structure-activity spreadsheet into matched molecular pair statistics with p-values and an R-group matrix you can defend in a review." />
+  <link rel="canonical" href="https://aiddhub.github.io/tutorials/mmp-rgroup-sar/" />
+  <link rel="alternate" hreflang="en" href="https://aiddhub.github.io/tutorials/mmp-rgroup-sar/" />
+  <link rel="alternate" hreflang="x-default" href="https://aiddhub.github.io/tutorials/mmp-rgroup-sar/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="AIDDHub Notes" />
+  <meta property="og:title" content="Matched molecular pairs and R-group tables: from spreadsheet to SAR" />
+  <meta property="og:description" content="Turn a structure-activity spreadsheet into matched molecular pair statistics with p-values and an R-group matrix you can defend in a review." />
+  <meta property="og:url" content="https://aiddhub.github.io/tutorials/mmp-rgroup-sar/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://aiddhub.github.io/assets/og/mmp-rgroup-sar-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Matched molecular pairs and R-group tables: from spreadsheet to SAR" />
+  <meta name="twitter:description" content="Turn a structure-activity spreadsheet into matched molecular pair statistics with p-values and an R-group matrix you can defend in a review." />
+  <meta name="twitter:image" content="https://aiddhub.github.io/assets/og/mmp-rgroup-sar-en.png" />
+  <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/atom+xml" title="AIDDHub Notes" href="https://aiddhub.github.io/feed.xml" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=ce19807a" />
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://aiddhub.github.io/tutorials/mmp-rgroup-sar/#article",
+      "headline": "Matched molecular pairs and R-group tables: from spreadsheet to SAR",
+      "description": "Turn a structure-activity spreadsheet into matched molecular pair statistics with p-values and an R-group matrix you can defend in a review.",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "inLanguage": "en",
+      "mainEntityOfPage": "https://aiddhub.github.io/tutorials/mmp-rgroup-sar/",
+      "articleSection": "Tutorials",
+      "keywords": "mmp, r-group, sar, cheminformatics",
+      "author": {
+        "@type": "Organization",
+        "name": "AIDDHub",
+        "url": "https://www.aiddhub.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.aiddhub.com/#organization",
+        "name": "AIDDHub",
+        "url": "https://www.aiddhub.com",
+        "email": "support@aiddhub.com",
+        "description": "Desktop software for molecular modelling, docking and SAR analysis."
+      },
+      "isPartOf": {
+        "@id": "https://aiddhub.github.io/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aiddhub.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutorials",
+          "item": "https://aiddhub.github.io/tutorials/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Matched molecular pairs and R-group tables: from spreadsheet to SAR",
+          "item": "https://aiddhub.github.io/tutorials/mmp-rgroup-sar/"
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body class="article-page">
+<div class="bg-aurora"></div>
+<div class="bg-grid"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/" aria-label="AIDDHub Notes">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+          <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b>AIDDHub</b>
+        <span>Tutorials &amp; case studies</span>
+      </span>
+    </a>
+
+    <div class="nav-right">
+      <nav class="nav" id="navLinks" aria-label="Main">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/tutorials/" aria-current="page">Tutorials</a>
+        <a class="nav-link" href="/cases/">Case studies</a>
+        <a class="nav-link" href="/about/">About</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="container">
+  <div class="article-top">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <a href="/tutorials/">Tutorials</a>
+    <span class="sep">/</span>
+    <span aria-current="page">MMP and R-group tables</span>
+  </nav>
+  </div>
+
+  <div class="article-layout">
+    <article>
+      <header class="article-head">
+        <div class="article-meta">
+          <span class="badge tutorial">Tutorial</span>
+          <span class="badge product">MolInsight</span>
+          <span class="dot">·</span>
+          <time datetime="2026-11-05">November 5, 2026</time>
+          <span class="dot">·</span>
+          <span>4 min read</span>
+        </div>
+        <h1>Matched molecular pairs and R-group tables: from spreadsheet to SAR</h1>
+      </header>
+
+      <div class="article-body">
+<p>The sentence that most often derails an SAR review is "this substituent looks better". Twenty minutes of
+arrow-pushing later, nobody can say whether the effect is real, how many compounds support it, or whether it
+reverses on a different scaffold.</p>
+<p>Matched molecular pairs (MMP) answer that question with arithmetic instead of intuition. This walkthrough takes
+a normal assay table and produces three things you can put in a report: pair statistics with a significance
+estimate, an R-group matrix, and one sentence that survives the follow-up question.</p>
+<h2 id="start-from-a-clean-table">Start from a clean table</h2>
+<p>You need one structure column and at least one numeric activity column. Before running anything:</p>
+<ul>
+<li>convert IC50 to pIC50, so that "higher is better" holds everywhere;</li>
+<li>drop censored values (<code>&gt; 10 µM</code>) or keep them in a separate column — a censored number is not a measurement;</li>
+<li>check that stereochemistry is defined; a racemate and a pure enantiomer are different compounds.</li>
+</ul>
+<p>On import, MolInsight calculates 35 molecular descriptors (MW, LogP, TPSA, HBA/HBD and the rest) and shows them
+next to your columns. Those descriptors are what you will compare against potency in the next step.</p>
+<p><strong>Choose the activity column before you run MMP.</strong> Every difference in the output is computed on that column,
+and re-running against a different column produces a completely different table.</p>
+<h2 id="look-at-the-whole-set-first">Look at the whole set first</h2>
+<p>A scatter plot of LogP against pIC50 takes ten seconds and tells you whether the series has an obvious trend
+before you attribute anything to a substituent. If a series has no signal at all, MMP will happily produce a
+long list of transformations with p-values near 1 — evidence of nothing.</p>
+<p>Useful first plots:</p>
+<ul>
+<li>pIC50 against LogP and against MW, to see how much of the series is driven by size and lipophilicity;</li>
+<li>a small-multiples view by scaffold, to check whether the series is really one series;</li>
+<li>a histogram of the activity column, to see whether the range is wide enough to talk about potency at all.</li>
+</ul>
+<h2 id="run-the-mmp-analysis">Run the MMP analysis</h2>
+<p><code>Analyze → MMP</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max cuts</td>
+<td>2</td>
+<td>one cut finds terminal substitutions, two adds linker replacements</td>
+</tr>
+<tr>
+<td>Max cut bonds</td>
+<td>5</td>
+<td>larger fragments stop being interpretable</td>
+</tr>
+<tr>
+<td>Property</td>
+<td>pIC50</td>
+<td>the column you are explaining</td>
+</tr>
+<tr>
+<td>Scope</td>
+<td>all</td>
+<td>run on everything, then filter by scaffold in the table</td>
+</tr>
+</tbody>
+</table>
+<p>The output is one row per transformation, written as <code>[R1]&gt;&gt;[R2]</code>, with:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>What it tells you</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pairs</td>
+<td>how many compounds support this transformation</td>
+</tr>
+<tr>
+<td>Mean Δ</td>
+<td>average change in the property across all pairs</td>
+</tr>
+<tr>
+<td>Std. dev.</td>
+<td>how consistent that change is</td>
+</tr>
+<tr>
+<td>Min / Max Δ</td>
+<td>the worst case, which is often the interesting one</td>
+</tr>
+<tr>
+<td>Significance p</td>
+<td>probability of seeing this Δ by chance given the pair count</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-to-read-the-p-values">How to read the p-values</h2>
+<p>This is the part that separates a defensible table from a pretty one.</p>
+<ul>
+<li><strong>Pairs = 3 with p = 0.003 is not a discovery.</strong> With three pairs you are one outlier away from the opposite
+  conclusion. Sort by pair count first, then by effect size, then look at p.</li>
+<li><strong>A sign flip across scaffolds is a result, not a bug.</strong> The same CH3 → CF3 change that gains 0.8 log units on
+  one core and loses 0.4 on another is telling you the effect is context-dependent. That is worth a sentence in
+  the report; a single averaged number hides it.</li>
+<li><strong>p is a filter, not a finding.</strong> It tells you which rows are worth a chemist's attention. The explanation
+  still comes from the structures and the interactions.</li>
+</ul>
+<blockquote>
+<p>A practical rule: require at least 5 pairs and |mean Δ| ≥ 0.3 log units before a transformation goes into a
+slide. Everything else goes in the appendix.</p>
+</blockquote>
+<h2 id="build-the-r-group-matrix">Build the R-group matrix</h2>
+<p><code>Analyze → R-group / Scaffold-side-chain</code>, then pick the core.</p>
+<p>The matrix shows the common core on the left, one column per substitution position, and each cell coloured by
+the mean property change of the compounds carrying that R group. Sparse cells are greyed out rather than
+silently averaged.</p>
+<p>What it is good for:</p>
+<ul>
+<li>seeing at a glance which position matters — a column with a strong colour gradient is an optimisation point,
+  a column of pale cells is not;</li>
+<li>spotting the combination that nobody made yet: a good R1 with a good R2 usually appears as a missing cell in
+  the corner;</li>
+<li>checking whether an apparent trend is one compound or a whole row.</li>
+</ul>
+<p>What it is not good for: imputing activity for combinations that do not exist in the data. An empty cell means
+"not measured", not "predicted".</p>
+<h2 id="write-the-conclusion">Write the conclusion</h2>
+<p>One sentence, with the numbers in it:</p>
+<blockquote>
+<p>On scaffold X, a fluoro at R1 raises the mean pIC50 by 0.8 (n = 6, p &lt; 0.01), while R2 polar substituents show
+no consistent effect (p = 0.42); the next step is to extend R1 and keep R2 small to preserve solubility.</p>
+</blockquote>
+<p>That sentence contains the effect size, the sample size, the significance, and the caveat. It is also the only
+part of the analysis most readers will remember.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<ul>
+<li><strong>Too many cuts.</strong> Three or more cuts fragment the molecules into pieces that no chemist would call a
+  substitution, and the table fills with noise.</li>
+<li><strong>Mixing assays.</strong> Two IC50 protocols, or one Ki column and one IC50 column, produce differences that have
+  nothing to do with the substituent.</li>
+<li><strong>Ignoring the pair count.</strong> A large table sorted by mean Δ puts the least supported transformations at the
+  top, because small samples produce large averages.</li>
+<li><strong>Reporting the average only.</strong> The min/max columns are where the mechanism usually hides.</li>
+</ul>
+<p>Every step above is in the free tier of MolInsight, including the MMP statistics and the R-group matrix.</p>
+      </div>
+
+      <footer class="article-foot">
+        <div class="cta-box">
+          <div>
+            <h3>Try it on your own data</h3>
+            <p>The free tier covers everything in this walkthrough, with no time limit.</p>
+          </div>
+          <a class="btn btn-primary" href="https://www.aiddhub.com/molinsight#download">Download MolInsight</a>
+        </div>
+        <div class="prevnext">
+          <a class="prev" href="https://aiddhub.github.io/tutorials/six-checks-docking-pose/"><span>← Previous</span>Six checks before you trust a docking pose</a>
+          <a class="next" href="https://aiddhub.github.io/tutorials/docking-in-10-minutes/"><span>Next →</span>Run a docking job on Windows in 10 minutes — without Python</a>
+        </div>
+      </footer>
+    </article>
+
+    <aside class="toc" aria-label="On this page">
+      <h4>On this page</h4>
+      <ul><li><a href="#start-from-a-clean-table">Start from a clean table</a></li><li><a href="#look-at-the-whole-set-first">Look at the whole set first</a></li><li><a href="#run-the-mmp-analysis">Run the MMP analysis</a></li><li><a href="#how-to-read-the-p-values">How to read the p-values</a></li><li><a href="#build-the-r-group-matrix">Build the R-group matrix</a></li><li><a href="#write-the-conclusion">Write the conclusion</a></li><li><a href="#common-mistakes">Common mistakes</a></li></ul>
+    </aside>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="17" r="2.4"/><circle cx="19" cy="17" r="2.4"/>
+              <path d="M12 7.4v3.2M10.1 12.6 6.6 15.4M13.9 12.6l3.5 2.8"/>
+            </svg>
+          </span>
+          <span class="brand-text"><b>AIDDHub</b><span>Tutorials &amp; case studies</span></span>
+        </a>
+        <p>Hands-on notes on molecular modelling, docking and SAR analysis, written by the people who build MolStudio and MolInsight.</p>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/tutorials/">Tutorials</a></li>
+          <li><a href="/cases/">Case studies</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://aiddhub.github.io/feed.xml">RSS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="https://www.aiddhub.com/molstudio">MolStudio</a></li>
+          <li><a href="https://www.aiddhub.com/molinsight">MolInsight</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#pricing">Pricing</a></li>
+          <li><a href="https://www.aiddhub.com/molstudio#download">Download</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> AIDDHub. All rights reserved.</span>
+      <span><a href="mailto:support@aiddhub.com">support@aiddhub.com</a> &middot; <a href="https://www.aiddhub.com/">aiddhub.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js?v=ce19807a" defer></script>
+</body>
+</html>

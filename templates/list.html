@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-head">
+  <div class="container">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="{{ home_href }}">{{ nav_text.home }}</a>
+      <span class="sep">/</span>
+      <span aria-current="page">{{ section.title }}</span>
+    </nav>
+    <h1>{{ section.title }}</h1>
+    <p>{{ section.blurb }}</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+{% if products|length > 1 %}
+    <div class="chips" id="filters">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">{{ strings.filter_all }}</button>
+{% for product in products %}
+      <button class="chip" type="button" data-filter="{{ product.key }}" aria-pressed="false">{{ product.label }}</button>
+{% endfor %}
+    </div>
+{% endif %}
+    <div class="card-grid" id="cards">
+{% for post in posts %}
+      <a class="card" href="{{ post.url }}" data-product="{{ post.product }}">
+        <div class="card-top">
+          <span class="badge {{ post.badge_class }}">{{ post.label }}</span>
+          <span class="badge product">{{ post.product_label }}</span>
+        </div>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description }}</p>
+        <div class="card-foot">
+          <time datetime="{{ post.iso }}">{{ post.date_label }}</time>
+          <span>·</span>
+          <span>{{ post.minutes }} {{ strings.min_read }}</span>
+        </div>
+      </a>
+{% endfor %}
+    </div>
+{% if not posts %}
+    <p style="color:var(--text-dim)">{{ strings.empty }}</p>
+{% endif %}
+  </div>
+</section>
+{% endblock %}
