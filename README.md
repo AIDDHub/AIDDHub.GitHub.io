@@ -40,6 +40,8 @@ Replace `assets/img/avatar.svg` with a photo (square, 240×240 or larger) to use
 
 ## Adding a post
 
+> 中文操作手册（包含常见问题与 Markdown 速查）：[`docs/写内容.md`](docs/写内容.md)
+
 The site is built from Markdown **in CI**, so publishing only needs one file.
 
 1. Create `content/posts/my-slug.en.md` (the filename must be `<slug>.en.md`, lowercase, hyphens).
