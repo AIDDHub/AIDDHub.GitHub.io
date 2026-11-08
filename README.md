@@ -38,22 +38,28 @@ rebuild; no template changes are needed.
 
 Replace `assets/img/avatar.svg` with a photo (square, 240×240 or larger) to use a real picture.
 
-## Writing a post
+## Adding a post
+
+The site is built from Markdown **in CI**, so publishing only needs one file.
+
+1. Create `content/posts/my-slug.en.md` (the filename must be `<slug>.en.md`, lowercase, hyphens).
+2. Write the front matter and the body — see the table below.
+3. Commit and push. GitHub Actions builds the HTML and deploys it in about a minute.
+
+No local Python is required. If you want to preview first:
 
 ```powershell
-python tools/build_site.py --new why-i-use-rdkit --section notes
+C:\miniconda3\python.exe tools\build_site.py
+C:\miniconda3\python.exe -m http.server 8899
 ```
 
-That creates `content/posts/why-i-use-rdkit.en.md`. Fill the front matter and the body, then:
+then open <http://127.0.0.1:8899/>.
+
+To start from a filled-in template instead of a blank file:
 
 ```powershell
-python tools/build_site.py
-git add -A
-git commit -m "post: why i use rdkit"
-git push
+C:\miniconda3\python.exe tools\build_site.py --new my-slug --section notes
 ```
-
-GitHub Pages rebuilds in about a minute.
 
 Front matter:
 
@@ -72,6 +78,16 @@ Front matter:
 House style: neutral, specific, no sales voice. Articles end with tags, previous/next navigation and a
 corrections line — not a call to action. Every `##` heading becomes a table-of-contents entry.
 
+### Images
+
+Put the file in `assets/img/` and reference it from the Markdown:
+
+```markdown
+![Interaction diagram](/assets/img/docking-interactions.png)
+```
+
+Keep images under ~500 KB; GitHub Pages allows 1 GB per site.
+
 ## Chinese editions
 
 Add `content/posts/<slug>.zh.md` with the same `date`, `section` and `product`. The build emits
@@ -87,9 +103,11 @@ The two homepages are generated from the same `profile.yml`; only the `en`/`zh` 
 python tools/build_site.py --check
 ```
 
-Fails if the committed HTML differs from a fresh build. The same check runs in GitHub Actions on every push,
-so a forgotten rebuild cannot reach the site. Social cards are excluded from the check (they are regenerated
-but compared by content only when the text changes).
+Fails if the committed HTML differs from a fresh build. Useful before pushing from a machine that has the
+build dependencies installed. CI does not require it — the deploy job builds the HTML itself.
+
+Social cards are excluded from the check: they are regenerated locally, and on machines without the Windows
+fonts (the Linux runner) the committed cards are kept as-is.
 
 ## Build dependencies
 

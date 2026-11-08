@@ -31,10 +31,10 @@ FONT_REG = {
 
 
 def _font(path: Path, size: int) -> ImageFont.FreeTypeFont:
-    try:
-        return ImageFont.truetype(str(path), size)
-    except OSError:
-        return ImageFont.load_default()
+    """Load a font, or raise. Missing fonts must not silently produce ugly cards."""
+    if not path.exists():
+        raise FileNotFoundError(path)
+    return ImageFont.truetype(str(path), size)
 
 
 def _glow(base: Image.Image, center: tuple[int, int], radius: int, color: tuple[int, int, int], alpha: int) -> None:

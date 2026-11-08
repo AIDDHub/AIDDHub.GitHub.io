@@ -568,15 +568,19 @@ class Builder:
         self.written.append(write(self.dest, rel, page))
 
     def make_og(self, rel: str, *, title: str, label: str, footer: str, lang: str) -> str | None:
+        url = SITE["url"] + "/" + rel
+        exists = (self.dest / rel).exists()
         if og_image is None:
-            return None
+            return url if exists else None
         try:
             og_image.render(title=title, label=label, footer=footer, lang=lang, out=self.dest / rel)
-        except Exception as exc:  # never fail a build over a card
+        except Exception as exc:  # keep the committed card when the font is unavailable (CI on Linux)
+            if exists:
+                return url
             print(f"warning: og image {rel} failed: {exc}")
             return None
         self.images.append(rel)
-        return SITE["url"] + "/" + rel
+        return url
 
     # -- pages ------------------------------------------------------------- #
 
@@ -727,11 +731,14 @@ class Builder:
                     f"  <url>\n    <loc>{absolute(path)}</loc>\n    <lastmod>{lastmod}</lastmod>{links}\n  </url>"
                 )
 
-        today = date.today().isoformat()
+        latest = max(
+            (ed["updated"] or ed["date"] for editions in self.posts.values() for ed in editions.values()),
+            default=date.today(),
+        ).isoformat()
         home_paths = {"en": "/"}
         if any("zh" in p for p in self.posts.values()):
             home_paths["zh"] = "/zh/"
-        add(home_paths, today)
+        add(home_paths, latest)
 
         for section in SECTIONS:
             paths = {}
@@ -739,7 +746,7 @@ class Builder:
                 if any(code in p and p[code]["section"] == section for p in self.posts.values()):
                     paths[code] = url_path(section, lang=code)
             if paths:
-                add(paths, today)
+                add(paths, latest)
 
         for slug, editions in sorted(self.posts.items()):
             paths = {code: ed["path"] for code, ed in editions.items() if code in ("en", "zh")}
@@ -749,7 +756,7 @@ class Builder:
         for name, editions in sorted(self.pages.items()):
             paths = {code: ed["path"] for code, ed in editions.items() if code in ("en", "zh")}
             if paths:
-                add(paths, today)
+                add(paths, latest)
 
         body = (
             '<?xml version="1.0" encoding="UTF-8"?>\n'
