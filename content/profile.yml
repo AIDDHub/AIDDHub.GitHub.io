@@ -1,0 +1,43 @@
+# Everything on the homepage lives here. Edit this file, run
+#   python tools/build_site.py
+# and push. No template changes needed.
+
+name: AIDDHub
+handle: "@AIDDHub"
+avatar: /assets/img/avatar.svg
+
+tagline:
+  en: "Computational chemistry · drug design · cheminformatics · data analysis"
+  zh: "计算化学 / 药物设计 · 化学信息学 / 数据分析"
+
+intro:
+  en: >-
+    I work on computational chemistry: molecular modelling, docking, and
+    structure–activity analysis. This page collects notes from that work —
+    methods, tools, and the things I had to figure out the hard way.
+  zh: >-
+    做计算化学：分子建模、分子对接与构效分析。这里放工作过程中的笔记——
+    方法、工具，以及那些绕了远路才想明白的事。
+
+keywords:
+  en: [Molecular modelling, Docking, SAR, Cheminformatics, Python]
+  zh: [分子建模, 分子对接, 构效关系, 化学信息学, Python]
+
+now:
+  en:
+    - "Writing tutorials for the workflows I use daily."
+    - "Keeping notes on the tools that make SAR analysis less manual."
+  zh:
+    - "在写自己每天都会用到的工作流教程。"
+    - "记录那些能让构效分析少一点手工活的工具。"
+
+# Label is the same in both languages; href can be absolute or site-relative.
+links:
+  - label: GitHub
+    href: "https://github.com/AIDDHub"
+  - label: Email
+    href: "mailto:support@aiddhub.com"
+  - label: RSS
+    href: "/feed.xml"
+  - label: aiddhub.com
+    href: "https://www.aiddhub.com"

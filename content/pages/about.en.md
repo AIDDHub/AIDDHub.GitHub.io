@@ -1,41 +1,33 @@
 ---
 title: "About"
-description: "AIDDHub is an independent software studio building desktop tools for molecular modelling and SAR analysis."
+description: "Computational chemistry: molecular modelling, docking and structure–activity analysis — and the notes that come out of it."
 ---
 
-AIDDHub is an independent software studio. We build desktop software for medicinal chemistry and structural
-biology, and publish the notes that come out of that work.
+I work on computational chemistry: molecular modelling, docking, and structure–activity analysis. Most of what
+is published here comes out of that work — methods I use, tools I compare, and notes on the parts that took
+longer than expected.
 
-## What we build
+## What is here
 
-**MolStudio** is a molecular modelling and docking workstation: 3D building, receptor preparation, docking
-with AutoDock Vina, 2D interaction diagrams, plots and saved sessions.
+- **Tutorials** — complete walkthroughs, from a real task to a figure or table that belongs in a report.
+- **Writing** — essays, build notes and opinions on software and method.
+- **Projects** — the tools I build and maintain.
 
-**MolInsight** is an SAR analysis workbench: 47 chart types, matched molecular pairs with pair counts and
-significance, R-group matrices, scaffold and side-chain analysis, clustering and self-organising maps, and
-QSAR with an applicability domain.
+## Background
 
-Both are native Windows and Linux applications. They run offline, keep data in ordinary files, and are sold as
-one-time licences with a free tier that has no time limit.
+My work sits between medicinal chemistry and software: docking and interaction analysis on one side, data
+handling, plotting and statistics on the other. A lot of the notes here exist because the same question came
+up more than once, and writing it down was cheaper than answering it again.
 
-## How these notes are written
+## How the writing is done
 
-Every article is tested against the current release before it is published. When a feature changes, the
-article changes with it. When an earlier statement turns out to be wrong, the correction stays visible instead
-of being quietly deleted.
-
-The tutorials are practical: a real task, the actual steps, and a figure or table at the end. The writing is
-more open-ended — design decisions, comparisons, and the parts of the work that do not fit on a product page.
-
-## What we do not do
-
-No subscription, no seat management, no admin console, no SSO, no cloud upload. A laboratory that needs ten
-seats buys ten licences. Anything else would be a second product to support, and a worse one.
+Articles are tested against the current release of whatever they describe. When something changes, the article
+changes with it. When an earlier statement turns out to be wrong, the correction stays visible instead of
+being quietly deleted.
 
 ## Contact
 
-Bug reports, corrections, feature requests and licence questions go to
-[support@aiddhub.com](mailto:support@aiddhub.com). English or Chinese; we answer within a couple of days.
+Corrections, questions and suggestions: [support@aiddhub.com](mailto:support@aiddhub.com). English or Chinese.
 
-If something on this site is wrong, telling us is useful — a correction costs two minutes and saves the next
+If something on this site is wrong, telling me is useful — a correction costs two minutes and saves the next
 reader an afternoon.

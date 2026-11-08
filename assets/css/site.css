@@ -279,6 +279,57 @@ h1.hero-title .grad {
 .stats b { display: block; font-size: 24px; letter-spacing: -0.02em; }
 .stats span { font-size: 12.5px; color: var(--text-faint); }
 
+/* profile (home) -------------------------------------------- */
+.profile { padding: 56px 0 6px; }
+.profile-top { display: flex; align-items: center; gap: 26px; }
+.avatar {
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-2);
+  flex: 0 0 auto;
+}
+.profile-id h1 { font-size: clamp(26px, 3.2vw, 36px); letter-spacing: -0.025em; line-height: 1.15; }
+.profile-tagline { margin-top: 7px; font-size: 15px; color: var(--text-dim); }
+.profile-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 13px; font-size: 13.5px; }
+.profile-links a { color: var(--accent); }
+.profile-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: 44px;
+  margin-top: 34px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+.profile-intro { font-size: 17px; line-height: 1.7; color: #cbd6e6; max-width: 62ch; }
+.keywords { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.keywords li {
+  font-size: 12.5px;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 5px 12px;
+}
+.profile-now h2 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--text-faint);
+  margin-bottom: 14px;
+}
+.profile-now ul { list-style: none; display: grid; gap: 11px; }
+.profile-now li { position: relative; padding-left: 18px; font-size: 14.5px; color: var(--text-dim); }
+.profile-now li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent-2);
+  opacity: .65;
+}
+
 /* section --------------------------------------------------- */
 section.block { padding: 58px 0; }
 .section-head {
@@ -705,6 +756,11 @@ section.block { padding: 58px 0; }
   .nav-links.open { display: flex; }
   .nav a.nav-link { padding: 11px 12px; font-size: 15px; }
   .hero { padding: 52px 0 30px; }
+  .profile { padding: 40px 0 0; }
+  .profile-top { gap: 18px; }
+  .avatar { width: 76px; height: 76px; }
+  .profile-grid { grid-template-columns: 1fr; gap: 28px; margin-top: 26px; }
+  .profile-intro { font-size: 16px; }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .card-grid, .card-grid.two, .product-strip { grid-template-columns: 1fr; }
   .post-item { grid-template-columns: 1fr auto; gap: 6px 14px; }

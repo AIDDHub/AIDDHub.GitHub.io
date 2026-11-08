@@ -110,6 +110,8 @@ TEXT = {
             "h1": "Notes on chemistry software",
             "lede": "AIDDHub builds desktop tools for molecular modelling and SAR analysis. This is where the work "
                     "gets written down: walkthroughs, build notes, and the occasional opinion.",
+            "writing_title": "Writing",
+            "now_title": "Now",
         },
         "list": {"empty": "Nothing published here yet."},
         "post": {"min_read": "min read", "updated": "Updated", "toc": "On this page",
@@ -129,6 +131,8 @@ TEXT = {
             "h1": "化学软件笔记",
             "lede": "AIDDHub 做分子建模与构效分析的桌面工具。这里记录工作本身：操作教程、开发笔记，"
                     "偶尔也写点看法。",
+            "writing_title": "文章",
+            "now_title": "近况",
         },
         "list": {"empty": "这里还没有内容。"},
         "post": {"min_read": "分钟阅读", "updated": "更新于", "toc": "本页目录",
@@ -301,6 +305,34 @@ def load_posts() -> dict[str, dict[str, dict]]:
         if "zh" in editions:
             editions["zh"]["translation"] = editions["en"]
     return posts
+
+
+def load_profile() -> dict:
+    path = CONTENT / "profile.yml"
+    if not path.exists():
+        return {}
+    return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+
+
+def profile_for(lang: str) -> dict:
+    data = load_profile()
+
+    def pick(key):
+        value = data.get(key)
+        if isinstance(value, dict):
+            return value.get(lang) or value.get("en") or ""
+        return value
+
+    return {
+        "name": data.get("name", SITE["brand"]),
+        "handle": data.get("handle", ""),
+        "avatar": data.get("avatar", ""),
+        "tagline": pick("tagline"),
+        "intro": pick("intro"),
+        "keywords": pick("keywords") or [],
+        "now": pick("now") or [],
+        "links": data.get("links") or [],
+    }
 
 
 def load_pages() -> dict[str, dict[str, dict]]:
@@ -558,24 +590,23 @@ class Builder:
         if any("zh" in p for p in self.posts.values()):
             other_paths["zh"] = "/zh/"
         context = self.base_context(lang, "home")
+        profile = profile_for(lang)
         context.update(
-            title=f"{SITE['name']} — notes on chemistry software"
-                  if lang == "en" else f"{SITE['name']} — 化学软件笔记",
-            description=("Notes on desktop software for medicinal chemistry: molecular modelling, docking, "
-                         "SAR analysis, and the engineering behind the tools.")
-                        if lang == "en" else
-                        ("关于药物化学桌面软件的笔记：分子建模、分子对接、构效分析，以及工具背后的工程问题。"),
+            title=f"{profile['name']} — computational chemistry notes"
+                  if lang == "en" else f"{profile['name']} — 计算化学笔记",
+            description=profile["intro"] or SITE["name"],
             canonical=absolute(home),
             alternates=self.alternates_for(other_paths),
             lang_switch=self.lang_switch(other_paths, lang),
             jsonld=jsonld_for_home(lang),
             recent=posts,
+            profile=profile,
             section_href=lambda key: self.section_href(key, lang),
         )
         context["og_image"] = self.make_og(
             f"assets/og/home-{lang}.png",
-            title=TEXT[lang]["home"]["h1"],
-            label=TEXT[lang]["tagline"],
+            title=profile["name"],
+            label=SITE["tagline"],
             footer="aiddhub.github.io",
             lang=lang,
         )

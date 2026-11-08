@@ -1,21 +1,57 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="hero hero-slim">
+<section class="profile">
   <div class="container">
-    <span class="eyebrow">{{ site.brand }}</span>
-    <h1 class="hero-title">{{ strings.h1 }}</h1>
-    <p class="lede">{{ strings.lede }}</p>
-    <p class="hero-links">
-      <a href="{{ section_href('notes') }}">{{ nav_text.notes }}</a>
-      <a href="{{ section_href('tutorials') }}">{{ nav_text.tutorials }}</a>
-      <a href="{{ projects_href }}">{{ nav_text.projects }}</a>
-      <a href="{{ site.url }}/feed.xml">RSS</a>
-    </p>
+    <div class="profile-top">
+{% if profile.avatar %}
+      <img class="avatar" src="{{ profile.avatar }}" alt="" width="104" height="104" />
+{% endif %}
+      <div class="profile-id">
+        <h1>{{ profile.name }}</h1>
+        <p class="profile-tagline">{{ profile.tagline }}</p>
+{% if profile.links %}
+        <p class="profile-links">
+{% for link in profile.links %}
+          <a href="{{ link.href }}">{{ link.label }}</a>
+{% endfor %}
+        </p>
+{% endif %}
+      </div>
+    </div>
+
+    <div class="profile-grid">
+      <div class="profile-main">
+        <p class="profile-intro">{{ profile.intro }}</p>
+{% if profile.keywords %}
+        <ul class="keywords">
+{% for keyword in profile.keywords %}
+          <li>{{ keyword }}</li>
+{% endfor %}
+        </ul>
+{% endif %}
+      </div>
+{% if profile.now %}
+      <aside class="profile-now">
+        <h2>{{ strings.now_title }}</h2>
+        <ul>
+{% for item in profile.now %}
+          <li>{{ item }}</li>
+{% endfor %}
+        </ul>
+      </aside>
+{% endif %}
+    </div>
   </div>
 </section>
 
 <section class="block">
   <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>{{ strings.writing_title }}</h2>
+      </div>
+      <a class="more" href="{{ site.url }}/feed.xml">RSS</a>
+    </div>
     <div class="post-list">
 {% for post in recent %}
       <a class="post-item" href="{{ post.url }}">
